@@ -11,6 +11,15 @@ class Role_Petugas extends CI_Controller
 
     public function index()
     {
+        $data['judul'] = "Dashboard";
+        // $data['p_byJk'] = $this->Penduduk_model->getByJK();
+        $this->load->view('layout/header', $data);
+        $this->load->view('vw_dashboard', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function penduduk()
+    {
         $data['judul'] = "Data Penduduk";
         // $data['p_byJk'] = $this->Penduduk_model->getByJK();
         $this->load->view('layout/header', $data);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <title>Halaman Petugas Lurah</title>
     <!-- Favicon -->
     <link rel="icon" href="<?= base_url(); ?>assets/img/brand/favicon.png" type="image/png">
     <!-- Fonts -->
@@ -37,6 +37,12 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" href="<?= site_url('role_petugas'); ?>">
+                                <i class="fas fa-tv text-primary"></i>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="<?= site_url('role_petugas/penduduk'); ?>">
                                 <i class="fas fa-users text-primary"></i>
                                 <span class="nav-link-text">Data Penduduk</span>
                             </a>
