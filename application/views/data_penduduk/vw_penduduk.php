@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
+                                    <a href="<?= site_url('Penduduk/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
                                 </div>
                             </div>
                         </div>
