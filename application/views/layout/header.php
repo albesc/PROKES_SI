@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <title>Halaman Petugas Lurah</title>
     <!-- Favicon -->
     <link rel="icon" href="<?= base_url(); ?>assets/img/brand/favicon.png" type="image/png">
     <!-- Fonts -->
@@ -26,8 +26,7 @@
             <!-- Brand -->
             <div class="sidenav-header  align-items-center">
                 <a class="navbar-brand" href="javascript:void(0)">
-                    <!--<img src="<?= base_url(); ?>assets/img/brand/blue.png" class="navbar-brand-img" alt="...">-->
-                    Logo Here
+                    <img src="<?= base_url(); ?>assets/img/brand/blue.png" class="navbar-brand-img" alt="logo">
                 </a>
             </div>
             <div class="navbar-inner">
@@ -36,55 +35,61 @@
                     <!-- Nav items -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas'); ?>">
+                                <i class="fas fa-tv text-primary"></i>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= site_url('role_petugas/penduduk'); ?>">
                                 <i class="fas fa-users text-primary"></i>
                                 <span class="nav-link-text">Data Penduduk</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/berita'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/berita'); ?>">
                                 <i class="fas fa-newspaper text-primary"></i>
                                 <span class="nav-link-text">Berita</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/galeri'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/galeri'); ?>">
                                 <i class="far fa-image text-primary"></i>
                                 <span class="nav-link-text">Galeri</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/pengaduan'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/pengaduan'); ?>">
                                 <i class="fas fa-bullhorn text-primary"></i>
                                 <span class="nav-link-text">Pengaduan</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/agenda'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/agenda'); ?>">
                                 <i class="fas fa-calendar text-primary"></i>
                                 <span class="nav-link-text">Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/rtrw'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/rtrw'); ?>">
                                 <i class="fas fa-user text-primary"></i>
                                 <span class="nav-link-text">RT & RW</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/sapras'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/sapras'); ?>">
                                 <i class="fas fa-building text-primary"></i>
                                 <span class="nav-link-text">Sarana & Prasarana</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/umkm'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/umkm'); ?>">
                                 <i class="fas fa-store text-primary"></i>
                                 <span class="nav-link-text">UMKM</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="<?= site_url('role_petugas/pooling'); ?>">
+                            <a class="nav-link" href="<?= site_url('role_petugas/pooling'); ?>">
                                 <i class="ni ni-single-copy-04 text-primary"></i>
                                 <span class="nav-link-text">Laporan Polling</span>
                             </a>

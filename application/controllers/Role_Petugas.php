@@ -7,12 +7,21 @@ class Role_Petugas extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Penduduk_model');
+        $this->load->model('Pengaduan_model');
     }
 
     public function index()
     {
+        $data['judul'] = "Dashboard";
+        $this->load->view('layout/header', $data);
+        $this->load->view('vw_dashboard', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function penduduk()
+    {
         $data['judul'] = "Data Penduduk";
-        // $data['p_byJk'] = $this->Penduduk_model->getByJK();
+        $data['penduduk'] = $this->Penduduk_model->getAll();
         $this->load->view('layout/header', $data);
         $this->load->view('data_penduduk/vw_penduduk', $data);
         $this->load->view('layout/footer', $data);
@@ -39,6 +48,7 @@ class Role_Petugas extends CI_Controller
     public function pengaduan()
     {
         $data['judul'] = "Data Pengaduan";
+        $data['pengaduan'] = $this->Pengaduan_model->getAll();
         // $data['p_byJk'] = $this->Pengaduan_model->getByJK();
         $this->load->view('layout/header', $data);
         $this->load->view('data_pengaduan/vw_pengaduan', $data);
