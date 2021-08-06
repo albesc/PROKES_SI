@@ -10,6 +10,13 @@ class Penduduk_model extends CI_Model
     {
         parent::__construct();
     }
+
+    public function getAll()
+    {
+        $query = $this->db->get('penduduk');
+        return $query->result_array();
+    }
+
     public function getByJK()
     {
         $this->db->select('pndk_jk as jk, count(*) as jumlah');
