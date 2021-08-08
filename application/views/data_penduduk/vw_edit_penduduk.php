@@ -6,7 +6,7 @@
              <div class="header-body">
                  <div class="row align-items-center py-4">
                      <div class="col-lg-6 col-7">
-                         <h3 class="h1 text-white d-inline-block mb-0">Tambah Data Penduduk</h3>
+                         <h3 class="h1 text-white d-inline-block mb-0">Edit Data Penduduk</h3>
                      </div>
                  </div>
              </div>
@@ -174,7 +174,7 @@
                              </div>
                              <div class="row">
                                  <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
+                                     <a href="" class="btn btn-primary">Edit</a>
                                  </div>
                              </div>
                          </form>

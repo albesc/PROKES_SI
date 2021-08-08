@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="<?= site_url('Penduduk/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
+                                    <a href="<?= site_url('Penduduk/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <td scope="col" class="sort" data-sort="id">ID Penduduk</td>
+                                        <td scope="col" class="sort" data-sort="id">No</td>
                                         <td scope="col" class="sort" data-sort="nik">NIK Penduduk</td>
                                         <td scope="col" class="sort" data-sort="nama">Nama Penduduk</td>
                                         <td scope="col">Jenis Kelamin</td>
@@ -55,12 +55,13 @@
                                 </thead>
                                 <tbody class="list">
                                     <?php
+                                    $i = 1;
                                     foreach ($penduduk as $p) {
                                     ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="media-body">
-                                                    <span class="name mb-0 text-sm"><?= $p['pndk_id'] ?></span>
+                                                    <span class="name mb-0 text-sm"><?= $i ?></span>
                                                 </div>
                                             </th>
                                             <td class="budget">
@@ -80,12 +81,12 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <a href="" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Hapus</a>
+                                                <a href="<?= site_url('Penduduk/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Penduduk/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php $i++;
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>

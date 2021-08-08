@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
+                                    <a href="<?= site_url('RtRw/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <td scope="col" class="sort" data-sort="id">RT</td>
+                                        <td scope="col" class="sort" data-sort="rt">RT</td>
                                         <td scope="col" class="sort" data-sort="nik">Nama Ketua RT</td>
                                         <td scope="col" class="sort" data-sort="nik">RW</td>
                                         <td scope="col" class="sort" data-sort="nama">Nama Ketua RW</td>

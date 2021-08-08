@@ -42,7 +42,7 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <td scope="col" class="sort" data-sort="id">ID Pengaduan</td>
+                                        <td scope="col" class="sort" data-sort="id">No</td>
                                         <td scope="col" class="sort" data-sort="nik">Nama Penduduk</td>
                                         <td scope="col" class="sort" data-sort="nama">Status</td>
                                         <td scope="col">Judul Pengaduan</td>

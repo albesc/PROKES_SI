@@ -24,10 +24,7 @@
                                     <div class="form-group">
                                         <select class="form-control" id="exampleFormControlSelect1">
                                             <option>Kategori Berita</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option></option>
                                         </select>
                                     </div>
                                 </div>
@@ -46,6 +43,9 @@
                                         </button>
                                     </form>
                                 </div>
+                                <div class="col-sm-2">
+                                    <a href="<?= site_url('Berita/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-3">
@@ -54,8 +54,7 @@
                                 <div class="card-body">
                                     <h2 class="card-title">Judul Berita</h2>
                                     <p class="card-text">Deskripsi singkat berita</p>
-                                    <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;
-                                    <a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Hapus</a>
+                                    <a href="<?= site_url('Berita/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;
                                 </div>
                             </div>
                         </div>
@@ -88,3 +87,4 @@
                     </div>
                 </div>
             </div>
+        </div>

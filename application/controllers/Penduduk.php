@@ -16,4 +16,20 @@ class Penduduk extends CI_Controller
         $this->load->view('data_penduduk/vw_add_penduduk', $data);
         $this->load->view('layout/footer', $data);
     }
+
+    public function edit()
+    {
+        $data['judul'] = "Edit Penduduk";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_penduduk/vw_edit_penduduk', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function detail()
+    {
+        $data['judul'] = "Detail Penduduk";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_penduduk/vw_detail_penduduk', $data);
+        $this->load->view('layout/footer', $data);
+    }
 }
