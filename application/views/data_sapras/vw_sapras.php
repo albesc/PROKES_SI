@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data</a>
+                                    <a href="<?= site_url('Sapras/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <td scope="col" class="sort" data-sort="id">ID Sarana-Prasarana</td>
+                                        <td scope="col" class="sort" data-sort="id">No</td>
                                         <td scope="col" class="sort" data-sort="nik">Nama Sarana-Prasarana</td>
                                         <td scope="col" class="sort" data-sort="nama">Kondisi</td>
                                         <td scope="col">Jumlah yang ada</td>
