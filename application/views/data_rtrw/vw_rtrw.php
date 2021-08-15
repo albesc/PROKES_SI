@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="<?= site_url('RtRw/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                    <a href="<?= site_url('Rtrw/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>

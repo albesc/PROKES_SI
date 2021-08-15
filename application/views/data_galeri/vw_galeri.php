@@ -44,10 +44,11 @@
                             <div class="card" style="width: 18rem;">
                                 <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
                                 <div class="card-body">
-                                    <h2 class="card-title">Judul</h2>
-                                    <h3>Waktu</h3>
-                                    <p class="card-text">Caption</p>
-                                    <a href="<?= site_url('Galeri/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;
+                                    <h2 class="card-title">Judul Galeri</h2>
+                                    <h3><i class="far fa-clock"></i>&nbsp;&nbsp;Waktu</h3>
+                                    <div class="col-12 text-right">
+                                        <a href="<?= site_url('Galeri/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

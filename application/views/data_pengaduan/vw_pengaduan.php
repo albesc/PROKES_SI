@@ -44,39 +44,33 @@
                                     <tr>
                                         <td scope="col" class="sort" data-sort="id">No</td>
                                         <td scope="col" class="sort" data-sort="nik">Nama Penduduk</td>
+                                        <td scope="col" class="sort">Kategori Pengaduan</td>
                                         <td scope="col" class="sort" data-sort="nama">Status</td>
-                                        <td scope="col">Judul Pengaduan</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <?php
-                                    foreach ($pengaduan as $p) {
-                                    ?>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="media-body">
-                                                    <span class="name mb-0 text-sm"><?= $p['pgdn_id'] ?></span>
-                                                </div>
-                                            </th>
-                                            <td class="budget">
-                                                <?= $p['nama'] ?>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $p['status'] ?></span>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <?= $p['pgdn_judul'] ?>
-                                            </td>
-                                            <td class="text-right">
-                                                <a href="" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Hapus</a>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
+                                    <tr>
+                                        <th scope="row">
+                                            <div class="media-body">
+                                                <span class="name mb-0 text-sm">1</span>
+                                            </div>
+                                        </th>
+                                        <td class="budget">
+                                            tes
+                                        </td>
+                                        <td>
+                                            tes
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-dot mr-4">
+                                                <span class="status">diproses</span>
+                                            </span>
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="<?= site_url('Pengaduan/resp'); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Tanggapi</a>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

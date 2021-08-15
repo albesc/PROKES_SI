@@ -27,9 +27,15 @@
                                          <input class="form-control" type="text" id="example-text-input">
                                      </div>
                                  </div>
-                                 <div class="col-4">
+                                 <div class="col-3">
                                      <div class="form-group">
-                                         <label for="example-date-input" class="form-control-label">Tanggal</label>
+                                         <label for="example-date-input" class="form-control-label">Tanggal Mulai</label>
+                                         <input class="form-control" type="date" id="example-date-input">
+                                     </div>
+                                 </div>
+                                 <div class="col-3">
+                                     <div class="form-group">
+                                         <label for="example-date-input" class="form-control-label">Tanggal Berakhir</label>
                                          <input class="form-control" type="date" id="example-date-input">
                                      </div>
                                  </div>
