@@ -53,8 +53,10 @@
                                 <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
                                 <div class="card-body">
                                     <h2 class="card-title">Judul Berita</h2>
-                                    <p class="card-text">Deskripsi singkat berita</p>
-                                    <a href="<?= site_url('Berita/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;
+                                    <h3><i class="far fa-clock"></i>&nbsp;&nbsp;Waktu</h3>
+                                    <div class="col-12 text-right">
+                                        <a href="<?= site_url('Berita/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

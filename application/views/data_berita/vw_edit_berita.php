@@ -27,15 +27,6 @@
                                          <input class="form-control" type="text" id="example-text-input">
                                      </div>
                                  </div>
-                                 <div class="col-2">
-                                     <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">KD</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>01</option>
-                                             <option></option>
-                                         </select>
-                                     </div>
-                                 </div>
                              </div>
                              <div class="row">
                                  <div class="col-12">

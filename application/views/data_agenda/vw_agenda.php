@@ -45,9 +45,10 @@
                                 <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
                                 <div class="card-body">
                                     <h2 class="card-title">Judul Agenda</h2>
-                                    <h3>Waktu&nbsp;&nbsp;&nbsp;Tempat</h3>
-                                    <p class="card-text">Deskripsi singkat agenda</p>
-                                    <a href="<?= site_url('Agenda/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>&nbsp;&nbsp;
+                                    <h3><i class="far fa-clock"></i>&nbsp;&nbsp;Waktu</h3>
+                                    <div class="col-12 text-right">
+                                        <a href="<?= site_url('Agenda/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

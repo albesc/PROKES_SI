@@ -1,11 +1,41 @@
 <div class="container-fluid mt--6">
     <div class="row">
-        <div class="col">
+        <div class="col-xl-4 order-xl-2">
+            <div class="card card-profile">
+                <img src="../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 order-lg-2">
+                        <div class="card-profile-image">
+                            <a href="#">
+                                <img src="../img/default_profile.png" class="rounded-circle">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-7">
+                    <div class="text-center">
+                        <h5 class="h3">
+                            Jessica Jones<span class="font-weight-light">, 27</span>
+                        </h5>
+                        <div class="h5 font-weight-300">
+                            <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                        </div>
+                        <div class="h5 mt-4">
+                            <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                        </div>
+                        <div>
+                            <i class="ni education_hat mr-2"></i>University of Computer Science
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
             <div class="card">
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Detail data penduduk </h3>
+                            <h3 class="mb-0">Detail Penduduk </h3>
                         </div>
                     </div>
                 </div>
@@ -14,50 +44,50 @@
                         <h6 class="heading-small text-muted mb-4">Informasi Penduduk</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
                                         <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
                                     </div>
                                 </div>
-                                <div class="col-lg-2">
+                                <div class="col-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">RT</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="RT" value="">
+                                        <label class="form-control-label" for="input-username">RW</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="RW" value="">
                                     </div>
                                 </div>
-                                <div class="col-lg-2">
+                                <div class="col-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">RW</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="RW" value="">
+                                        <label class="form-control-label" for="input-username">RT</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="RW" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">Nama</label>
                                         <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Jenis Kelamin</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="jenis kelamin" value="">
+                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="jenis kelamin" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Tempat Lahir</label>
                                         <input type="text" id="input-first-name" class="form-control" placeholder="tempat lahir" value="">
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-last-name">Tanggal Lahir</label>
-                                        <input type="text" id="input-last-name" class="form-control" placeholder="tanggal lahir" value="">
+                                        <label class="form-control-label" for="input-first-name">Tanggal Lahir</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="tanggal lahir" value="">
                                     </div>
                                 </div>
                             </div>
@@ -69,34 +99,34 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-address">Agama</label>
-                                        <input id="input-address" class="form-control" placeholder="agama" value="" type="text">
+                                        <label class="form-control-label" for="input-first-name">Agama</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="agama" value="">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-address">Golongan Darah</label>
-                                        <input id="input-address" class="form-control" placeholder="golongan darah" value="" type="text">
+                                        <label class="form-control-label" for="input-first-name">Golongan Darah</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="golongan darah" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-city">Pendidikan</label>
-                                        <input type="text" id="input-city" class="form-control" placeholder="pendidikan" value="">
+                                        <label class="form-control-label" for="input-first-name">Pendidikan</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="pendidikan" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-country">Pekerjaan</label>
-                                        <input type="text" id="input-country" class="form-control" placeholder="pekerjaan" value="">
+                                        <label class="form-control-label" for="input-first-name">Pekerjaan</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="pekerjaan" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-country">Status Hubungan</label>
-                                        <input type="text" id="input-postal-code" class="form-control" placeholder="status">
+                                        <label class="form-control-label" for="input-first-name">Status Keluarga</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="status keluarga" value="">
                                     </div>
                                 </div>
                             </div>
@@ -108,20 +138,20 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-city">Status Pernikahan</label>
-                                        <input type="text" id="input-city" class="form-control" placeholder="status pernikahan" value="">
+                                        <label class="form-control-label" for="input-first-name">Status Perkawinan</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="status perkawinan" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-city">Kewarganegaraan</label>
-                                        <input type="text" id="input-city" class="form-control" placeholder="kewarganegaraan" value="">
+                                        <label class="form-control-label" for="input-first-name">Kewarganegaraan</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="kewarganegaraan" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-city">Jenis Kewarganegaraan</label>
-                                        <input type="text" id="input-city" class="form-control" placeholder="jenis kewarganegaraan" value="">
+                                        <label class="form-control-label" for="input-first-name">Jenis Asuransi</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="jenis asuransi" value="">
                                     </div>
                                 </div>
                             </div>
@@ -131,4 +161,3 @@
             </div>
         </div>
     </div>
-</div>
