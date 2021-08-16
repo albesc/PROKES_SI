@@ -75,6 +75,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <label for="example-tel-input" class="form-control-label">Foto Penduduk</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <hr class="my-4" />
                         <!-- Address -->

@@ -31,11 +31,14 @@
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Jenis Sarana & Prasarana</label>
                                          <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>-</option>
-                                             <option></option>
+                                             <option>Kesehatan</option>
+                                             <option>Sekolah</option>
+                                             <option>Tempat Ibadah</option>
                                          </select>
                                      </div>
                                  </div>
+                             </div>
+                             <div class="row">
                                  <div class="col-2">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Kondisi</label>
@@ -45,18 +48,10 @@
                                          </select>
                                      </div>
                                  </div>
-                             </div>
-                             <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">Invetaris</label>
+                                         <label for="example-tel-input" class="form-control-label">Lokasi</label>
                                          <input class="form-control" type="text" id="example-text-input">
-                                     </div>
-                                 </div>
-                                 <div class="col-3">
-                                     <div class="form-group">
-                                         <label for="example-number-input" class="form-control-label">Jumlah</label>
-                                         <input class="form-control" type="number" value="" id="example-number-input">
                                      </div>
                                  </div>
                              </div>

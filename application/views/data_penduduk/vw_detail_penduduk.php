@@ -20,12 +20,6 @@
                         <div class="h5 font-weight-300">
                             <i class="ni location_pin mr-2"></i>Bucharest, Romania
                         </div>
-                        <div class="h5 mt-4">
-                            <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
-                        </div>
-                        <div>
-                            <i class="ni education_hat mr-2"></i>University of Computer Science
-                        </div>
                     </div>
                 </div>
             </div>
@@ -59,15 +53,15 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">RT</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="RW" value="">
+                                        <input type="text" id="input-username" class="form-control" placeholder="RT" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-email">Alamat</label>
+                                        <input type="email" id="input-email" class="form-control" placeholder="alamat" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-5">

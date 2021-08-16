@@ -6,7 +6,7 @@
              <div class="header-body">
                  <div class="row align-items-center py-4">
                      <div class="col-lg-6 col-7">
-                         <h3 class="h1 text-white d-inline-block mb-0">Tambah Data Sarana & Prasarana</h3>
+                         <h3 class="h1 text-white d-inline-block mb-0">Edit Data RT</h3>
                      </div>
                  </div>
              </div>
@@ -21,43 +21,50 @@
                      <div class="card-header border-0">
                          <form>
                              <div class="row">
-                                 <div class="col-4">
-                                     <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">Nama Sarana & Prasarana</label>
-                                         <input class="form-control" type="text" id="example-text-input">
-                                     </div>
-                                 </div>
-                                 <div class="col-3">
-                                     <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">Jenis Sarana & Prasarana</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Kesehatan</option>
-                                             <option>Sekolah</option>
-                                             <option>Tempat Ibadah</option>
-                                         </select>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="row">
                                  <div class="col-2">
                                      <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">Kondisi</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Baik</option>
-                                             <option></option>
-                                         </select>
+                                         <label for="example-text-input" class="form-control-label">RT</label>
+                                         <input class="form-control" type="text" id="example-text-input">
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">Lokasi</label>
+                                         <label for="example-text-input" class="form-control-label">Nama Ketua RT</label>
                                          <input class="form-control" type="text" id="example-text-input">
                                      </div>
                                  </div>
                              </div>
                              <div class="row">
-                                 <div class="col-6">
-                                     <label for="example-tel-input" class="form-control-label">Gambar</label>
+                                 <div class="col-4">
+                                     <div class="form-group">
+                                         <label for="example-text-input" class="form-control-label">Alamat Ketua RT</label>
+                                         <input class="form-control" type="text" id="example-text-input">
+                                     </div>
+                                 </div>
+                                 <div class="col-4">
+                                     <div class="form-group">
+                                         <label for="example-text-input" class="form-control-label">No HP Ketua RT</label>
+                                         <input class="form-control" type="text" id="example-text-input">
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-4">
+                                     <div class="form-group">
+                                         <label for="example-text-input" class="form-control-label">Tanggal menjabat</label>
+                                         <input class="form-control" type="date" id="example-date-input">
+                                     </div>
+                                 </div>
+                                 <div class="col-4">
+                                     <div class="form-group">
+                                         <label for="example-text-input" class="form-control-label">Tanggal berakhir jabatan</label>
+                                         <input class="form-control" type="date" id="example-date-input">
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-5">
+                                     <label for="example-tel-input" class="form-control-label">Foto Ketua RT</label>
                                      <div class="custom-file">
                                          <input type="file" class="custom-file-input" id="customFileLang" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>
@@ -67,9 +74,11 @@
                              <br>
                              <div class="row">
                                  <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
+                                     <a href="" class="btn btn-primary">Edit</a>
                                  </div>
                              </div>
                          </form>
                      </div>
                  </div>
+             </div>
+         </div>
