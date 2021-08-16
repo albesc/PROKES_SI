@@ -9,11 +9,51 @@ class Rtrw extends CI_Controller
         $this->load->model('Rtrw_model');
     }
 
-    public function add()
+    public function detail_rw()
     {
-        $data['judul'] = "Tambah RT dan RW";
+        $data['judul'] = "Detail RW";
         $this->load->view('layout/header', $data);
-        $this->load->view('data_rtrw/vw_add_rtrw', $data);
+        $this->load->view('data_rtrw/vw_detail_rw', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function detail_rt()
+    {
+        $data['judul'] = "Detail RW";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_detail_rt', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function add_rw()
+    {
+        $data['judul'] = "Tambah RW";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_add_rw', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function add_rt()
+    {
+        $data['judul'] = "Tambah RW";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_add_rt', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function edit_rw()
+    {
+        $data['judul'] = "Edit RW";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_edit_rw', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function edit_rt()
+    {
+        $data['judul'] = "Edit RT";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_edit_rt', $data);
         $this->load->view('layout/footer', $data);
     }
 }

@@ -8,7 +8,7 @@
                             <h3 class="mb-0">Edit data penduduk </h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="#!" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="" class="btn btn-sm btn-primary">Edit</a>
                         </div>
                     </div>
                 </div>
@@ -72,6 +72,21 @@
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
                                         <input class="form-control" type="date" id="example-date-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <label for="example-tel-input" class="form-control-label">Foto Penduduk</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                        <label class="custom-file-label" for="customFileLang">Select file</label>
                                     </div>
                                 </div>
                             </div>

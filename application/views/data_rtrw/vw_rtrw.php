@@ -36,7 +36,7 @@
                                     </form>
                                 </div>
                                 <div class="col-sm-2">
-                                    <a href="<?= site_url('Rtrw/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                    <a href="<?= site_url('Rtrw/add_rw'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>
@@ -45,18 +45,38 @@
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <tr>
-                                        <td scope="col" class="sort" data-sort="rt">RT</td>
-                                        <td scope="col" class="sort" data-sort="nik">Nama Ketua RT</td>
+                                        <td scope="col" class="sort" data-sort="nik">No</td>
                                         <td scope="col" class="sort" data-sort="nik">RW</td>
                                         <td scope="col" class="sort" data-sort="nama">Nama Ketua RW</td>
-                                        <td scope="col">Jumlah Penduduk</td>
                                         <td scope="col" class="sort" data-sort="asal">Jumlah Warga Laki-laki</td>
                                         <td scope="col" class="sort" data-sort="asal">Jumlah Warga Perempuan</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-
+                                    <tr>
+                                        <th scope="row">
+                                            <div class="media-body">
+                                                <span>1</span>
+                                            </div>
+                                        </th>
+                                        <td class="budget">
+                                            01
+                                        </td>
+                                        <td>
+                                            Bambang
+                                        </td>
+                                        <td>
+                                            250
+                                        </td>
+                                        <td>
+                                            250
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="<?= site_url('Rtrw/detail_rw'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?= site_url('Rtrw/edit_rw'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
