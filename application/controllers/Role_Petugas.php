@@ -27,6 +27,33 @@ class Role_Petugas extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
+    public function kelahiran()
+    {
+        $data['judul'] = "Data Kelahiran";
+        // $data['penduduk'] = $this->Penduduk_model->getAll();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_kelahiran/vw_kelahiran', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function kematian()
+    {
+        $data['judul'] = "Data Kematian";
+        // $data['penduduk'] = $this->Penduduk_model->getAll();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_kematian/vw_kematian', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function pindahdomisili()
+    {
+        $data['judul'] = "Data Pindah Domisili";
+        // $data['penduduk'] = $this->Penduduk_model->getAll();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_pindahdomisili/vw_pindahdomisili', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
     public function berita()
     {
         $data['judul'] = "Data Berita";
