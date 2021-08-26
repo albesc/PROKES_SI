@@ -20,7 +20,10 @@
                         <!-- Card header -->
                         <div class="card-header border-0">
                             <div class="row">
-                                <div class="col-sm-10">
+                                <div class="col-sm-7">
+                                    <a href="<?= site_url('pindahdomisili/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                </div>
+                                <div class="col-sm-2">
                                     <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
                                         <div class="form-group mb-0">
                                             <div class="input-group input-group-alternative input-group-merge">
@@ -34,9 +37,6 @@
                                             <span aria-hidden="true">×</span>
                                         </button>
                                     </form>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="<?= site_url('pindahdomisili/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                             </div>
                         </div>

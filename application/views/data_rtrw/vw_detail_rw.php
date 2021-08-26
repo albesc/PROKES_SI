@@ -83,10 +83,11 @@
                 <div class="card-header border-0">
                     <div class="row">
                         <div class="col-10">
-                            <h3 class="mb-0">List RT</h3>
+                            <h3 class="mb-0">List RT</h3> <br>  
+                            <a href="<?= site_url('Rtrw/add_rt'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?= site_url('Rtrw/add_rt'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                            
                         </div>
                     </div>
                 </div>
