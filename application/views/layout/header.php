@@ -106,12 +106,12 @@
                                 <span class="nav-link-text">UMKM</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="<?= site_url('role_petugas/pooling'); ?>">
                                 <i class="ni ni-single-copy-04 text-primary"></i>
                                 <span class="nav-link-text">Laporan Polling</span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- Divider -->
                     <hr class="my-3">
