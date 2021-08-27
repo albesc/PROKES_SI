@@ -15,10 +15,10 @@
                 <div class="card-body pt-7">
                     <div class="text-center">
                         <h5 class="h3">
-                            Jessica Jones<span class="font-weight-light">, 27</span>
+                            Bambang<span class="font-weight-light">, 20</span>
                         </h5>
                         <div class="h5 font-weight-300">
-                            <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                            <i class="ni location_pin mr-2"></i>Pekanbaru
                         </div>
                     </div>
                 </div>
@@ -40,48 +40,48 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">RW</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="RW" value="">
+                                        <label class="form-control-label" for="input-username">RW</label><br>
+                                        <label class="form-control-label" for="input-username">01</label>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">RT</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="RT" value="">
+                                        <label class="form-control-label" for="input-username">RT</label><br>
+                                        <label class="form-control-label" for="input-username">01</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Alamat</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="alamat" value="">
+                                        <label class="form-control-label" for="input-email">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="jenis kelamin" value="">
+                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label><br>
+                                        <label class="form-control-label" for="input-username">Laki-Laki</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tempat Lahir</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat lahir" value="">
+                                        <label class="form-control-label" for="input-first-name">Tempat Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">Pekanbaru</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tanggal Lahir</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tanggal lahir" value="">
+                                        <label class="form-control-label" for="input-first-name">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">01-01-2001</label>
                                     </div>
                                 </div>
                             </div>
@@ -93,34 +93,34 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Agama</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="agama" value="">
+                                        <label class="form-control-label" for="input-first-name">Agama</label><br>
+                                        <label class="form-control-label" for="input-username">Islam</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Golongan Darah</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="golongan darah" value="">
+                                        <label class="form-control-label" for="input-first-name">Golongan Darah</label><br>
+                                        <label class="form-control-label" for="input-username">A+</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pendidikan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="pendidikan" value="">
+                                        <label class="form-control-label" for="input-first-name">Pendidikan</label><br>
+                                        <label class="form-control-label" for="input-username">D4</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pekerjaan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="pekerjaan" value="">
+                                        <label class="form-control-label" for="input-first-name">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Programmer</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Keluarga</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="status keluarga" value="">
+                                        <label class="form-control-label" for="input-first-name">Status Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username">Anak</label>
                                     </div>
                                 </div>
                             </div>
@@ -132,20 +132,20 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Perkawinan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="status perkawinan" value="">
+                                        <label class="form-control-label" for="input-first-name">Status Perkawinan</label><br>
+                                        <label class="form-control-label" for="input-username">-</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Kewarganegaraan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="kewarganegaraan" value="">
+                                        <label class="form-control-label" for="input-first-name">Kewarganegaraan</label><br>
+                                        <label class="form-control-label" for="input-username">WNI</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Jenis Asuransi</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="jenis asuransi" value="">
+                                        <label class="form-control-label" for="input-first-name">Jenis Asuransi</label><br>
+                                        <label class="form-control-label" for="input-username">-</label>
                                     </div>
                                 </div>
                             </div>

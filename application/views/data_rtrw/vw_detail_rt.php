@@ -50,24 +50,36 @@
                         <h6 class="heading-small text-muted mb-4">Informasi RT</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Alamat</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="Nama" value="">
+                                        <label class="form-control-label" for="input-username">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
                                     </div>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">No HP</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="No HP" value="">
+                                        <label class="form-control-label" for="input-username">No HP</label><br>
+                                        <label class="form-control-label" for="input-username">081343758274</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Masa Jabatan</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder=".. Tahun" value="">
+                                        <label class="form-control-label" for="input-username">Masa Jabatan</label><br>
+                                        <label class="form-control-label" for="input-username">3 Tahun</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Menjabat</label><br>
+                                        <label class="form-control-label" for="input-username">11-02-2019</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Berakhir Jabatan</label><br>
+                                        <label class="form-control-label" for="input-username">11-02-2022</label>
                                     </div>
                                 </div>
                             </div>

@@ -48,6 +48,12 @@
                                          </select>
                                      </div>
                                  </div>
+                                 <div class="col-2">
+                                     <div class="form-group">
+                                         <label for="example-number-input" class="form-control-label">Jumlah</label>
+                                         <input class="form-control" type="number" value="10" id="example-number-input">
+                                     </div>
+                                 </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Lokasi</label>
