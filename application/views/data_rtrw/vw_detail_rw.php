@@ -50,24 +50,36 @@
                         <h6 class="heading-small text-muted mb-4">Informasi RW</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Alamat</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="Nama" value="">
+                                        <label class="form-control-label" for="input-username">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
                                     </div>
                                 </div>
-                                <div class="col-5">
+                                <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">No HP</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="No HP" value="">
+                                        <label class="form-control-label" for="input-username">No HP</label><br>
+                                        <label class="form-control-label" for="input-username">081343758274</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Masa Jabatan</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder=".. Tahun" value="">
+                                        <label class="form-control-label" for="input-username">Masa Jabatan</label><br>
+                                        <label class="form-control-label" for="input-username">3 Tahun</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Menjabat</label><br>
+                                        <label class="form-control-label" for="input-username">11-02-2019</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Berakhir Jabatan</label><br>
+                                        <label class="form-control-label" for="input-username">11-02-2022</label>
                                     </div>
                                 </div>
                             </div>
@@ -82,12 +94,11 @@
             <div class="card">
                 <div class="card-header border-0">
                     <div class="row">
-                        <div class="col-10">
-                            <h3 class="mb-0">List RT</h3> <br>  
-                            <a href="<?= site_url('Rtrw/add_rt'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                        <div class="col-1">
+                            <h3 class="mb-0">List RT</h3>
                         </div>
-                        <div class="col-sm-2">
-                            
+                        <div class="col-3">
+                            <a href="<?= site_url('Rtrw/add_rt'); ?>" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                         </div>
                     </div>
                 </div>

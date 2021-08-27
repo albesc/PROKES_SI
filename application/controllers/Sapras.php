@@ -24,4 +24,12 @@ class Sapras extends CI_Controller
         $this->load->view('data_sapras/vw_edit_sapras', $data);
         $this->load->view('layout/footer', $data);
     }
+
+    public function detail()
+    {
+        $data['judul'] = "Detail Sarana dan Prasarana";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_sapras/vw_detail_sapras', $data);
+        $this->load->view('layout/footer', $data);
+    }
 }

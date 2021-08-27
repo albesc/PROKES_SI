@@ -1,151 +1,269 @@
 <div class="container-fluid mt--6">
     <div class="row">
-        <div class="col-xl-4 order-xl-2">
-            <div class="card card-profile">
-                <img src="../assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 order-lg-2">
-                        <div class="card-profile-image">
-                            <a href="#">
-                                <img src="../img/default_profile.png" class="rounded-circle">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body pt-7">
-                    <div class="text-center">
-                        <h5 class="h3">
-                            Jessica Jones<span class="font-weight-light">, 27</span>
-                        </h5>
-                        <div class="h5 font-weight-300">
-                            <i class="ni location_pin mr-2"></i>Bucharest, Romania
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-8 order-xl-1">
+        <div class="col">
             <div class="card">
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Detail Penduduk </h3>
+                            <h3 class="mb-0">Detail Data Kematian </h3>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <form>
-                        <h6 class="heading-small text-muted mb-4">Informasi Penduduk</h6>
+                        <h6 class="heading-small text-muted mb-4">Informasi Kematian</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <label class="form-control-label" for="input-username">Nama Kepala Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username">Bambang</label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">RW</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="RW" value="">
+                                        <label class="form-control-label" for="input-username">Nomor Kepala Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username">176320218358</label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Jenazah</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">RT</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="RT" value="">
+                                        <label class="form-control-label" for="input-email">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">176320218358</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Alamat</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="alamat" value="">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Benny</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
+                                    <label for="example-tel-input" class="form-control-label">Jenis Kelamin</label><br>
+                                    <label class="form-control-label" for="input-username">Laki-laki</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="jenis kelamin" value="">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">15-07-2000</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">21</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Tempat Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">Pekanbaru</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-5">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tempat Lahir</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat lahir" value="">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Agama</label><br>
+                                        <label class="form-control-label" for="input-username">Islam</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tanggal Lahir</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tanggal lahir" value="">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Web Developer</label>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Budisari</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Anak ke</label><br>
+                                        <label class="form-control-label" for="input-username">1</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Kematian</label><br>
+                                        <label class="form-control-label" for="input-username">04-05-2021</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label for="example-time-input" class="form-control-label">Pukul</label><br>
+                                        <label class="form-control-label" for="input-username">10:00</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Sebab Kematian</label><br>
+                                        <label class="form-control-label" for="input-username">Sakit Biasa / Tua</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Tempat Kematian</label><br>
+                                        <label class="form-control-label" for="input-username">Rumah</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Yang menerangkan</label><br>
+                                        <label class="form-control-label" for="input-username">Dokter</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr class="my-4" />
                         <!-- Address -->
-                        <h6 class="heading-small text-muted mb-4">Informasi tambahan</h6>
+                        <h6 class="heading-small text-muted mb-4">Ayah</h6>
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Agama</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="agama" value="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Golongan Darah</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="golongan darah" value="">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pendidikan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="pendidikan" value="">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Bambang</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pekerjaan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="pekerjaan" value="">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">10-02-1996</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Keluarga</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="status keluarga" value="">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">25</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Karyawan Swasta</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Budisari</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <hr class="my-4" />
                         <!-- Description -->
-                        <h6 class="heading-small text-muted mb-4">Status</h6>
+                        <h6 class="heading-small text-muted mb-4">Ibu</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Perkawinan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="status perkawinan" value="">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Susi</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Kewarganegaraan</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="kewarganegaraan" value="">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">19-02-1998</label>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-2">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Jenis Asuransi</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="jenis asuransi" value="">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">22</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">IRT</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Budisari</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">Pelapor</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Susi</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">20</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Perawat</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Tegalsari</label>
                                     </div>
                                 </div>
                             </div>

@@ -160,7 +160,6 @@
                                             <td scope="col" class="sort" data-sort="nama">Nama Penduduk</td>
                                             <td scope="col">Masa Berlaku KTP S/D</td>
                                             <td scope="col" class="sort" data-sort="asal">SHDK</td>
-                                            <td scope="col"></td>
                                         </tr>
                                     </thead>
                                     <tbody class="list">
@@ -189,9 +188,6 @@
                                                 <div class="d-flex align-items-center">
                                                     <span class="completion mr-2">...</span>
                                                 </div>
-                                            </td>
-                                            <td class="text-right">
-                                                <a href="<?= site_url('pindahdomisili/edit_keluarga'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
                                         <?php //$i++;

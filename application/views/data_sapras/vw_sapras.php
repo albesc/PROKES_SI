@@ -49,7 +49,7 @@
                                         <td scope="col" class="sort" data-sort="nik">Nama Sarana-Prasarana</td>
                                         <td scope="col" class="sort" data-sort="nama">Kondisi</td>
                                         <td scope="col" class="sort" data-sort="asal">Lokasi</td>
-                                        <td scope="col" class="sort" data-sort="asal">Gambar</td>
+                                        <td scope="col" class="sort" data-sort="asal">Jumlah</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
@@ -72,9 +72,10 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <img src="../img/default_pic.png" width="150" height="130">
+                                            20
                                         </td>
                                         <td class="text-right">
+                                            <a href="<?= site_url('Sapras/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
                                             <a href="<?= site_url('Sapras/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                         </td>
                                     </tr>

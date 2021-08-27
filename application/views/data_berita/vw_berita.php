@@ -23,7 +23,7 @@
                                 <div class="col-sm-2">
                                     <a href="<?= site_url('Berita/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
-                                <div class="col-sm-5">
+                                <div class="col-sm-3">
                                     <div class="form-group">
                                         <select class="form-control" id="exampleFormControlSelect1">
                                             <option>Kategori Berita</option>
@@ -31,7 +31,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 text-right">
                                     <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
                                         <div class="form-group mb-0">
                                             <div class="input-group input-group-alternative input-group-merge">
