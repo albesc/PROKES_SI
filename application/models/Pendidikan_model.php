@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Agama_model extends CI_Model
+class Pendidikan_model extends CI_Model
 {
-    public $table = 'agenda';
-    public $id = 'agenda.ag_id';
+    public $table = 'pendidikan';
+    public $id = 'pendidikan.pnd_id';
 
     public function __construct()
     {

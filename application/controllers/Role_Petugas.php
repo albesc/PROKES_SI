@@ -21,7 +21,7 @@ class Role_Petugas extends CI_Controller
     public function penduduk()
     {
         $data['judul'] = "Data Penduduk";
-        $data['penduduk'] = $this->Penduduk_model->getAll();
+        $data['penduduk'] = $this->Penduduk_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_penduduk/vw_penduduk', $data);
         $this->load->view('layout/footer', $data);
@@ -75,7 +75,7 @@ class Role_Petugas extends CI_Controller
     public function pengaduan()
     {
         $data['judul'] = "Data Pengaduan";
-        $data['pengaduan'] = $this->Pengaduan_model->getAll();
+        $data['pengaduan'] = $this->Pengaduan_model->get();
         // $data['p_byJk'] = $this->Pengaduan_model->getByJK();
         $this->load->view('layout/header', $data);
         $this->load->view('data_pengaduan/vw_pengaduan', $data);

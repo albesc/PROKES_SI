@@ -11,7 +11,7 @@ class Pengaduan_model extends CI_Model
         parent::__construct();
     }
 
-    public function getAll()
+    public function get()
     {
         $query = $this->db->get('pengaduan');
         return $query->result_array();

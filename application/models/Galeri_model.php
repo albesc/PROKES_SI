@@ -11,9 +11,10 @@ class Galeri_model extends CI_Model
         parent::__construct();
     }
 
-    public function getAll()
+    public function get()
     {
-        $query = $this->db->get('galeri');
+        $this->db->from($this->table);
+        $query = $this->db->get();
         return $query->result_array();
     }
 }

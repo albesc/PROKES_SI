@@ -6,7 +6,16 @@ class Pindahdomisili extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $this->load->model('PindahDomisili_model');
+        $this->load->model('PindahDomisili_model');
+    }
+
+    function index()
+    {
+        $data['judul'] = "Halaman Pindah Domisili";
+        $data['pindahdomisili'] = $this->PindahDomisili_model->get();
+        $this->load->view("layout/header", $data);
+        $this->load->view("data_pindahdomisili/vw_pindahdomisili", $data);
+        $this->load->view("layout/footer", $data);
     }
 
     public function add()

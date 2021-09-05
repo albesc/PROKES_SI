@@ -81,8 +81,8 @@
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <a href="<?= site_url('Penduduk/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="<?= site_url('Penduduk/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                                <a href="<?= site_url('Penduduk/detail/') . $p['pndk_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Penduduk/edit/') . $p['pndk_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
                                     <?php $i++;
