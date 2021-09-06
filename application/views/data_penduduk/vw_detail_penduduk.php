@@ -46,6 +46,14 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No KK</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nokk'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="form-group">
                                         <label class="form-control-label" for="input-username">RW</label><br>
                                         <label class="form-control-label" for="input-username">
                                             <?php foreach ($rw as $r) :
@@ -83,20 +91,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tempat Lahir</label><br>
-                                        <label class="form-control-label" for="input-username">Pekanbaru</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tanggal Lahir</label><br>
-                                        <label class="form-control-label" for="input-username">01-01-2001</label>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                         <hr class="my-4" />
                         <!-- Address -->
@@ -107,24 +101,24 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Agama</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($agama as $a) :
+                                            <?php foreach ($agama as $a) :
                                                 if ($penduduk['agm_id'] == $a['agm_id']) { ?>
                                                     <?= $a['agm_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
-                                    </label>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Golongan Darah</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($gol_darah as $r) :
+                                            <?php foreach ($gol_darah as $r) :
                                                 if ($penduduk['goldr_id'] == $r['goldr_id']) { ?>
                                                     <?= $r['goldr_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
-                                    </label>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -133,10 +127,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Pendidikan</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($pendidikan as $r) :
+                                            <?php foreach ($pendidikan as $r) :
                                                 if ($penduduk['pnd_id'] == $r['pnd_id']) { ?>
                                                     <?= $r['pnd_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>
@@ -145,10 +139,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Pekerjaan</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($pekerjaan as $r) :
+                                            <?php foreach ($pekerjaan as $r) :
                                                 if ($penduduk['pkrj_id'] == $r['pkrj_id']) { ?>
                                                     <?= $r['pkrj_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>
@@ -157,10 +151,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Status Keluarga</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($sts_hub_kel as $r) :
+                                            <?php foreach ($sts_hub_kel as $r) :
                                                 if ($penduduk['sts_hub_id'] == $r['sts_hub_id']) { ?>
                                                     <?= $r['sts_hub_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>
@@ -176,10 +170,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Status Pernikahan</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($sts_pernikahan as $r) :
+                                            <?php foreach ($sts_pernikahan as $r) :
                                                 if ($penduduk['stspnkn_id'] == $r['stspnkn_id']) { ?>
                                                     <?= $r['stspnkn_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>
@@ -188,10 +182,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Kewarganegaraan</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($kewarganegaraan as $r) :
+                                            <?php foreach ($kewarganegaraan as $r) :
                                                 if ($penduduk['kwgn_id'] == $r['kwgn_id']) { ?>
                                                     <?= $r['kwgn_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>
@@ -200,10 +194,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Jenis Asuransi</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($jns_asuransi as $r) :
+                                            <?php foreach ($jns_asuransi as $r) :
                                                 if ($penduduk['jnsasn_id'] == $r['jnsasn_id']) { ?>
                                                     <?= $r['jnsasn_ket']; ?>
-                                                <?php }
+                                            <?php }
                                             endforeach; ?>
                                         </label>
                                     </div>

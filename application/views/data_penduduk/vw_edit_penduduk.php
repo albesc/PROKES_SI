@@ -16,13 +16,21 @@
                     <form>
                         <h6 class="heading-small text-muted mb-4">Informasi Penduduk</h6>
                         <div class="pl-lg-4">
-                            <div class="row">
+                        <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
                                         <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
                                     </div>
                                 </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No KK</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="No KK" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-2">
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">RW</label>
