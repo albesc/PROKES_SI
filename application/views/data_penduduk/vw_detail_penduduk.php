@@ -180,18 +180,6 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Kewarganegaraan</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($kewarganegaraan as $r) :
-                                                if ($penduduk['kwgn_id'] == $r['kwgn_id']) { ?>
-                                                    <?= $r['kwgn_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Jenis Asuransi</label><br>
                                         <label class="form-control-label" for="input-username">
                                             <?php foreach ($jns_asuransi as $r) :

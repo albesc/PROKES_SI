@@ -13,7 +13,8 @@ class Sapras_model extends CI_Model
 
     public function get()
     {
-        $query = $this->db->get('saprsarana');
+        $this->db->from($this->table);
+        $query = $this->db->get();
         return $query->result_array();
     }
 }

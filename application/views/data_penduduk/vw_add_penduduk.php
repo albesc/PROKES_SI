@@ -35,8 +35,9 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">RW</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>01</option>
-                                            <option></option>
+                                            <?php foreach ($rw as $r) : ?>
+                                                <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -44,8 +45,9 @@
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">RT</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>01</option>
-                                            <option></option>
+                                            <?php foreach ($rt as $r) : ?>
+                                                <option value="<?= $r['rt_id']; ?>"><?= $r['no_rt']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -108,8 +110,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Agama</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>islam</option>
-                                            <option></option>
+                                            <?php foreach ($agama as $r) : ?>
+                                                <option value="<?= $r['agm_id']; ?>"><?= $r['agm_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -117,8 +120,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Golongan Darah</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>AB</option>
-                                            <option></option>
+                                            <?php foreach ($gol_darah as $r) : ?>
+                                                <option value="<?= $r['goldr_id']; ?>"><?= $r['goldr_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -128,8 +132,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Pendidikan</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>D4</option>
-                                            <option></option>
+                                            <?php foreach ($pendidikan as $r) : ?>
+                                                <option value="<?= $r['pnd_id']; ?>"><?= $r['pnd_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -137,8 +142,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -146,8 +152,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Status Keluarga</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Anak</option>
-                                            <option></option>
+                                            <?php foreach ($sts_hub_kel as $r) : ?>
+                                                <option value="<?= $r['sts_hub_id']; ?>"><?= $r['sts_hub_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -162,8 +169,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Status Perkawinan</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Kawin</option>
-                                            <option></option>
+                                            <?php foreach ($sts_pernikahan as $r) : ?>
+                                                <option value="<?= $r['stspnkn_id']; ?>"><?= $r['stspnkn_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -171,8 +179,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Kewarganegaraan</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Indonesia</option>
-                                            <option></option>
+                                            <?php foreach ($kewarganegaraan as $r) : ?>
+                                                <option value="<?= $r['kwgn_id']; ?>"><?= $r['kwgn_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -180,8 +189,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Jenis Asuransi</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Jiwasraya</option>
-                                            <option></option>
+                                            <?php foreach ($jns_asuransi as $r) : ?>
+                                                <option value="<?= $r['jnsasn_id']; ?>"><?= $r['jnsasn_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
