@@ -246,6 +246,106 @@
                                         <label class="form-control-label" for="input-username">Susi</label>
                                     </div>
                                 </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">15-07-2000</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">20</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Perawat</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Tegalsari</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">Sanksi I</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Susi</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">15-07-2000</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">20</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Perawat</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username">Jl.Tegalsari</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">Sanksi II</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
+                                        <label class="form-control-label" for="input-username">102320398358</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label><br>
+                                        <label class="form-control-label" for="input-username">Susi</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">15-07-2000</label>
+                                    </div>
+                                </div>
                                 <div class="col-lg-2">
                                     <div class="form-group">
                                         <label for="example-number-input" class="form-control-label">Umur</label><br>

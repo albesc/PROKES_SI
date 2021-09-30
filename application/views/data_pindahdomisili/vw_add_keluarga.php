@@ -29,7 +29,7 @@
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
-                                         <label for="example-text-input" class="form-control-label">Nama Ketua RT</label>
+                                         <label for="example-text-input" class="form-control-label">Nama Penduduk</label>
                                          <input class="form-control" type="text" id="example-text-input">
                                      </div>
                                  </div>

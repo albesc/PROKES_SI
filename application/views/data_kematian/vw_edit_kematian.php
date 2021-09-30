@@ -309,6 +309,106 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">Sanksi I</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">NIK</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label>
+                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
+                                        <input class="form-control" type="date" id="example-date-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label>
+                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Wiraswasta</option>
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <!-- Description -->
+                        <h6 class="heading-small text-muted mb-4">Sanksi II</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">NIK</label>
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Nama</label>
+                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
+                                        <input class="form-control" type="date" id="example-date-input">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <label for="example-number-input" class="form-control-label">Umur</label>
+                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Wiraswasta</option>
+                                            <option></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Alamat</label>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
