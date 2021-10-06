@@ -35,28 +35,66 @@
                 </div>
                 <div class="card-body">
                     <form>
-                        <h6 class="heading-small text-muted mb-4">Informasi Penduduk</h6>
+                        <h6 class="heading-small text-muted mb-4">Data Wilayah</h6>
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">NIK</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nik'] ?></label>
+                                        <label class="form-control-label" for="input-username">Provinsi</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_provinsi'] ?></label>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">No KK</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nokk'] ?></label>
+                                        <label class="form-control-label" for="input-username">Kabupaten/Kota</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kabupatenkota'] ?></label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-5">
                                     <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Kecamatan</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kecamatan'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Kelurahan/Desa</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_desalurah'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Data Keluarga</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Nama Kepala Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_provinsi'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No. Kartu Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kabupatenkota'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Alamat Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kecamatan'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
                                         <label class="form-control-label" for="input-username">RW</label><br>
                                         <label class="form-control-label" for="input-username">
-                                            <?php foreach ($rw as $r) :
+                                        <?php foreach ($rw as $r) :
                                                 if ($penduduk['rw_id'] == $r['rw_id']) { ?>
                                                     <?= $r['no_rw']; ?>
                                             <?php }
@@ -64,11 +102,11 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">RT</label><br>
                                         <label class="form-control-label" for="input-username">
-                                            <?php foreach ($rt as $r) :
+                                        <?php foreach ($rt as $r) :
                                                 if ($penduduk['rt_id'] == $r['rt_id']) { ?>
                                                     <?= $r['no_rt']; ?>
                                             <?php }
@@ -78,16 +116,74 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Nama Dusun</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_desalurah'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Kode Pos</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kecamatan'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Telepon</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_desalurah'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Data Individu</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Tempat Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username">Nama Lengkap</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nik'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No KTP/No Penduduk</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nokk'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No Paspor</label><br>
+                                        <label class="form-control-label" for="input-username"></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Berakhir Paspor</label><br>
+                                        <label class="form-control-label" for="input-username"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_jk'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Tempat Lahir</label><br>
                                         <label class="form-control-label" for="input-username"><?= $penduduk['pndk_tmp_lahir'] ?>, <?= $penduduk['pndk_tgl_lahir'] ?></label>
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Jenis Kelamin</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_jk'] ?></label>
+                                        <label class="form-control-label" for="input-email">Tanggal Lahir</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_tgl_lahir'] ?>, <?= $penduduk['pndk_tgl_lahir'] ?></label>
                                     </div>
                                 </div>
                             </div>
