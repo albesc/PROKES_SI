@@ -94,7 +94,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">RW</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($rw as $r) :
+                                            <?php foreach ($rw as $r) :
                                                 if ($penduduk['rw_id'] == $r['rw_id']) { ?>
                                                     <?= $r['no_rw']; ?>
                                             <?php }
@@ -106,7 +106,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">RT</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php foreach ($rt as $r) :
+                                            <?php foreach ($rt as $r) :
                                                 if ($penduduk['rt_id'] == $r['rt_id']) { ?>
                                                     <?= $r['no_rt']; ?>
                                             <?php }
@@ -146,9 +146,9 @@
                                         <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nik'] ?></label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">No KTP/No Penduduk</label><br>
+                                        <label class="form-control-label" for="input-username">NIK</label><br>
                                         <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nokk'] ?></label>
                                     </div>
                                 </div>
@@ -156,19 +156,71 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">No Paspor</label><br>
-                                        <label class="form-control-label" for="input-username"></label>
+                                        <label class="form-control-label" for="input-username">Alamat</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kecamatan'] ?></label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Tanggal Berakhir Paspor</label><br>
-                                        <label class="form-control-label" for="input-username"></label>
+                                        <label class="form-control-label" for="input-username">RW</label><br>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php foreach ($rw as $r) :
+                                                if ($penduduk['rw_id'] == $r['rw_id']) { ?>
+                                                    <?= $r['no_rw']; ?>
+                                            <?php }
+                                            endforeach; ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">RT</label><br>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php foreach ($rt as $r) :
+                                                if ($penduduk['rt_id'] == $r['rt_id']) { ?>
+                                                    <?= $r['no_rt']; ?>
+                                            <?php }
+                                            endforeach; ?>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Nama Dusun</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_desalurah'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Kode Pos</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_kecamatan'] ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Telepon</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_desalurah'] ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">No Paspor</label><br>
+                                        <label class="form-control-label" for="input-username">23857381</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Tanggal Berakhir Paspor</label><br>
+                                        <label class="form-control-label" for="input-username">11 November 2024</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Jenis Kelamin</label><br>
                                         <label class="form-control-label" for="input-username"><?= $penduduk['pndk_jk'] ?></label>
@@ -186,73 +238,149 @@
                                         <label class="form-control-label" for="input-username"><?= $penduduk['pndk_tgl_lahir'] ?>, <?= $penduduk['pndk_tgl_lahir'] ?></label>
                                     </div>
                                 </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Umur</label><br>
+                                        <label class="form-control-label" for="input-username">28 Tahun</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Akta Kelahiran</label><br>
+                                        <label class="form-control-label" for="input-username">Ada</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">No Akta Kelahiran</label><br>
+                                        <label class="form-control-label" for="input-username">734361838</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Golongan darah</label><br>
+                                        <label class="form-control-label" for="input-username">A+</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Agama</label><br>
+                                        <label class="form-control-label" for="input-username">Islam</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Status Perkawinan</label><br>
+                                        <label class="form-control-label" for="input-username">Kawin</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Akta Perkawinan</label><br>
+                                        <label class="form-control-label" for="input-username">Ada</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">No Akta Perkawinan</label><br>
+                                        <label class="form-control-label" for="input-username">387432641</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Tanggal Perkawinan</label><br>
+                                        <label class="form-control-label" for="input-username">10 Februari 2021</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Akta Perceraian</label><br>
+                                        <label class="form-control-label" for="input-username">Tidak ada</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">No Akta Perceraian</label><br>
+                                        <label class="form-control-label" for="input-username">387432641</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Tanggal Perceraian</label><br>
+                                        <label class="form-control-label" for="input-username">10 Februari 2021</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Status Hubungan dlm Keluarga</label><br>
+                                        <label class="form-control-label" for="input-username">Suami</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Kelainan Fisik dan Mental</label><br>
+                                        <label class="form-control-label" for="input-username">Tidak ada</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Penyandang Cacat</label><br>
+                                        <label class="form-control-label" for="input-username">Cacat Fisik</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Pendidikan Terakhir</label><br>
+                                        <label class="form-control-label" for="input-username">Diploma IV / Strata I</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Pekerjaan</label><br>
+                                        <label class="form-control-label" for="input-username">Guru</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <hr class="my-4" />
                         <!-- Address -->
-                        <h6 class="heading-small text-muted mb-4">Informasi tambahan</h6>
+                        <h6 class="heading-small text-muted mb-4">Data Orang Tua</h6>
                         <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Agama</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($agama as $a) :
-                                                if ($penduduk['agm_id'] == $a['agm_id']) { ?>
-                                                    <?= $a['agm_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">NIK Ayah</label><br>
+                                        <label class="form-control-label" for="input-username">1203294</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Golongan Darah</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($gol_darah as $r) :
-                                                if ($penduduk['goldr_id'] == $r['goldr_id']) { ?>
-                                                    <?= $r['goldr_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">Nama Lengkap Ayah</label><br>
+                                        <label class="form-control-label" for="input-username">Bambang</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pendidikan</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($pendidikan as $r) :
-                                                if ($penduduk['pnd_id'] == $r['pnd_id']) { ?>
-                                                    <?= $r['pnd_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">NIK Ibu</label><br>
+                                        <label class="form-control-label" for="input-username">1203294</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Pekerjaan</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($pekerjaan as $r) :
-                                                if ($penduduk['pkrj_id'] == $r['pkrj_id']) { ?>
-                                                    <?= $r['pkrj_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Keluarga</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($sts_hub_kel as $r) :
-                                                if ($penduduk['sts_hub_id'] == $r['sts_hub_id']) { ?>
-                                                    <?= $r['sts_hub_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">Nama Lengkap Ibu</label><br>
+                                        <label class="form-control-label" for="input-username">Siti</label>
                                     </div>
                                 </div>
                             </div>
@@ -264,26 +392,14 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Status Pernikahan</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($sts_pernikahan as $r) :
-                                                if ($penduduk['stspnkn_id'] == $r['stspnkn_id']) { ?>
-                                                    <?= $r['stspnkn_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">Ketua RT</label><br>
+                                        <label class="form-control-label" for="input-username">Dodi</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Jenis Asuransi</label><br>
-                                        <label class="form-control-label" for="input-username">
-                                            <?php foreach ($jns_asuransi as $r) :
-                                                if ($penduduk['jnsasn_id'] == $r['jnsasn_id']) { ?>
-                                                    <?= $r['jnsasn_ket']; ?>
-                                            <?php }
-                                            endforeach; ?>
-                                        </label>
+                                        <label class="form-control-label" for="input-email">Ketua RW</label><br>
+                                        <label class="form-control-label" for="input-username">Susanto</label>
                                     </div>
                                 </div>
                             </div>
