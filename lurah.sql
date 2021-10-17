@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2021 at 03:23 PM
+-- Generation Time: Oct 17, 2021 at 04:27 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.20
 
@@ -68,7 +68,7 @@ CREATE TABLE `agenda` (
 CREATE TABLE `berita` (
   `brt_id` int(5) NOT NULL,
   `usr_id` int(5) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT '1',
   `brt_kd` varchar(40) NOT NULL,
   `brt_judul` text NOT NULL,
   `brt_isi` text NOT NULL,
@@ -180,13 +180,52 @@ CREATE TABLE `kelahiran` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kematian`
+--
+
+CREATE TABLE `kematian` (
+  `kmtn_id` int(11) NOT NULL,
+  `kmtn_kepala_keluarga` varchar(255) NOT NULL,
+  `kmtn_nokk` varchar(50) NOT NULL,
+  `kmtn_nik` int(16) NOT NULL,
+  `kmtn_nama` varchar(255) NOT NULL,
+  `kmtn_jk` varchar(255) NOT NULL,
+  `kmtn_agama` int(5) NOT NULL,
+  `kmtn_pekerjaan` int(5) NOT NULL,
+  `kmtn_alamat` varchar(255) NOT NULL,
+  `kmtn_anak_ke` int(5) NOT NULL,
+  `kmtn_tgl_mati` date NOT NULL,
+  `kmtn_pkl_mati` time NOT NULL,
+  `kmtn_sebab_mati` varchar(255) NOT NULL,
+  `kmtn_tempat_mati` varchar(255) NOT NULL,
+  `kmtn_yg_menerangkan` int(5) NOT NULL,
+  `kmtn_ayah_nik` int(100) NOT NULL,
+  `kmtn_ayah_nama` varchar(255) NOT NULL,
+  `kmtn_ibu_nik` int(100) NOT NULL,
+  `kmtn_ibu_nama` varchar(255) NOT NULL,
+  `plpr_nik` int(100) NOT NULL,
+  `plpr_fullname` varchar(255) NOT NULL,
+  `plpr_umur` int(10) NOT NULL,
+  `plpr_tgl_lahir` date NOT NULL,
+  `plpr_pekerjaan` int(5) NOT NULL,
+  `plpr_alamat` varchar(255) NOT NULL,
+  `sks_nik` int(100) NOT NULL,
+  `sks_fullname` varchar(255) NOT NULL,
+  `sks_tgl_lahir` date NOT NULL,
+  `sks_pekerjaan` int(5) NOT NULL,
+  `sks_alamat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `komentar`
 --
 
 CREATE TABLE `komentar` (
   `kmtr_id` int(10) NOT NULL,
   `brt_id` int(5) NOT NULL,
-  `status` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT '1',
   `kmtr_fullname` varchar(255) NOT NULL,
   `kmtr_email` varchar(255) NOT NULL,
   `kmtr_date` datetime NOT NULL,
@@ -375,22 +414,30 @@ CREATE TABLE `penduduk` (
   `pndk_kabupatenkota` varchar(255) NOT NULL,
   `pndk_provinsi` varchar(255) NOT NULL,
   `pndk_kodepos` int(10) NOT NULL,
-  `pndk_tanggal_kawin` date NOT NULL,
+  `pndk_tgl_kawin` date NOT NULL,
   `pndk_nopaspor` varchar(255) NOT NULL,
-  `pndk_nokitaskitap` varchar(255) NOT NULL,
   `pndk_nama_ayah` varchar(255) NOT NULL,
   `pndk_nama_ibu` varchar(255) NOT NULL,
-  `pndk_dikeluarkan_tanggal` varchar(255) NOT NULL,
   `pndk_foto` varchar(255) NOT NULL DEFAULT 'default.png',
-  `pndk_tgl_tambah` datetime NOT NULL
+  `pndk_tgl_tambah` datetime NOT NULL DEFAULT current_timestamp(),
+  `pndk_tlpkeluarga` varchar(255) DEFAULT NULL,
+  `pndk_tgl_berakhir_paspor` date DEFAULT NULL,
+  `pndk_akta_lahir` varchar(255) DEFAULT NULL,
+  `pndk_noakta_lahir` varchar(255) DEFAULT NULL,
+  `pndk_noakta_kawin` varchar(255) DEFAULT NULL,
+  `pndk_noakta_cerai` varchar(255) DEFAULT NULL,
+  `pndk_tgl_cerai` date DEFAULT NULL,
+  `pndk_cacat` varchar(255) DEFAULT NULL,
+  `pndk_nik_ayah` varchar(255) DEFAULT NULL,
+  `pndk_nik_ibu` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `penduduk`
 --
 
-INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `jnsasn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tanggal_kawin`, `pndk_nopaspor`, `pndk_nokitaskitap`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_dikeluarkan_tanggal`, `pndk_foto`, `pndk_tgl_tambah`) VALUES
-(1, 1111111111, '101010101010', 'Jln. Umban Sari', 1, 1, 'siapa', 'Laki-Laki', 'Pekanbaru', '2021-09-01', '1010101010', 1, 1, 1, 1, 1, 1, 1, 'Ada', 'Tidak Ada', 'Ada', 'Umban Sari', 'gtw', 'Pekanbaru', 'Riau', 11111, '2021-09-02', '123123123', '', 'ayah', 'ibu', 'tes', 'default.png', '2021-09-30 07:04:26');
+INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `jnsasn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tgl_kawin`, `pndk_nopaspor`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_foto`, `pndk_tgl_tambah`, `pndk_tlpkeluarga`, `pndk_tgl_berakhir_paspor`, `pndk_akta_lahir`, `pndk_noakta_lahir`, `pndk_noakta_kawin`, `pndk_noakta_cerai`, `pndk_tgl_cerai`, `pndk_cacat`, `pndk_nik_ayah`, `pndk_nik_ibu`) VALUES
+(1, 1111111111, '101010101010', 'Jln. Umban Sari', 6, 1, 'siapa', 'Laki-Laki', 'Pekanbaru', '2021-09-01', '1010101010', 1, 1, 1, 1, 1, 1, 1, 'Ada', 'Tidak Ada', 'Ada', 'Umban Sari', 'rmb', 'Pekanbaru', 'Riau', 11111, '2021-09-02', '123123123', 'ayah', 'ibu', 'default.png', '2021-09-30 07:04:26', NULL, '2021-10-31', 'Ada', '32123', '1231212', '212121', '2021-10-03', 'Cacat Fisik', '159159159', '357357375');
 
 -- --------------------------------------------------------
 
@@ -706,7 +753,7 @@ CREATE TABLE `user` (
   `usr_pass` text NOT NULL,
   `usr_fullname` text NOT NULL,
   `usr_email` text NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -765,6 +812,16 @@ ALTER TABLE `kelahiran`
   ADD PRIMARY KEY (`klhrn_id`),
   ADD KEY `klhrn_plpr_pkrj` (`plpr_pekerjaan`),
   ADD KEY `klhrn_sks_pkrj` (`sks_pekerjaan`);
+
+--
+-- Indexes for table `kematian`
+--
+ALTER TABLE `kematian`
+  ADD PRIMARY KEY (`kmtn_id`),
+  ADD KEY `kmtn_pkrj` (`kmtn_pekerjaan`),
+  ADD KEY `kmtn_plpr_pkrj` (`plpr_pekerjaan`),
+  ADD KEY `kmtn_sks_pkrj` (`sks_pekerjaan`),
+  ADD KEY `kmtn_agm` (`kmtn_agama`);
 
 --
 -- Indexes for table `komentar`
@@ -944,10 +1001,22 @@ ALTER TABLE `kelahiran`
   MODIFY `klhrn_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `kematian`
+--
+ALTER TABLE `kematian`
+  MODIFY `kmtn_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
   MODIFY `kmtr_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ortu`
+--
+ALTER TABLE `ortu`
+  MODIFY `ortu_id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pekerjaan`
@@ -1049,6 +1118,15 @@ ALTER TABLE `berita`
 ALTER TABLE `kelahiran`
   ADD CONSTRAINT `klhrn_plpr_pkrj` FOREIGN KEY (`plpr_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
   ADD CONSTRAINT `klhrn_sks_pkrj` FOREIGN KEY (`sks_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
+
+--
+-- Constraints for table `kematian`
+--
+ALTER TABLE `kematian`
+  ADD CONSTRAINT `kmtn_agm` FOREIGN KEY (`kmtn_agama`) REFERENCES `agama` (`agm_id`),
+  ADD CONSTRAINT `kmtn_pkrj` FOREIGN KEY (`kmtn_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
+  ADD CONSTRAINT `kmtn_plpr_pkrj` FOREIGN KEY (`plpr_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
+  ADD CONSTRAINT `kmtn_sks_pkrj` FOREIGN KEY (`sks_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
 
 --
 -- Constraints for table `komentar`
