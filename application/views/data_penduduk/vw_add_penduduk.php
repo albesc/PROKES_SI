@@ -135,7 +135,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="pndk_alamat">Alamat Keluarga</label>
+                                        <label class="form-control-label" for="pndk_alamat">Alamat</label>
                                         <input type="text" name="pndk_alamat" class="form-control" placeholder="alamat" >
                                     </div>
                                 </div>
@@ -301,7 +301,6 @@
                                         <label for="html">Ada</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <input type="radio" id="css" name="pndk_akta_cerai" value="Tidak Ada">
                                         <label for="css">Tidak Ada</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -448,4 +447,3 @@
                     </form>
                 </div>
             </div>
-    </div>
