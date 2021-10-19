@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2021 at 04:27 PM
+-- Generation Time: Oct 19, 2021 at 02:04 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.20
 
@@ -390,34 +390,33 @@ INSERT INTO `pendidikan` (`pnd_id`, `pnd_ket`) VALUES
 CREATE TABLE `penduduk` (
   `pndk_id` int(10) NOT NULL,
   `pndk_nik` bigint(16) NOT NULL,
-  `pndk_nokk` varchar(50) NOT NULL,
-  `pndk_alamat` varchar(50) NOT NULL,
+  `pndk_nokk` varchar(50) DEFAULT NULL,
+  `pndk_alamat` varchar(50) DEFAULT NULL,
   `rt_id` int(5) NOT NULL,
   `rw_id` int(5) NOT NULL,
-  `pndk_fullname` varchar(100) NOT NULL,
-  `pndk_jk` varchar(100) NOT NULL,
-  `pndk_tmp_lahir` varchar(100) NOT NULL,
-  `pndk_tgl_lahir` date NOT NULL,
-  `pndk_tlp` varchar(50) NOT NULL,
+  `pndk_fullname` varchar(100) DEFAULT NULL,
+  `pndk_jk` varchar(100) DEFAULT NULL,
+  `pndk_tmp_lahir` varchar(100) DEFAULT NULL,
+  `pndk_tgl_lahir` date DEFAULT NULL,
+  `pndk_tlp` varchar(50) DEFAULT NULL,
   `agm_id` int(5) NOT NULL,
   `goldr_id` int(5) NOT NULL,
   `pnd_id` int(5) NOT NULL,
   `pkrj_id` int(5) NOT NULL,
   `sts_hub_id` int(5) NOT NULL,
   `stspnkn_id` int(5) NOT NULL,
-  `jnsasn_id` int(5) NOT NULL,
-  `pndk_akta_kawin` varchar(255) NOT NULL,
-  `pndk_akta_cerai` varchar(255) NOT NULL,
-  `pndk_kelainan` varchar(255) NOT NULL,
-  `pndk_desalurah` varchar(255) NOT NULL,
-  `pndk_kecamatan` varchar(255) NOT NULL,
-  `pndk_kabupatenkota` varchar(255) NOT NULL,
-  `pndk_provinsi` varchar(255) NOT NULL,
-  `pndk_kodepos` int(10) NOT NULL,
-  `pndk_tgl_kawin` date NOT NULL,
-  `pndk_nopaspor` varchar(255) NOT NULL,
-  `pndk_nama_ayah` varchar(255) NOT NULL,
-  `pndk_nama_ibu` varchar(255) NOT NULL,
+  `pndk_akta_kawin` varchar(255) DEFAULT NULL,
+  `pndk_akta_cerai` varchar(255) DEFAULT NULL,
+  `pndk_kelainan` varchar(255) DEFAULT NULL,
+  `pndk_desalurah` varchar(255) DEFAULT NULL,
+  `pndk_kecamatan` varchar(255) DEFAULT NULL,
+  `pndk_kabupatenkota` varchar(255) DEFAULT NULL,
+  `pndk_provinsi` varchar(255) DEFAULT NULL,
+  `pndk_kodepos` int(10) DEFAULT NULL,
+  `pndk_tgl_kawin` date DEFAULT NULL,
+  `pndk_nopaspor` varchar(255) DEFAULT NULL,
+  `pndk_nama_ayah` varchar(255) DEFAULT NULL,
+  `pndk_nama_ibu` varchar(255) DEFAULT NULL,
   `pndk_foto` varchar(255) NOT NULL DEFAULT 'default.png',
   `pndk_tgl_tambah` datetime NOT NULL DEFAULT current_timestamp(),
   `pndk_tlpkeluarga` varchar(255) DEFAULT NULL,
@@ -429,15 +428,21 @@ CREATE TABLE `penduduk` (
   `pndk_tgl_cerai` date DEFAULT NULL,
   `pndk_cacat` varchar(255) DEFAULT NULL,
   `pndk_nik_ayah` varchar(255) DEFAULT NULL,
-  `pndk_nik_ibu` varchar(255) DEFAULT NULL
+  `pndk_nik_ibu` varchar(255) DEFAULT NULL,
+  `pndk_umur` int(11) DEFAULT NULL,
+  `pndk_namakk` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `penduduk`
 --
 
-INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `jnsasn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tgl_kawin`, `pndk_nopaspor`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_foto`, `pndk_tgl_tambah`, `pndk_tlpkeluarga`, `pndk_tgl_berakhir_paspor`, `pndk_akta_lahir`, `pndk_noakta_lahir`, `pndk_noakta_kawin`, `pndk_noakta_cerai`, `pndk_tgl_cerai`, `pndk_cacat`, `pndk_nik_ayah`, `pndk_nik_ibu`) VALUES
-(1, 1111111111, '101010101010', 'Jln. Umban Sari', 6, 1, 'siapa', 'Laki-Laki', 'Pekanbaru', '2021-09-01', '1010101010', 1, 1, 1, 1, 1, 1, 1, 'Ada', 'Tidak Ada', 'Ada', 'Umban Sari', 'rmb', 'Pekanbaru', 'Riau', 11111, '2021-09-02', '123123123', 'ayah', 'ibu', 'default.png', '2021-09-30 07:04:26', NULL, '2021-10-31', 'Ada', '32123', '1231212', '212121', '2021-10-03', 'Cacat Fisik', '159159159', '357357375');
+INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tgl_kawin`, `pndk_nopaspor`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_foto`, `pndk_tgl_tambah`, `pndk_tlpkeluarga`, `pndk_tgl_berakhir_paspor`, `pndk_akta_lahir`, `pndk_noakta_lahir`, `pndk_noakta_kawin`, `pndk_noakta_cerai`, `pndk_tgl_cerai`, `pndk_cacat`, `pndk_nik_ayah`, `pndk_nik_ibu`, `pndk_umur`, `pndk_namakk`) VALUES
+(1, 1111111111, '101010101010', 'Jln. Umban Sari', 6, 1, 'siapa', 'Laki-Laki', 'Pekanbaru', '2021-09-01', '1010101010', 1, 1, 1, 1, 1, 1, 'Ada', 'Tidak Ada', 'Ada', 'Umban Sari', 'rmb', 'Pekanbaru', 'Riau', 11111, '2021-09-02', '123123123', 'ayah', 'ibu', 'default.png', '2021-09-30 07:04:26', NULL, '2021-10-31', 'Ada', '32123', '1231212', '212121', '2021-10-03', 'Cacat Fisik', '159159159', '357357375', 1, 'Budi'),
+(2, 1, '1', '1', 1, 1, '1', 'Laki-Laki', '1', '2021-10-06', '1', 2, 3, 3, 15, 2, 2, 'Ada', 'Ada', 'Ada', '1', '1', '1', '1', 1, '2021-10-13', '1', '1', '1', 'default.png', '2021-10-19 15:43:13', '1', '2021-10-07', 'Ada', '1', '1', '1', '2021-10-05', 'Cacat Netra/Buta', '1', '1', NULL, '1'),
+(3, 2, '2', '2', 1, 1, '2', 'Laki-Laki', 'pku', '2021-10-01', '2', 1, 2, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '2', '2', '2', '2', 2, '2021-10-15', '2', '2', '2', 'hutao.jpeg', '2021-10-19 15:54:17', '2', '2021-09-29', 'Ada', '2', '2', '2', '2021-10-07', 'Cacat Fisik', '2', '2', NULL, '2'),
+(4, 3, '3', '3', 1, 1, '3', 'Laki-Laki', '3', '2021-10-13', '3', 1, 1, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '3', '3', '3', '3', 3, '2021-09-29', '3', '3', '3', '', '2021-10-19 15:57:59', '3', '2021-10-05', 'Ada', '3', '3', '3', '2021-10-06', 'Cacat Fisik', '3', '3', NULL, '3'),
+(5, 4, '4', '4', 1, 1, '4', 'Laki-Laki', '4', '2021-10-07', '4', 1, 1, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '4', '4', '4', '4', 4, '0000-00-00', '4', '4', '4', 'hutao.jpeg', '2021-10-19 16:59:55', '4', '2021-10-13', 'Ada', '4', '', '4', '2021-10-06', 'Cacat Fisik', '4', '4', NULL, '4');
 
 -- --------------------------------------------------------
 
@@ -862,7 +867,6 @@ ALTER TABLE `penduduk`
   ADD KEY `fk_pkrj_id` (`pkrj_id`),
   ADD KEY `fk_sts_hub_id` (`sts_hub_id`),
   ADD KEY `fk_stspnkn_id` (`stspnkn_id`),
-  ADD KEY `fk_jnsasn_id` (`jnsasn_id`),
   ADD KEY `fk_goldr_id` (`goldr_id`);
 
 --
@@ -1028,7 +1032,7 @@ ALTER TABLE `pekerjaan`
 -- AUTO_INCREMENT for table `penduduk`
 --
 ALTER TABLE `penduduk`
-  MODIFY `pndk_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pndk_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
@@ -1140,7 +1144,6 @@ ALTER TABLE `komentar`
 ALTER TABLE `penduduk`
   ADD CONSTRAINT `fk_agm_id` FOREIGN KEY (`agm_id`) REFERENCES `agama` (`agm_id`),
   ADD CONSTRAINT `fk_goldr_id` FOREIGN KEY (`goldr_id`) REFERENCES `gol_darah` (`goldr_id`),
-  ADD CONSTRAINT `fk_jnsasn_id` FOREIGN KEY (`jnsasn_id`) REFERENCES `jns_asuransi` (`jnsasn_id`),
   ADD CONSTRAINT `fk_pkrj_id` FOREIGN KEY (`pkrj_id`) REFERENCES `pekerjaan` (`pkrj_id`),
   ADD CONSTRAINT `fk_pnd_id` FOREIGN KEY (`pnd_id`) REFERENCES `pendidikan` (`pnd_id`),
   ADD CONSTRAINT `fk_rt_id` FOREIGN KEY (`rt_id`) REFERENCES `rt` (`rt_id`),

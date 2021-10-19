@@ -11,7 +11,6 @@ class Penduduk extends CI_Controller
         $this->load->model('Rt_model');
         $this->load->model('Agama_model');
         $this->load->model('Gol_darah_model');
-        $this->load->model('Jns_asuransi_model');
         $this->load->model('Pekerjaan_model');
         $this->load->model('Pendidikan_model');
         $this->load->model('Sts_hub_kel_model');
@@ -33,7 +32,6 @@ class Penduduk extends CI_Controller
         $data['judul'] = "Tambah Penduduk";
         $data['agama'] = $this->Agama_model->get();
         $data['gol_darah'] = $this->Gol_darah_model->get();
-        $data['jns_asuransi'] = $this->Jns_asuransi_model->get();
         $data['pekerjaan'] = $this->Pekerjaan_model->get();
         $data['pendidikan'] = $this->Pendidikan_model->get();
         $data['sts_hub_kel'] = $this->Sts_hub_kel_model->get();
@@ -64,7 +62,6 @@ class Penduduk extends CI_Controller
             'pkrj_id' => $this->input->post('pkrj_id'),
             'sts_hub_id' => $this->input->post('sts_hub_id'),
             'stspnkn_id' => $this->input->post('stspnkn_id'),
-            'jnsasn_id' => $this->input->post('jnsasn_id'),
             'pndk_akta_kawin' => $this->input->post('pndk_akta_kawin'),
             'pndk_akta_cerai' => $this->input->post('pndk_akta_cerai'),
             'pndk_kelainan' => $this->input->post('pndk_kelainan'),
@@ -78,19 +75,33 @@ class Penduduk extends CI_Controller
             'pndk_nama_ayah' => $this->input->post('pndk_nama_ayah'),
             'pndk_nama_ibu' => $this->input->post('pndk_nama_ibu'),
             'pndk_foto' => $this->input->post('pndk_foto'),
-            'pndk_tgl_tambah' => $this->input->post('pndk_tgl_tambah'),
             'pndk_tlpkeluarga' => $this->input->post('pndk_tlpkeluarga'),
             'pndk_tgl_berakhir_paspor' => $this->input->post('pndk_tgl_berakhir_paspor'),
             'pndk_akta_lahir' => $this->input->post('pndk_akta_lahir'),
+            'pndk_noakta_lahir' => $this->input->post('pndk_noakta_lahir'),
             'pndk_noakta_kawin' => $this->input->post('pndk_noakta_kawin'),
             'pndk_noakta_cerai' => $this->input->post('pndk_noakta_cerai'),
             'pndk_tgl_cerai' => $this->input->post('pndk_tgl_cerai'),
             'pndk_cacat' => $this->input->post('pndk_cacat'),
             'pndk_nik_ayah' => $this->input->post('pndk_nik_ayah'),
             'pndk_nik_ibu' => $this->input->post('pndk_nik_ibu'),
+            'pndk_namakk' => $this->input->post('pndk_namakk'),
         ];
-        $this->Penduduk_model->insert($data);
-        redirect(Penduduk);
+        $upload_image = $_FILES['pndk_foto']['name'];
+            if ($upload_image) {
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['max_size'] = '2048';
+                $config['upload_path'] = './assets/img/';
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('pndk_foto')) {
+                    $new_image = $this->upload->data('file_name');
+                    $this->db->set('pndk_foto', $new_image);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+        $this->Penduduk_model->insert($data, $upload_image);
+        redirect("Penduduk");
     }
 
     public function edit($pndk_id)
@@ -108,7 +119,6 @@ class Penduduk extends CI_Controller
         $data['penduduk'] = $this->Penduduk_model->getById($pndk_id);
         $data['agama'] = $this->Agama_model->get();
         $data['gol_darah'] = $this->Gol_darah_model->get();
-        $data['jns_asuransi'] = $this->Jns_asuransi_model->get();
         $data['pekerjaan'] = $this->Pekerjaan_model->get();
         $data['pendidikan'] = $this->Pendidikan_model->get();
         $data['sts_hub_kel'] = $this->Sts_hub_kel_model->get();

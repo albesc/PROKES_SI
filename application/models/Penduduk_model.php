@@ -19,7 +19,7 @@ class Penduduk_model extends CI_Model
     public function getById($pndk_id){
         $this->db->select('penduduk.*, rw.no_rw as rw, rt.no_rt as rt, agama.agm_ket as agama, gol_darah.goldr_ket as gol_darah, 
         pendidikan.pnd_ket as pendidikan, pekerjaan.pkrj_ket as pekerjaan, sts_hub_kel.sts_hub_ket as sts_hub_kel, 
-        sts_pernikahan.stspnkn_ket as sts_pernikahan, jns_asuransi.jnsasn_ket as jns_asuransi');
+        sts_pernikahan.stspnkn_ket as sts_pernikahan');
         $this->db->from('penduduk');
         $this->db->join('rw', 'penduduk.rw_id = rw.rw_id');
         $this->db->join('rt', 'penduduk.rt_id = rt.rt_id');
@@ -29,7 +29,6 @@ class Penduduk_model extends CI_Model
         $this->db->join('pekerjaan', 'penduduk.pkrj_id = pekerjaan.pkrj_id');
         $this->db->join('sts_hub_kel', 'penduduk.sts_hub_id = sts_hub_kel.sts_hub_id');
         $this->db->join('sts_pernikahan', 'penduduk.stspnkn_id = sts_pernikahan.stspnkn_id');
-        $this->db->join('jns_asuransi', 'penduduk.jnsasn_id = jns_asuransi.jnsasn_id');
         $this->db->where('penduduk.pndk_id', $pndk_id);
         $query = $this->db->get();
         return $query->row_array();
