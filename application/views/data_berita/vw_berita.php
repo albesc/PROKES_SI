@@ -44,43 +44,49 @@
                                 </div>
                             </div>
                             <div class="col-3">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
-                                    <div class="card-body">
-                                        <h2 class="card-title">Judul Berita</h2>
-                                        <h3><i class="far fa-clock"></i>&nbsp;&nbsp;Waktu</h3>
-                                        <div class="col-12 text-right">
-                                            <a href="<?= site_url('Berita/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                <?php
+                                $i = 1;
+                                foreach ($berita as $b) : ?>
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="<?= base_url('assets/img/berita/') . $b['brt_gambar']; ?>" alt="pic">
+                                        <div class="card-body">
+
+                                            <h2 class="card-title"><?= $b['brt_judul']; ?></h2>
+                                            <h3><i class="far fa-clock"></i>&nbsp;&nbsp;<?= $b['brt_tgl']; ?></h3>
+                                            <div class="col-12 text-right">
+                                                <a href="<?= site_url('Berita/edit/') . $b['brt_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
-                            <!-- Card footer -->
-                            <div class="card-footer py-4">
-                                <nav aria-label="...">
-                                    <ul class="pagination justify-content-end mb-0">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1">
-                                                <i class="fas fa-angle-left"></i>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">
-                                                <i class="fas fa-angle-right"></i>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
+                        <!-- Card footer -->
+                        <div class="card-footer py-4">
+                            <nav aria-label="...">
+                                <ul class="pagination justify-content-end mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">
+                                            <i class="fas fa-angle-left"></i>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="fas fa-angle-right"></i>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                         </div>
                     </div>
                 </div>

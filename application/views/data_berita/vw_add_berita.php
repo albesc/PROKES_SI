@@ -19,12 +19,12 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Berita/upload'); ?>" method="post" enctype="multipart/form-data">
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Judul Berita</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="brt_judul" placeholder="Judul Berita">
                                      </div>
                                  </div>
                              </div>
@@ -32,7 +32,7 @@
                                  <div class="col-12">
                                      <label for="example-tel-input" class="form-control-label">Isi Berita</label><br>
                                      <div class="form-group">
-                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                         <textarea class="form-control" name="brt_isi" rows="5" placeholder="Isi Berita"></textarea>
                                      </div>
                                  </div>
                              </div>
@@ -40,15 +40,15 @@
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Gambar</label>
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                                         <label class="custom-file-label" for="customFileLang">Select file</label>
+                                         <input type="file" class="custom-file-input" name="brt_gambar" id="gambar" lang="en">
+                                         <label class="custom-file-label" for="brt_gambar">Select file</label>
                                      </div>
                                  </div>
                              </div>
                              <br>
                              <div class="row">
                                  <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
+                                     <button type="submit" name="Tambah" class="btn btn-primary">Tambah</butto>
                                  </div>
                              </div>
                          </form>
