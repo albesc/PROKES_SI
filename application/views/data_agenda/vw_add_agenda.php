@@ -19,24 +19,24 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Agenda/upload'); ?>" method="post" enctype="multipart/form-data">
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Agenda</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="ag_name" id="example-text-input">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-date-input" class="form-control-label">Tanggal Mulai</label>
-                                         <input class="form-control" type="date" id="example-date-input">
+                                         <input class="form-control" type="date" name="ag_start_date" id="example-date-input">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-date-input" class="form-control-label">Tanggal Berakhir</label>
-                                         <input class="form-control" type="date" id="example-date-input">
+                                         <input class="form-control" type="date" name="ag_finish_date" id="example-date-input">
                                      </div>
                                  </div>
                              </div>
@@ -44,13 +44,13 @@
                                  <div class="col-12">
                                      <label for="example-tel-input" class="form-control-label">Keterangan</label><br>
                                      <div class="form-group">
-                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                         <textarea class="form-control" name="ag_ket" id="exampleFormControlTextarea1" rows="5"></textarea>
                                      </div>
                                  </div>
                              </div>
                              <div class="row">
                                  <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
+                                     <button type="submit" name="Tambah" class="btn btn-primary">Tambah</button>
                                  </div>
                              </div>
                          </form>

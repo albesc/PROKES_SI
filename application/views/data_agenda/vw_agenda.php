@@ -41,16 +41,21 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
-                                <div class="card-body">
-                                    <h2 class="card-title">Judul Agenda</h2>
-                                    <h3><i class="far fa-clock"></i>&nbsp;&nbsp;Waktu</h3>
-                                    <div class="col-12 text-right">
-                                        <a href="<?= site_url('Agenda/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                            <?php
+                            $i = 1;
+                            foreach ($agenda as $a) : ?>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
+                                    <div class="card-body">
+                                        <h2 class="card-title"><?= $a['ag_name']; ?></h2>
+                                        <h3><i class="far fa-clock"></i>&nbsp;&nbsp; <?= $a['ag_start_date']; ?></h3>
+                                        <div class="col-12 text-right">
+                                            <a href="<?= site_url('Agenda/edit/') . $a['ag_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
                         </div>
                         <!-- Card footer -->
                         <div class="card-footer py-4">
