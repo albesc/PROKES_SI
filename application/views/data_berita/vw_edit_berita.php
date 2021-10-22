@@ -19,7 +19,8 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form action="<?= base_url('Berita/update'); ?>">
+                         <form action="<?= base_url('Berita/update'); ?>" method="post" enctype="multipart/form-data">
+                         <input class="form-control" type="hidden" name="brt_id" value="<?= $berita['brt_id']; ?>">
                              <div class="row">
                                  <div class="col-4">
                                  <div class="form-group">
@@ -40,7 +41,7 @@
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Gambar</label>
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                         <input type="file" name="brt_gambar" class="custom-file-input" id="customFileLang" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>
                                      </div>
                                  </div>
