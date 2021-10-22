@@ -8,6 +8,8 @@ class Role_Petugas extends CI_Controller
         parent::__construct();
         $this->load->model('Penduduk_model');
         $this->load->model('Pengaduan_model');
+        $this->load->model('Berita_model');
+        $this->load->model('Agenda_model');
     }
 
     public function index()
@@ -57,7 +59,7 @@ class Role_Petugas extends CI_Controller
     public function berita()
     {
         $data['judul'] = "Data Berita";
-        // $data['p_byJk'] = $this->Berita_model->getByJK();
+        $data['berita'] = $this->Berita_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_berita/vw_berita', $data);
         $this->load->view('layout/footer', $data);
@@ -85,7 +87,7 @@ class Role_Petugas extends CI_Controller
     public function agenda()
     {
         $data['judul'] = "Data Agenda";
-        // $data['p_byJk'] = $this->Agenda_model->getByJK();
+        $data['agenda'] = $this->Agenda_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_agenda/vw_agenda', $data);
         $this->load->view('layout/footer', $data);
