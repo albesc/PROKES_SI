@@ -32,7 +32,7 @@ class Berita extends CI_Controller
     public function upload()
     {
         $data = [
-            'usr_id' => '6',
+            'usr_id' => '5',
             'brt_judul' => $this->input->post('brt_judul'),
             'brt_isi' => $this->input->post('brt_isi'),
         ];
@@ -67,7 +67,7 @@ class Berita extends CI_Controller
     public function update()
     {
         $data = [
-            'usr_id' => '6',
+            'usr_id' => '5',
             'brt_judul' => $this->input->post('brt_judul'),
             'brt_isi' => $this->input->post('brt_isi'),
         ];

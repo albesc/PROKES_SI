@@ -410,7 +410,7 @@
                             <div class="row">
                                 <div class="col-5">
                                     <label for="example-tel-input" class="form-control-label">Foto Penduduk</label>
-                                    <img src="<?= base_url('assets/img/') . $penduduk['pndk_foto']; ?>" style="width: 100px" class="img-thumbnail">
+                                    <img src="<?= base_url('assets/img/penduduk/') . $penduduk['pndk_foto']; ?>" style="width: 100px" class="img-thumbnail">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" name="pndk_foto" lang="en">
                                         <label class="custom-file-label" for="customFileLang">Select file</label>

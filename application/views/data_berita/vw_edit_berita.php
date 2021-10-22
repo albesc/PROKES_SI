@@ -32,7 +32,7 @@
                                  <div class="col-12">
                                      <label for="example-tel-input" class="form-control-label">Isi Berita</label><br>
                                      <div class="form-group">
-                                         <textarea class="form-control" name="brt_isi" value="<?= $berita['brt_isi']; ?>" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                         <textarea class="form-control" name="brt_isi" id="exampleFormControlTextarea1" rows="5"><?= $berita['brt_isi']; ?></textarea>
                                      </div>
                                  </div>
                              </div>

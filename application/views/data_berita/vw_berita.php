@@ -23,14 +23,6 @@
                                 <div class="col-sm-2">
                                     <a href="<?= site_url('Berita/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Kategori Berita</option>
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-sm-3 text-right">
                                     <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
                                         <div class="form-group mb-0">
@@ -41,26 +33,27 @@
                                                 <input class="form-control" placeholder="Cari berdasarkan judul" type="text">
                                             </div>
                                         </div>
+                                    </form>
                                 </div>
                             </div>
+                            <br>
                             <div class="col-3">
-                                <?php
-                                $i = 1;
-                                foreach ($berita as $b) : ?>
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="<?= base_url('assets/img/berita/') . $b['brt_gambar']; ?>" alt="pic">
-                                        <div class="card-body">
-
-                                            <h2 class="card-title"><?= $b['brt_judul']; ?></h2>
-                                            <h3><i class="far fa-clock"></i>&nbsp;&nbsp;<?= $b['brt_tgl']; ?></h3>
-                                            <div class="col-12 text-right">
-                                                <a href="<?= site_url('Berita/edit/') . $b['brt_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                            </div>
+                            <?php
+                            $i = 1;
+                            foreach ($berita as $b) : ?>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="<?= base_url('assets/img/berita/') . $b['brt_gambar']; ?>" alt="pic">
+                                    <div class="card-body">
+                                        <h2 class="card-title"><?= $b['brt_judul']; ?></h2>
+                                        <h3><i class="far fa-clock"></i>&nbsp;&nbsp;<?= $b['brt_tgl']; ?></h3>
+                                        <div class="col-12 text-right">
+                                            <a href="<?= site_url('Berita/edit/') . $b['brt_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                         </div>
                                     </div>
+                                </div>
                             </div>
-                            <?php $i++; ?>
-                        <?php endforeach; ?>
+                            <?php $i++;
+                            endforeach; ?>
                         <!-- Card footer -->
                         <div class="card-footer py-4">
                             <nav aria-label="...">

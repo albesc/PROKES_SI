@@ -143,7 +143,7 @@
                                 <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nama Lengkap</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_nik'] ?></label>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_fullname'] ?></label>
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -240,13 +240,8 @@
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
-                                        <?php
-                                        $thn = date_format(date_create($penduduk['pndk_tgl_lahir']), "Y");
-                                        $thnNow = date("Y");
-                                        $age = $thnNow - $thn;
-                                        ?>
                                         <label class="form-control-label" for="input-email">Umur</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $age ?></label>
+                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_umur'] ?></label>
                                     </div>
                                 </div>
                             </div>

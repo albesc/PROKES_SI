@@ -90,7 +90,7 @@ class Penduduk extends CI_Controller
         if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2048';
-            $config['upload_path'] = './assets/img/';
+            $config['upload_path'] = './assets/img/penduduk/';
             $this->load->library('upload', $config);
             if ($this->upload->do_upload('pndk_foto')) {
                 $new_image = $this->upload->data('file_name');
@@ -173,7 +173,7 @@ class Penduduk extends CI_Controller
             if ($this->upload->do_upload('pndk_foto')) {
                 $old_image = $data['penduduk']['gambar'];
                 if ($old_image != 'default.png') {
-                    unlink(FCPATH . 'assets/img/' . $old_image);
+                    unlink(FCPATH . 'assets/img/penduduk/' . $old_image);
                 }
                 $new_image = $this->upload->data('file_name');
                 $this->db->set('pndk_foto', $new_image);
