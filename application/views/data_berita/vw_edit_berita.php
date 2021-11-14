@@ -20,10 +20,10 @@
                      <!-- Card header -->
                      <div class="card-header border-0">
                          <form action="<?= base_url('Berita/update'); ?>" method="post" enctype="multipart/form-data">
-                         <input class="form-control" type="hidden" name="brt_id" value="<?= $berita['brt_id']; ?>">
+                             <input class="form-control" type="hidden" name="brt_id" value="<?= $berita['brt_id']; ?>">
                              <div class="row">
                                  <div class="col-4">
-                                 <div class="form-group">
+                                     <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Judul Berita</label>
                                          <input class="form-control" type="text" name="brt_judul" value="<?= $berita['brt_judul']; ?>" placeholder="Judul Berita">
                                      </div>

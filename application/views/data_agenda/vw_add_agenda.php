@@ -30,13 +30,13 @@
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-date-input" class="form-control-label">Tanggal Mulai</label>
-                                         <input class="form-control" type="date" name="ag_start_date" id="example-date-input">
+                                         <input class="form-control" type="date" name="ag_tgl_mulai" id="example-date-input">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-date-input" class="form-control-label">Tanggal Berakhir</label>
-                                         <input class="form-control" type="date" name="ag_finish_date" id="example-date-input">
+                                         <input class="form-control" type="date" name="ag_tgl_akhir" id="example-date-input">
                                      </div>
                                  </div>
                              </div>

@@ -48,7 +48,7 @@
                                     <img class="card-img-top" src="<?= base_url(); ?>assets/img/theme/img-1-1000x600.jpg" alt="pic">
                                     <div class="card-body">
                                         <h2 class="card-title"><?= $a['ag_name']; ?></h2>
-                                        <h3><i class="far fa-clock"></i>&nbsp;&nbsp; <?= $a['ag_start_date']; ?></h3>
+                                        <h3><i class="far fa-clock"></i>  <?= $a['ag_tgl_mulai']; ?> s/d <?= $a['ag_tgl_akhir']; ?></h3>
                                         <div class="col-12 text-right">
                                             <a href="<?= site_url('Agenda/edit/') . $a['ag_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                         </div>

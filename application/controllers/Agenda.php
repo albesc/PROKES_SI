@@ -35,8 +35,8 @@ class Agenda extends CI_Controller
     {
         $data = [
             'ag_name' => $this->input->post('ag_name'),
-            'ag_start_date' => $this->input->post('ag_start_date'),
-            'ag_finish_date' => $this->input->post('ag_finish_date'),
+            'ag_tgl_mulai' => $this->input->post('ag_tgl_mulai'),
+            'ag_tgl_akhir' => $this->input->post('ag_tgl_akhir'),
             'ag_ket' => $this->input->post('ag_ket'),
         ];
         $this->Agenda_model->insert($data);
@@ -45,7 +45,7 @@ class Agenda extends CI_Controller
 
     public function edit($ag_id)
     {
-        $data['judul'] = "Edit Berita";
+        $data['judul'] = "Edit Agenda";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['agenda'] = $this->Agenda_model->getById($ag_id);
         $this->load->view('layout/header', $data);
@@ -57,8 +57,8 @@ class Agenda extends CI_Controller
     {
         $data = [
             'ag_name' => $this->input->post('ag_name'),
-            'ag_start_date' => $this->input->post('ag_start_date'),
-            'ag_finish_date' => $this->input->post('ag_finish_date'),
+            'ag_tgl_mulai' => $this->input->post('ag_tgl_mulai'),
+            'ag_tgl_akhir' => $this->input->post('ag_tgl_akhir'),
             'ag_ket' => $this->input->post('ag_ket'),
         ];
         $id = $this->input->post('ag_id');

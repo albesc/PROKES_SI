@@ -18,10 +18,10 @@ class Agenda_model extends CI_Model
         return $query->result_array();
     }
     
-    public function getById($brt_id){
-        $this->db->select('berita.*');
-        $this->db->from('berita');
-        $this->db->where('berita.brt_id', $brt_id);
+    public function getById($ag_id){
+        $this->db->select('agenda.*');
+        $this->db->from('agenda');
+        $this->db->where('agenda.ag_id', $ag_id);
         $query = $this->db->get();
         return $query->row_array();
     }
