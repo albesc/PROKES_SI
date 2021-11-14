@@ -10,6 +10,7 @@ class Role_Petugas extends CI_Controller
         $this->load->model('Pengaduan_model');
         $this->load->model('Berita_model');
         $this->load->model('Agenda_model');
+        $this->load->model('Sapras_model');
     }
 
     public function index()
@@ -105,7 +106,7 @@ class Role_Petugas extends CI_Controller
     public function sapras()
     {
         $data['judul'] = "Data Sarana Prasarana";
-        // $data['p_byJk'] = $this->Sapras_model->getByJK();
+        $data['saprsarana'] = $this->Sapras_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_sapras/vw_sapras', $data);
         $this->load->view('layout/footer', $data);

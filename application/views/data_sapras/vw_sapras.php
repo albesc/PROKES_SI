@@ -49,36 +49,40 @@
                                         <td scope="col" class="sort" data-sort="nik">Nama Sarana-Prasarana</td>
                                         <td scope="col" class="sort" data-sort="nama">Kondisi</td>
                                         <td scope="col" class="sort" data-sort="asal">Lokasi</td>
-                                        <td scope="col" class="sort" data-sort="asal">Jumlah</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="media-body">
-                                                <span>1</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            tes
-                                        </td>
-                                        <td>
-                                            Bagus
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <span class="status">Jl.Tegalsari</span>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            20
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="<?= site_url('Sapras/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                            <a href="<?= site_url('Sapras/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($saprsarana as $s) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media-body">
+                                                    <span><?= $i ?></span>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <?= $s['spr_name'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $s['spr_kondisi'] ?>
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-dot mr-4">
+                                                    <span class="status"><?= $s['spr_lokasi'] ?></span>
+                                                </span>
+                                            </td>
+                                            <td class="text-right">
+                                                <a href="<?= site_url('Sapras/detail/') . $s['spr_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i> Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Sapras/edit/') . $s['spr_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

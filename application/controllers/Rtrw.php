@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Rtrw extends CI_Controller
 {
+    public $tablert = 'rt';
+    public $idrt = 'rt.rt_id';
+    public $tablerw = 'rw';
+    public $idrw = 'rw.rw_id';
+
     public function __construct()
     {
         parent::__construct();

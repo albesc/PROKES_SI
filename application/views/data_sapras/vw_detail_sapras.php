@@ -50,7 +50,7 @@
                                          </div>
                                          <div class="col-3">
                                              <div class="form-group">
-                                                 <label for="example-tel-input" class="form-control-label">Lokasi : </label>
+                                                 <label for="example-tel-input" class="form-control-label">Lokasi</label><br>
                                                  <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
                                              </div>
                                          </div>
