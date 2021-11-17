@@ -54,31 +54,40 @@
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="media-body">
-                                                <span>1</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            01239449
-                                        </td>
-                                        <td>
-                                            Toko Kelontong Pak Udin
-                                        </td>
-                                        <td>
-                                            Mikro
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <span class="status">Jl.Tegalsari</span>
-                                            </span>
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="<?= site_url('Umkm/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                            <a href="<?= site_url('Umkm/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($umkm as $u) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media-body">
+                                                    <span><?= $i ?></span>
+                                                </div>
+                                            </th>
+                                            <td class="budget">
+                                                <?= $u['no_nib'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $u['nama_usaha'] ?>
+                                            </td>
+                                            <td>
+                                                <?php foreach ($umkm_kat as $uk) :
+                                                    if ($u['id_kat'] == $uk['id_kat']) { ?>
+                                                        <?= $uk['nama']; ?>
+                                                <?php }
+                                                endforeach; ?>
+                                            </td>
+                                            <td>
+                                                <?= $u['alamat'] ?>
+                                            </td>
+                                            <td class="text-right">
+                                                <a href="<?= site_url('Umkm/detail/') . $u['id_umkm']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Umkm/edit/') . $u['id_umkm']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>

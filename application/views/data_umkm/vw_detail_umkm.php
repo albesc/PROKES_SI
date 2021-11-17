@@ -29,27 +29,33 @@
                          <form>
                              <div class="card flex-row">
                                  <div class="img-square-wrapper">
-                                     <img class="" src="../img/default_pic.png" width="300" height="215" alt="Card image cap">
+                                     <img class="" src="<?= base_url('assets/img/umkm/') . $umkm['foto_produk']; ?>" width="300" height="215" alt="Card image cap">
                                  </div>
                                  <div class="card-body">
-                                     <h3 class="card-title">Nama Usaha</h3>
+                                     <h3 class="card-title"><?= $umkm['nama_usaha'] ?></h3>
                                      <div class="row">
                                          <div class="col-2">
                                              <label for="example-tel-input" class="form-control-label">No NIB</label><br>
-                                             <label class="form-control-label" for="input-username">01239449</label>
+                                             <label class="form-control-label" for="input-username"><?= $umkm['no_nib'] ?></label>
                                          </div>
                                          <div class="col-3">
                                              <label for="example-tel-input" class="form-control-label">Pemilik Usaha</label><br>
-                                             <label class="form-control-label" for="input-username">Udin</label>
+                                             <label class="form-control-label" for="input-username"><?= $umkm['nama_owner'] ?></label>
                                          </div>
                                          <div class="col-2">
                                              <label for="example-tel-input" class="form-control-label">Jenis Usaha</label><br>
-                                             <label class="form-control-label" for="input-username">Mikro</label>
+                                             <label class="form-control-label" for="input-username">
+                                                 <?php foreach ($umkm_kat as $r) :
+                                                        if ($umkm['id_kat'] == $r['id_kat']) { ?>
+                                                         <?= $r['nama']; ?>
+                                                 <?php }
+                                                    endforeach; ?>
+                                             </label>
                                          </div>
                                          <div class="col-3">
                                              <div class="form-group">
-                                                 <label for="example-tel-input" class="form-control-label">Alamat</label>
-                                                 <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
+                                                 <label for="example-tel-input" class="form-control-label">Alamat</label><br>
+                                                 <label class="form-control-label" for="input-username"><?= $umkm['alamat'] ?></label>
                                              </div>
                                          </div>
                                      </div>

@@ -19,21 +19,26 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Sapras/update'); ?>" method="post" enctype="multipart/form-data">
+                             <input type="hidden" name="spr_id" class="form-control" value="<?= $saprsarana['spr_id'] ?>">
+                             <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Sarana & Prasarana</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" name="spr_name" type="text" value="<?= $saprsarana['spr_name'] ?>" id="example-text-input">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Jenis Sarana & Prasarana</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Kesehatan</option>
-                                             <option>Sekolah</option>
-                                             <option>Tempat Ibadah</option>
+                                         <select class="form-control" name="sprjns_id">
+                                             <?php foreach ($sprjns as $r) : ?>
+                                                 <option value="<?= $r['sprjns_id']; ?>" <?php if ($saprsarana['sprjns_id'] == $r['sprjns_id']) {
+                                                                                                echo "selected";
+                                                                                            } ?>><?= $r['sprjns_name']; ?></option>
+                                             <?php endforeach; ?>
                                          </select>
                                      </div>
                                  </div>
@@ -42,38 +47,27 @@
                                  <div class="col-2">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Kondisi</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Baik</option>
-                                             <option></option>
+                                         <select class="form-control" name="spr_kondisi">
+                                             <option <?php if($saprsarana['spr_kondisi'] == "Baik") echo "selected"; ?>>Baik</option>
+                                             <option <?php if($saprsarana['spr_kondisi'] == "Buruk") echo "selected"; ?>>Buruk</option>
                                          </select>
-                                     </div>
-                                 </div>
-                                 <div class="col-2">
-                                     <div class="form-group">
-                                         <label for="example-number-input" class="form-control-label">Jumlah</label>
-                                         <input class="form-control" type="number" value="10" id="example-number-input">
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Lokasi</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" name="spr_lokasi" type="text" value="<?= $saprsarana['spr_lokasi'] ?>" id="example-text-input">
                                      </div>
                                  </div>
                              </div>
                              <div class="row">
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Gambar</label>
+                                     <img src="<?= base_url('assets/img/sapras/') . $saprsarana['spr_gambar']; ?>" style="width: 100px" class="img-thumbnail">
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                         <input type="file" class="custom-file-input" name="spr_gambar" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>
                                      </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <a href="" class="btn btn-primary">Edit</a>
                                  </div>
                              </div>
                          </form>

@@ -11,6 +11,11 @@ class Role_Petugas extends CI_Controller
         $this->load->model('Berita_model');
         $this->load->model('Agenda_model');
         $this->load->model('Sapras_model');
+        $this->load->model('Umkm_model');
+        $this->load->model('Umkm_kat_model');
+        $this->load->model('Kelahiran_model');
+        $this->load->model('Kematian_model');
+        $this->load->model('Pindahdomisili_model');
     }
 
     public function index()
@@ -33,6 +38,7 @@ class Role_Petugas extends CI_Controller
     public function kelahiran()
     {
         $data['judul'] = "Data Kelahiran";
+        $data['kelahiran'] = $this->Kelahiran_model->get();
         // $data['penduduk'] = $this->Penduduk_model->getAll();
         $this->load->view('layout/header', $data);
         $this->load->view('data_kelahiran/vw_kelahiran', $data);
@@ -42,7 +48,7 @@ class Role_Petugas extends CI_Controller
     public function kematian()
     {
         $data['judul'] = "Data Kematian";
-        // $data['penduduk'] = $this->Penduduk_model->getAll();
+        $data['kematian'] = $this->Kematian_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_kematian/vw_kematian', $data);
         $this->load->view('layout/footer', $data);
@@ -51,7 +57,7 @@ class Role_Petugas extends CI_Controller
     public function pindahdomisili()
     {
         $data['judul'] = "Data Pindah Domisili";
-        // $data['penduduk'] = $this->Penduduk_model->getAll();
+        $data['pindahdomisili'] = $this->Pindahdomisili_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_pindahdomisili/vw_pindahdomisili', $data);
         $this->load->view('layout/footer', $data);
@@ -69,6 +75,7 @@ class Role_Petugas extends CI_Controller
     public function galeri()
     {
         $data['judul'] = "Data Galeri";
+        $data['galeri'] = $this->Galeri_model->get();
         // $data['p_byJk'] = $this->Galeri_model->getByJK();
         $this->load->view('layout/header', $data);
         $this->load->view('data_galeri/vw_galeri', $data);
@@ -94,10 +101,19 @@ class Role_Petugas extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
-    public function rtrw()
+    public function rt()
     {
         $data['judul'] = "Data RT & RW";
-        // $data['p_byJk'] = $this->Rtrw_model->getByJK();
+        $data['rt'] = $this->Rt_model->get();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_rtrw/vw_rtrw', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function rw()
+    {
+        $data['judul'] = "Data RT & RW";
+        $data['rw'] = $this->Rw_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_rtrw/vw_rtrw', $data);
         $this->load->view('layout/footer', $data);
@@ -115,7 +131,8 @@ class Role_Petugas extends CI_Controller
     public function umkm()
     {
         $data['judul'] = "Data UMKM";
-        // $data['p_byJk'] = $this->Umkm_model->getByJK();
+        $data['umkm'] = $this->Umkm_model->get();
+        $data['umkm_kat'] = $this->Umkm_kat_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_umkm/vw_umkm', $data);
         $this->load->view('layout/footer', $data);

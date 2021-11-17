@@ -70,9 +70,7 @@
                                                 <?= $s['spr_kondisi'] ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $s['spr_lokasi'] ?></span>
-                                                </span>
+                                                <?= $s['spr_lokasi'] ?>
                                             </td>
                                             <td class="text-right">
                                                 <a href="<?= site_url('Sapras/detail/') . $s['spr_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i> Detail</a>&nbsp;&nbsp;&nbsp;

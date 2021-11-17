@@ -7,7 +7,7 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="#">
-                                <img src="<?= base_url('assets/img/') . $penduduk['pndk_foto']; ?>" class="rounded-circle">
+                                <img src="<?= base_url('assets/img/penduduk/') . $penduduk['pndk_foto']; ?>" class="rounded-circle">
                             </a>
                         </div>
                     </div>

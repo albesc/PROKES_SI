@@ -29,29 +29,29 @@
                          <form>
                              <div class="card flex-row">
                                  <div class="img-square-wrapper">
-                                     <img class="" src="../img/default_pic.png" width="300" height="215" alt="Card image cap">
+                                     <img class="" src="<?= base_url('assets/img/sapras/') . $saprsarana['spr_gambar']; ?>" width="300" height="215" alt="Card image cap">
                                  </div>
                                  <div class="card-body">
-                                     <h3 class="card-title">Nama Sarana & Prasarana</h3>
+                                     <h3 class="card-title"><?= $saprsarana['spr_name'] ?></h3>
                                      <div class="row">
                                          <div class="col-4">
                                              <label for="example-tel-input" class="form-control-label">Jenis Sarana & Prasarana</label><br>
-                                             <label class="form-control-label" for="input-username">Sekolah</label>
+                                             <label class="form-control-label" for="input-username">
+                                                 <?php foreach ($sprjns as $r) :
+                                                        if ($saprsarana['sprjns_id'] == $r['sprjns_id']) { ?>
+                                                         <?= $r['sprjns_name']; ?>
+                                                 <?php }
+                                                    endforeach; ?>
+                                             </label>
                                          </div>
                                          <div class="col-2">
                                              <label for="example-tel-input" class="form-control-label">Kondisi</label><br>
-                                             <label class="form-control-label" for="input-username">Baik</label>
-                                         </div>
-                                         <div class="col-2">
-                                             <div class="form-group">
-                                                 <label for="example-number-input" class="form-control-label">Jumlah</label><br>
-                                                 <label class="form-control-label" for="input-username">10</label>
-                                             </div>
+                                             <label class="form-control-label" for="input-username"><?= $saprsarana['spr_kondisi'] ?></label>
                                          </div>
                                          <div class="col-3">
                                              <div class="form-group">
                                                  <label for="example-tel-input" class="form-control-label">Lokasi</label><br>
-                                                 <label class="form-control-label" for="input-username">Jl. Umban Sari</label>
+                                                 <label class="form-control-label" for="input-username"><?= $saprsarana['spr_lokasi'] ?></label>
                                              </div>
                                          </div>
                                      </div>

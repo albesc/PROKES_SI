@@ -19,18 +19,20 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Umkm/upload'); ?>" method="post" enctype="multipart/form-data">
+                             <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">No NIB</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="no_nib">
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Pemilik</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="nama_owner">
                                      </div>
                                  </div>
                              </div>
@@ -38,24 +40,23 @@
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Usaha</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="nama_usaha">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Kategori Usaha</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Mikro</option>
-                                             <option>Kecil</option>
-                                             <option>Menengah</option>
-                                             <option>Besar</option>
+                                         <select class="form-control" name="id_kat">
+                                             <?php foreach ($umkm_kat as $r) : ?>
+                                                 <option value="<?= $r['id_kat']; ?>"><?= $r['nama']; ?></option>
+                                             <?php endforeach; ?>
                                          </select>
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Alamat</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="alamat">
                                      </div>
                                  </div>
                              </div>
@@ -63,15 +64,9 @@
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Foto Produk</label>
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                                         <label class="custom-file-label" for="customFileLang">Select file</label>
+                                         <input type="file" class="custom-file-input" name="foto_produk" id="gambar">
+                                         <label class="custom-file-label" for="foto_produk">Select file</label>
                                      </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
                                  </div>
                              </div>
                          </form>

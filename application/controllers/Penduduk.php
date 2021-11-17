@@ -106,7 +106,7 @@ class Penduduk extends CI_Controller
 
     public function edit($pndk_id)
     {
-        $data['judul'] = "Detail Penduduk";
+        $data['judul'] = "Edit Penduduk";
         $data['penduduk'] = $this->Penduduk_model->getById($pndk_id);
         $data['agama'] = $this->Agama_model->get();
         $data['gol_darah'] = $this->Gol_darah_model->get();

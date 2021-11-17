@@ -33,6 +33,32 @@ class Sapras extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
+    public function upload()
+    {
+        $data = [
+            'spr_name' => $this->input->post('spr_name'),
+            'spr_kondisi' => $this->input->post('spr_kondisi'),
+            'spr_lokasi' => $this->input->post('spr_lokasi'),
+            'sprjns_id' => $this->input->post('sprjns_id'),
+        ];
+        $upload_image = $_FILES['spr_gambar']['name'];
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = '2048';
+            $config['upload_path'] = './assets/img/sapras/';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('spr_gambar')) {
+                $new_image = $this->upload->data('file_name');
+                $this->db->set('spr_gambar', $new_image);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        }
+
+        $this->Sapras_model->insert($data, $upload_image);
+        redirect("Sapras");
+    }
+
     public function edit($spr_id)
     {
         $data['judul'] = "Edit Sarana dan Prasarana";
@@ -41,6 +67,37 @@ class Sapras extends CI_Controller
         $this->load->view('layout/header', $data);
         $this->load->view('data_sapras/vw_edit_sapras', $data);
         $this->load->view('layout/footer', $data);
+    }
+
+    public function update()
+    {
+        $data = [
+            'spr_name' => $this->input->post('spr_name'),
+            'spr_kondisi' => $this->input->post('spr_kondisi'),
+            'spr_lokasi' => $this->input->post('spr_lokasi'),
+            'sprjns_id' => $this->input->post('sprjns_id'),
+        ];
+        $upload_image = $_FILES['spr_gambar']['name'];
+        if ($upload_image) {
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            $config['max_size'] = '2048';
+            $config['upload_path'] = './assets/img/sapras/';
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('spr_gambar')) {
+                $old_image = $data['sapras']['gambar'];
+                if ($old_image != 'default.png') {
+                    unlink(FCPATH . 'assets/img/sapras/' . $old_image);
+                }
+                $new_image = $this->upload->data('file_name');
+                $this->db->set('spr_gambar', $new_image);
+            } else {
+                echo $this->upload->display_errors();
+            }
+        }
+
+        $id = $this->input->post('spr_id');
+        $this->Sapras_model->update(['spr_id' => $id], $data, $upload_image);
+        redirect("Sapras");
     }
 
     public function detail($spr_id)

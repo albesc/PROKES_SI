@@ -19,21 +19,23 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Sapras/upload'); ?>" method="post" enctype="multipart/form-data">
+                             <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Sarana & Prasarana</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" name="spr_name" type="text" id="example-text-input">
                                      </div>
                                  </div>
                                  <div class="col-3">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Jenis Sarana & Prasarana</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
-                                             <option>Kesehatan</option>
-                                             <option>Sekolah</option>
-                                             <option>Tempat Ibadah</option>
+                                         <select class="form-control" name="sprjns_id">
+                                             <?php foreach ($sprjns as $r) : ?>
+                                                 <option value="<?= $r['sprjns_id']; ?>"><?= $r['sprjns_name']; ?></option>
+                                             <?php endforeach; ?>
                                          </select>
                                      </div>
                                  </div>
@@ -42,22 +44,16 @@
                                  <div class="col-2">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Kondisi</label>
-                                         <select class="form-control" id="exampleFormControlSelect1">
+                                         <select class="form-control" id="exampleFormControlSelect1" name="spr_kondisi">
                                              <option>Baik</option>
-                                             <option></option>
+                                             <option>Buruk</option>
                                          </select>
-                                     </div>
-                                 </div>
-                                 <div class="col-2">
-                                     <div class="form-group">
-                                         <label for="example-number-input" class="form-control-label">Jumlah</label>
-                                         <input class="form-control" type="number" value="10" id="example-number-input">
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Lokasi</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" name="spr_lokasi" type="text" id="example-text-input">
                                      </div>
                                  </div>
                              </div>
@@ -65,15 +61,9 @@
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Gambar</label>
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                                         <label class="custom-file-label" for="customFileLang">Select file</label>
+                                         <input type="file" class="custom-file-input" name="spr_gambar" id="gambar">
+                                         <label class="custom-file-label" for="spr_gambar">Select file</label>
                                      </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <a href="" class="btn btn-primary">Tambah</a>
                                  </div>
                              </div>
                          </form>
