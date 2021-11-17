@@ -19,18 +19,19 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Rw/update'); ?>" method="post" enctype="multipart/form-data">
+                             <input class="form-control" type="hidden" name="rw_id" value="<?= $rw['rw_id']; ?>">
                              <div class="row">
                                  <div class="col-2">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">RW</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="no_rw" <?= $rw['no_rw']; ?>>
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">Nama Ketua RW</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="rw_nama" <?= $rw['rw_nama']; ?>>
                                      </div>
                                  </div>
                              </div>
@@ -38,13 +39,13 @@
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">Alamat Ketua RW</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="alamat" <?= $rw['alamat']; ?>>
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">No HP Ketua RW</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="no_tlp" <?= $rw['no_tlp']; ?>>
                                      </div>
                                  </div>
                              </div>
@@ -52,13 +53,13 @@
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">Tanggal menjabat</label>
-                                         <input class="form-control" type="date" id="example-date-input">
+                                         <input class="form-control" type="date" name="tgl_jabat" <?= $rw['tgl_jabat']; ?>>
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-text-input" class="form-control-label">Tanggal berakhir jabatan</label>
-                                         <input class="form-control" type="date" id="example-date-input">
+                                         <input class="form-control" type="date" name="tgl_akhir" <?= $rw['tgl_akhir']; ?>>
                                      </div>
                                  </div>
                              </div>

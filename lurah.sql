@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2021 at 02:04 PM
+-- Generation Time: Nov 17, 2021 at 06:09 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.20
 
@@ -55,9 +55,19 @@ INSERT INTO `agama` (`agm_id`, `agm_ket`) VALUES
 CREATE TABLE `agenda` (
   `ag_id` int(10) NOT NULL,
   `ag_name` varchar(255) NOT NULL,
-  `ag_date` date NOT NULL,
-  `ag_ket` varchar(255) NOT NULL
+  `ag_date` date NOT NULL DEFAULT current_timestamp(),
+  `ag_ket` varchar(255) NOT NULL,
+  `ag_tgl_mulai` date DEFAULT NULL,
+  `ag_tgl_akhir` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `agenda`
+--
+
+INSERT INTO `agenda` (`ag_id`, `ag_name`, `ag_date`, `ag_ket`, `ag_tgl_mulai`, `ag_tgl_akhir`) VALUES
+(2, 'testestes', '2021-11-14', 'gaa', '2021-11-09', '2021-11-10'),
+(3, 'tes2', '2021-11-14', 'te', '2021-11-18', '2021-11-25');
 
 -- --------------------------------------------------------
 
@@ -72,9 +82,18 @@ CREATE TABLE `berita` (
   `brt_kd` varchar(40) NOT NULL,
   `brt_judul` text NOT NULL,
   `brt_isi` text NOT NULL,
-  `brt_tgl` datetime NOT NULL,
-  `brt_gambar` varchar(200) NOT NULL
+  `brt_tgl` date NOT NULL DEFAULT current_timestamp(),
+  `brt_gambar` varchar(200) NOT NULL DEFAULT 'default_pic.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `berita`
+--
+
+INSERT INTO `berita` (`brt_id`, `usr_id`, `status`, `brt_kd`, `brt_judul`, `brt_isi`, `brt_tgl`, `brt_gambar`) VALUES
+(5, 5, '1', '', 'tes2', 'tesajates', '2021-10-22', 'hutao_face.png'),
+(6, 5, '1', '', 'adaa', 'adadadada', '2021-10-22', 'default_pic.png'),
+(7, 5, '1', '', 'testes', 'bbbb', '2021-11-14', 'default_pic.png');
 
 -- --------------------------------------------------------
 
@@ -146,6 +165,9 @@ INSERT INTO `jns_asuransi` (`jnsasn_id`, `jnsasn_ket`) VALUES
 --
 
 CREATE TABLE `kelahiran` (
+  `desa_kelurahan` varchar(255) NOT NULL,
+  `kecamatan` varchar(255) NOT NULL,
+  `kabupaten_kota` varchar(255) NOT NULL,
   `klhrn_id` int(11) NOT NULL,
   `klhrn_kepala_keluarga` varchar(255) NOT NULL,
   `klhrn_nokk` varchar(50) NOT NULL,
@@ -162,19 +184,55 @@ CREATE TABLE `kelahiran` (
   `klhrn_panjang` int(11) NOT NULL,
   `klhrn_ibu_nik` int(100) NOT NULL,
   `klhrn_ibu_nama` varchar(255) NOT NULL,
+  `klhrn_ibu_tgl_lahir` date NOT NULL,
+  `klhrn_ibu_pekerjaan` int(5) NOT NULL,
+  `klhrn_ibu_alamat` varchar(255) NOT NULL,
+  `klhrn_ibu_alamat_desakelurahan` varchar(255) NOT NULL,
+  `klhrn_ibu_alamat_kecamatan` varchar(255) NOT NULL,
+  `klhrn_ibu_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `klhrn_ibu_alamat_provinsi` varchar(255) NOT NULL,
+  `klhrn_ibu_kewarganegaraan` int(1) NOT NULL,
+  `klhrn_ibu_kebangsaan` varchar(255) NOT NULL,
+  `klhrn_ibu_tgl_catat_kawin` date NOT NULL,
   `klhrn_ayah_nik` int(100) NOT NULL,
   `klhrn_ayah_nama` varchar(255) NOT NULL,
+  `klhrn_ayah_tgl_lahir` date NOT NULL,
+  `klhrn_ayah_pekerjaan` int(5) NOT NULL,
+  `klhrn_ayah_alamat` varchar(255) NOT NULL,
+  `klhrn_ayah_alamat_desakelurahan` varchar(255) NOT NULL,
+  `klhrn_ayah_alamat_kecamatan` varchar(255) NOT NULL,
+  `klhrn_ayah_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `klhrn_ayah_alamat_provinsi` varchar(255) NOT NULL,
+  `klhrn_ayah_kewarganegaraan` int(1) NOT NULL,
+  `klhrn_ayah_kebangsaan` varchar(255) NOT NULL,
   `plpr_nik` bigint(16) NOT NULL,
   `plpr_fullname` varchar(255) NOT NULL,
   `plpr_umur` int(10) NOT NULL,
   `plpr_jk` varchar(255) NOT NULL,
   `plpr_pekerjaan` int(5) NOT NULL,
   `plpr_alamat` varchar(255) NOT NULL,
-  `sks_nik` bigint(16) NOT NULL,
-  `sks_fullname` varchar(255) NOT NULL,
-  `sks_umur` int(10) NOT NULL,
-  `sks_pekerjaan` int(5) NOT NULL,
-  `sks_alamat` varchar(255) NOT NULL
+  `plpr_alamat_desakelurahan` varchar(255) NOT NULL,
+  `plpr_alamat_kecamatan` varchar(255) NOT NULL,
+  `plpr_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `plpr_alamat_provinsi` varchar(255) NOT NULL,
+  `sks1_nik` bigint(16) NOT NULL,
+  `sks1_fullname` varchar(255) NOT NULL,
+  `sks1_umur` int(10) NOT NULL,
+  `sks1_pekerjaan` int(5) NOT NULL,
+  `sks1_alamat` varchar(255) NOT NULL,
+  `sks1_alamat_desakelurahan` varchar(255) NOT NULL,
+  `sks1_alamat_kecamatan` varchar(255) NOT NULL,
+  `sks1_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `sks1_alamat_provinsi` varchar(255) NOT NULL,
+  `sks2_nik` bigint(16) NOT NULL,
+  `sks2_fullname` varchar(255) NOT NULL,
+  `sks2_umur` int(10) NOT NULL,
+  `sks2_pekerjaan` int(5) NOT NULL,
+  `sks2_alamat` varchar(255) NOT NULL,
+  `sks2_alamat_desakelurahan` varchar(255) NOT NULL,
+  `sks2_alamat_kecamatan` varchar(255) NOT NULL,
+  `sks2_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `sks2_alamat_provinsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -184,6 +242,9 @@ CREATE TABLE `kelahiran` (
 --
 
 CREATE TABLE `kematian` (
+  `desa_kelurahan` varchar(255) NOT NULL,
+  `kecamatan` varchar(255) NOT NULL,
+  `kabupaten_kota` varchar(255) NOT NULL,
   `kmtn_id` int(11) NOT NULL,
   `kmtn_kepala_keluarga` varchar(255) NOT NULL,
   `kmtn_nokk` varchar(50) NOT NULL,
@@ -201,19 +262,50 @@ CREATE TABLE `kematian` (
   `kmtn_yg_menerangkan` int(5) NOT NULL,
   `kmtn_ayah_nik` int(100) NOT NULL,
   `kmtn_ayah_nama` varchar(255) NOT NULL,
+  `kmtn_ayah_tanggal_lahir` date NOT NULL,
+  `kmtn_ayah_pekerjaan` int(5) NOT NULL,
+  `kmtn_ayah_alamat` varchar(255) NOT NULL,
+  `kmtn_ayah_alamat_desakelurahan` varchar(255) NOT NULL,
+  `kmtn_ayah_alamat_kecamatan` varchar(255) NOT NULL,
+  `kmtn_ayah_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `kmtn_ayah_alamat_provinsi` varchar(255) NOT NULL,
   `kmtn_ibu_nik` int(100) NOT NULL,
   `kmtn_ibu_nama` varchar(255) NOT NULL,
+  `kmtn_ibu_tanggal_lahir` date NOT NULL,
+  `kmtn_ibu_pekerjaan` int(5) NOT NULL,
+  `kmtn_ibu_alamat` varchar(255) NOT NULL,
+  `kmtn_ibu_alamat_desakelurahan` varchar(255) NOT NULL,
+  `kmtn_ibu_alamat_kecamatan` varchar(255) NOT NULL,
+  `kmtn_ibu_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `kmtn_ibu_alamat_provinsi` varchar(255) NOT NULL,
   `plpr_nik` int(100) NOT NULL,
   `plpr_fullname` varchar(255) NOT NULL,
   `plpr_umur` int(10) NOT NULL,
   `plpr_tgl_lahir` date NOT NULL,
   `plpr_pekerjaan` int(5) NOT NULL,
   `plpr_alamat` varchar(255) NOT NULL,
-  `sks_nik` int(100) NOT NULL,
-  `sks_fullname` varchar(255) NOT NULL,
-  `sks_tgl_lahir` date NOT NULL,
-  `sks_pekerjaan` int(5) NOT NULL,
-  `sks_alamat` varchar(255) NOT NULL
+  `plpr_alamat_desakelurahan` varchar(255) NOT NULL,
+  `plpr_alamat_kecamatan` varchar(255) NOT NULL,
+  `plpr_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `plpr_alamat_provinsi` varchar(255) NOT NULL,
+  `sks1_nik` int(100) NOT NULL,
+  `sks1_fullname` varchar(255) NOT NULL,
+  `sks1_tgl_lahir` date NOT NULL,
+  `sks1_pekerjaan` int(5) NOT NULL,
+  `sks1_alamat` varchar(255) NOT NULL,
+  `sks1_alamat_desakelurahan` varchar(255) NOT NULL,
+  `sks1_alamat_kecamatan` varchar(255) NOT NULL,
+  `sks1_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `sks1_alamat_provinsi` varchar(255) NOT NULL,
+  `sks2_nik` int(100) NOT NULL,
+  `sks2_fullname` varchar(255) NOT NULL,
+  `sks2_tgl_lahir` date NOT NULL,
+  `sks2_pekerjaan` int(5) NOT NULL,
+  `sks2_alamat` varchar(255) NOT NULL,
+  `sks2_alamat_desakelurahan` varchar(255) NOT NULL,
+  `sks2_alamat_kecamatan` varchar(255) NOT NULL,
+  `sks2_alamat_kabupatenkota` varchar(255) NOT NULL,
+  `sks2_alamat_provinsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -429,20 +521,17 @@ CREATE TABLE `penduduk` (
   `pndk_cacat` varchar(255) DEFAULT NULL,
   `pndk_nik_ayah` varchar(255) DEFAULT NULL,
   `pndk_nik_ibu` varchar(255) DEFAULT NULL,
-  `pndk_umur` int(11) DEFAULT NULL,
-  `pndk_namakk` varchar(255) DEFAULT NULL
+  `pndk_namakk` varchar(255) DEFAULT NULL,
+  `pndk_umur` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `penduduk`
 --
 
-INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tgl_kawin`, `pndk_nopaspor`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_foto`, `pndk_tgl_tambah`, `pndk_tlpkeluarga`, `pndk_tgl_berakhir_paspor`, `pndk_akta_lahir`, `pndk_noakta_lahir`, `pndk_noakta_kawin`, `pndk_noakta_cerai`, `pndk_tgl_cerai`, `pndk_cacat`, `pndk_nik_ayah`, `pndk_nik_ibu`, `pndk_umur`, `pndk_namakk`) VALUES
-(1, 1111111111, '101010101010', 'Jln. Umban Sari', 6, 1, 'siapa', 'Laki-Laki', 'Pekanbaru', '2021-09-01', '1010101010', 1, 1, 1, 1, 1, 1, 'Ada', 'Tidak Ada', 'Ada', 'Umban Sari', 'rmb', 'Pekanbaru', 'Riau', 11111, '2021-09-02', '123123123', 'ayah', 'ibu', 'default.png', '2021-09-30 07:04:26', NULL, '2021-10-31', 'Ada', '32123', '1231212', '212121', '2021-10-03', 'Cacat Fisik', '159159159', '357357375', 1, 'Budi'),
-(2, 1, '1', '1', 1, 1, '1', 'Laki-Laki', '1', '2021-10-06', '1', 2, 3, 3, 15, 2, 2, 'Ada', 'Ada', 'Ada', '1', '1', '1', '1', 1, '2021-10-13', '1', '1', '1', 'default.png', '2021-10-19 15:43:13', '1', '2021-10-07', 'Ada', '1', '1', '1', '2021-10-05', 'Cacat Netra/Buta', '1', '1', NULL, '1'),
-(3, 2, '2', '2', 1, 1, '2', 'Laki-Laki', 'pku', '2021-10-01', '2', 1, 2, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '2', '2', '2', '2', 2, '2021-10-15', '2', '2', '2', 'hutao.jpeg', '2021-10-19 15:54:17', '2', '2021-09-29', 'Ada', '2', '2', '2', '2021-10-07', 'Cacat Fisik', '2', '2', NULL, '2'),
-(4, 3, '3', '3', 1, 1, '3', 'Laki-Laki', '3', '2021-10-13', '3', 1, 1, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '3', '3', '3', '3', 3, '2021-09-29', '3', '3', '3', '', '2021-10-19 15:57:59', '3', '2021-10-05', 'Ada', '3', '3', '3', '2021-10-06', 'Cacat Fisik', '3', '3', NULL, '3'),
-(5, 4, '4', '4', 1, 1, '4', 'Laki-Laki', '4', '2021-10-07', '4', 1, 1, 1, 1, 1, 1, 'Ada', 'Ada', 'Ada', '4', '4', '4', '4', 4, '0000-00-00', '4', '4', '4', 'hutao.jpeg', '2021-10-19 16:59:55', '4', '2021-10-13', 'Ada', '4', '', '4', '2021-10-06', 'Cacat Fisik', '4', '4', NULL, '4');
+INSERT INTO `penduduk` (`pndk_id`, `pndk_nik`, `pndk_nokk`, `pndk_alamat`, `rt_id`, `rw_id`, `pndk_fullname`, `pndk_jk`, `pndk_tmp_lahir`, `pndk_tgl_lahir`, `pndk_tlp`, `agm_id`, `goldr_id`, `pnd_id`, `pkrj_id`, `sts_hub_id`, `stspnkn_id`, `pndk_akta_kawin`, `pndk_akta_cerai`, `pndk_kelainan`, `pndk_desalurah`, `pndk_kecamatan`, `pndk_kabupatenkota`, `pndk_provinsi`, `pndk_kodepos`, `pndk_tgl_kawin`, `pndk_nopaspor`, `pndk_nama_ayah`, `pndk_nama_ibu`, `pndk_foto`, `pndk_tgl_tambah`, `pndk_tlpkeluarga`, `pndk_tgl_berakhir_paspor`, `pndk_akta_lahir`, `pndk_noakta_lahir`, `pndk_noakta_kawin`, `pndk_noakta_cerai`, `pndk_tgl_cerai`, `pndk_cacat`, `pndk_nik_ayah`, `pndk_nik_ibu`, `pndk_namakk`, `pndk_umur`) VALUES
+(3, 0, '', '', 1, 1, '', NULL, '', '0000-00-00', '', 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, '', '', '', '1', 0, '0000-00-00', '', '', '', 'default.png', '2021-10-22 14:22:26', '', '0000-00-00', NULL, '', '', '', '0000-00-00', 'Cacat Fisik', '', '', '', NULL),
+(5, 123, '', '', 1, 1, '', NULL, '', '0000-00-00', '', 1, 1, 1, 1, 1, 1, NULL, NULL, NULL, '', '', '', '', 0, '0000-00-00', '', '', '', 'default.png', '2021-11-14 14:03:47', '', '0000-00-00', NULL, '', '', '', '0000-00-00', 'Cacat Fisik', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -522,70 +611,71 @@ CREATE TABLE `rt` (
   `no_rt` varchar(50) DEFAULT NULL,
   `alamat` varchar(50) DEFAULT NULL,
   `no_tlp` varchar(50) DEFAULT NULL,
-  `rt_foto` varchar(50) DEFAULT NULL,
-  `periode` varchar(50) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL
+  `rt_foto` varchar(50) DEFAULT 'default.png',
+  `tgl_jabat` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL,
+  `status` varchar(50) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `rt`
 --
 
-INSERT INTO `rt` (`rt_id`, `rw_id`, `rt_nama`, `no_rt`, `alamat`, `no_tlp`, `rt_foto`, `periode`, `status`) VALUES
-(1, 1, 'SAFRUDIN', '01', 'Jl. Utama No.01', '082172697643', NULL, NULL, NULL),
-(2, 1, 'SANDRA EVA KISMAYA', '02', 'Jl. Utama Gg. Anugerah', '082274261284', NULL, NULL, NULL),
-(3, 1, 'SUMADI, SH', '03', 'Jl. Mangkubumi Gg. Amal', '082288367595', NULL, NULL, NULL),
-(4, 1, 'ABDUL HALIM', '04', 'Jl. Yossudarso Gg. Amal', '082284844101', NULL, NULL, NULL),
-(5, 1, 'ROBERT HARAHAP, SH', '05', 'Jl. Utama Ujung', '085355235596', NULL, NULL, NULL),
-(6, 1, 'SUDIONO', '06', 'Jl. Mangkubumi Gg. Pelita Taqwa', '081365771274', NULL, NULL, NULL),
-(7, 2, 'SULARDI', '01', 'Jl. Berdikari', '082174261284', NULL, NULL, NULL),
-(8, 2, 'AGUS TRIONO', '02', 'Jl. Mangkubumi', '085213733741', NULL, NULL, NULL),
-(9, 2, 'AMIRUDDIN', '03', 'Jl. Berdikari Ujung  Gg. Pelita', '08126823970', NULL, NULL, NULL),
-(10, 3, 'ZULFAHMI', '01', 'Jl Tegal Sari I', '085278133030', NULL, NULL, NULL),
-(11, 3, 'SUYETNO', '02', 'Jl Tegal Sari II', '081261725692', NULL, NULL, NULL),
-(12, 3, 'ARIEF YUDI PURNOMO', '03', 'Jl Tegal Sari III', '082172546212', NULL, NULL, NULL),
-(13, 3, 'ASRIL TANJUNG', '04', 'Jl. Yossudarso', '085278930462', NULL, NULL, NULL),
-(14, 3, 'IRSAL', '05', 'Jl. Tegal Sari', '', NULL, NULL, NULL),
-(15, 3, 'PRAYITNO', '06', 'Jl. Berdikari Gg. Sersasi', '08127621769', NULL, NULL, NULL),
-(16, 4, 'YONKE, S.HUT', '01', 'Jl. Budi Sari', '085265242411', NULL, NULL, NULL),
-(17, 4, 'FREDY NASWANDI', '02', 'Jl. Budi Sari', '082169822475', NULL, NULL, NULL),
-(18, 4, 'MOCHAMAD SJAID', '03', 'Jl. Rowo Sari Gg. Rambutan', '081371583221', NULL, NULL, NULL),
-(19, 5, 'KARMAWADI SINAGA', '01', 'Jl. Tegal Sari Ujung Gg. Mekar Sari', '085265409323', NULL, NULL, NULL),
-(20, 5, 'KHARIMULLAH TAMBUNAN', '02', 'Jl. Berdikari Gg. Memori', '08127620839', NULL, NULL, NULL),
-(21, 5, 'MULIADI', '03', 'Jl. Berdikari Gg. Lestari', '081365736347', NULL, NULL, NULL),
-(22, 5, 'SURYA NIRWANA', '04', 'Jl. Tegal Sari Ujung Gg. Mekar Sari', '081371252540', NULL, NULL, NULL),
-(23, 5, 'PARWOTO', '05', 'Jl. Asparagas', '085271805418', NULL, NULL, NULL),
-(24, 6, 'JOKO WARGONO', '01', 'Jl. Taman Sari', '085364247734', NULL, NULL, NULL),
-(25, 6, 'INDRAHAYU, S.Sos', '02', 'Jl. Putih Sari', '', NULL, NULL, NULL),
-(26, 6, 'FULIDODO ZENDRATO, S.Ap', '03', 'Jl. Kencana Sari', '', NULL, NULL, NULL),
-(27, 7, 'ABI HURAIRA', '01', 'Jl.Pasir Sari', '085274520574', NULL, NULL, NULL),
-(28, 7, '', '02', 'Jl.Bukit Sari', '081276337155', NULL, NULL, NULL),
-(29, 7, '', '03', 'Jl.Bukit Sari', '082172250833', NULL, NULL, NULL),
-(30, 8, 'SUPARMAN', '01', 'Jl.Geso IV', '082384399555', NULL, NULL, NULL),
-(31, 8, 'NURMALA,S.pd', '02', 'Jl.Umban Sari Atas I', '082391381638', NULL, NULL, NULL),
-(32, 8, 'A.KHAIRI', '03', 'Jl.Geso V Gg.Toyosari', '081275354100', NULL, NULL, NULL),
-(33, 9, 'HAMDAN', '02', 'Jl.Datuk Panglima', '081371422026', NULL, NULL, NULL),
-(34, 9, 'SAHAT SAGALA', '03', 'Jl.Putih Pungguk', '082173071183', NULL, NULL, NULL),
-(35, 9, 'SYAFRIJON', '04', 'Jl.Gurindam XII', '081268121020', NULL, NULL, NULL),
-(36, 9, 'Drs.ISKANDAR', '05', 'Jl.Siak II Perum Guru Cendana', '081276079822', NULL, NULL, NULL),
-(37, 9, 'ZULHAM HARAHAP', '06', 'Jl.Padat Karya Perum. Griya Padat Karya', '081276139347', NULL, NULL, NULL),
-(38, 10, 'SUTRISNO', '01', 'Jl. Geso X', '085363555353', NULL, NULL, NULL),
-(39, 10, 'ROPAI', '02', 'Jl. Barito Sari', '08127616500', NULL, NULL, NULL),
-(40, 10, 'RIO HARDI', '03', 'Jl. Geso X', '087770195444', NULL, NULL, NULL),
-(41, 11, 'NINA NELMA YENTI, S.Pd', '01', 'Perum Aliyah Syifa', '', NULL, NULL, NULL),
-(42, 11, 'AL AS\'ARI', '02', 'Perum Aliyah Syifa', '081374761179', NULL, NULL, NULL),
-(43, 11, 'YUSNU WANDI', '03', 'Jl. Umban Sari Atas', '081365704402', NULL, NULL, NULL),
-(44, 11, 'RIANTO SITUMORANG', '04', 'Jl. Toba Sari', '082173110311', NULL, NULL, NULL),
-(45, 12, 'AGUS SAFAR, S.Pd', '01', 'Jl. Geso II', '08126827061', NULL, NULL, NULL),
-(46, 12, 'PUTRA ADIN MARDEKA', '02', 'Jl. Pasir Perum. Sidimaco', '08127647686', NULL, NULL, NULL),
-(47, 12, 'JUSWANDI', '03', 'Jl. Geso VI', '', NULL, NULL, NULL),
-(48, 12, 'ISKANDAR, S.Sos', '04', 'Jl. Patria Sari V', '081268107888', NULL, NULL, NULL),
-(49, 13, 'NISOM BUDIN', '01', 'Jl. Teratai Indah', '08127642723', NULL, NULL, NULL),
-(50, 13, 'NUR KHAMDI', '02', 'Jl. Umban Sari Atas Perum. PCR', '082387743715', NULL, NULL, NULL),
-(51, 13, 'MARTUJI', '03', 'Jl. Pintas Sari', '081378445164', NULL, NULL, NULL),
-(52, 13, 'SAUT HUTAGAOL', '04', 'Jl. Teratai Indah', '081283356484', NULL, NULL, NULL),
-(53, 13, 'ZULKIFLI. S', '05', 'Perum. Lancang Kuning Sejahtera', '08127630146', NULL, NULL, NULL),
-(54, 9, '', '01', '', '', NULL, NULL, NULL);
+INSERT INTO `rt` (`rt_id`, `rw_id`, `rt_nama`, `no_rt`, `alamat`, `no_tlp`, `rt_foto`, `tgl_jabat`, `tgl_akhir`, `status`) VALUES
+(1, 1, 'SAFRUDIN', '01', 'Jl. Utama No.01', '082172697643', NULL, NULL, NULL, NULL),
+(2, 1, 'SANDRA EVA KISMAYA', '02', 'Jl. Utama Gg. Anugerah', '082274261284', NULL, NULL, NULL, NULL),
+(3, 1, 'SUMADI, SH', '03', 'Jl. Mangkubumi Gg. Amal', '082288367595', NULL, NULL, NULL, NULL),
+(4, 1, 'ABDUL HALIM', '04', 'Jl. Yossudarso Gg. Amal', '082284844101', NULL, NULL, NULL, NULL),
+(5, 1, 'ROBERT HARAHAP, SH', '05', 'Jl. Utama Ujung', '085355235596', NULL, NULL, NULL, NULL),
+(6, 1, 'SUDIONO', '06', 'Jl. Mangkubumi Gg. Pelita Taqwa', '081365771274', NULL, NULL, NULL, NULL),
+(7, 2, 'SULARDI', '01', 'Jl. Berdikari', '082174261284', NULL, NULL, NULL, NULL),
+(8, 2, 'AGUS TRIONO', '02', 'Jl. Mangkubumi', '085213733741', NULL, NULL, NULL, NULL),
+(9, 2, 'AMIRUDDIN', '03', 'Jl. Berdikari Ujung  Gg. Pelita', '08126823970', NULL, NULL, NULL, NULL),
+(10, 3, 'ZULFAHMI', '01', 'Jl Tegal Sari I', '085278133030', NULL, NULL, NULL, NULL),
+(11, 3, 'SUYETNO', '02', 'Jl Tegal Sari II', '081261725692', NULL, NULL, NULL, NULL),
+(12, 3, 'ARIEF YUDI PURNOMO', '03', 'Jl Tegal Sari III', '082172546212', NULL, NULL, NULL, NULL),
+(13, 3, 'ASRIL TANJUNG', '04', 'Jl. Yossudarso', '085278930462', NULL, NULL, NULL, NULL),
+(14, 3, 'IRSAL', '05', 'Jl. Tegal Sari', '', NULL, NULL, NULL, NULL),
+(15, 3, 'PRAYITNO', '06', 'Jl. Berdikari Gg. Sersasi', '08127621769', NULL, NULL, NULL, NULL),
+(16, 4, 'YONKE, S.HUT', '01', 'Jl. Budi Sari', '085265242411', NULL, NULL, NULL, NULL),
+(17, 4, 'FREDY NASWANDI', '02', 'Jl. Budi Sari', '082169822475', NULL, NULL, NULL, NULL),
+(18, 4, 'MOCHAMAD SJAID', '03', 'Jl. Rowo Sari Gg. Rambutan', '081371583221', NULL, NULL, NULL, NULL),
+(19, 5, 'KARMAWADI SINAGA', '01', 'Jl. Tegal Sari Ujung Gg. Mekar Sari', '085265409323', NULL, NULL, NULL, NULL),
+(20, 5, 'KHARIMULLAH TAMBUNAN', '02', 'Jl. Berdikari Gg. Memori', '08127620839', NULL, NULL, NULL, NULL),
+(21, 5, 'MULIADI', '03', 'Jl. Berdikari Gg. Lestari', '081365736347', NULL, NULL, NULL, NULL),
+(22, 5, 'SURYA NIRWANA', '04', 'Jl. Tegal Sari Ujung Gg. Mekar Sari', '081371252540', NULL, NULL, NULL, NULL),
+(23, 5, 'PARWOTO', '05', 'Jl. Asparagas', '085271805418', NULL, NULL, NULL, NULL),
+(24, 6, 'JOKO WARGONO', '01', 'Jl. Taman Sari', '085364247734', NULL, NULL, NULL, NULL),
+(25, 6, 'INDRAHAYU, S.Sos', '02', 'Jl. Putih Sari', '', NULL, NULL, NULL, NULL),
+(26, 6, 'FULIDODO ZENDRATO, S.Ap', '03', 'Jl. Kencana Sari', '', NULL, NULL, NULL, NULL),
+(27, 7, 'ABI HURAIRA', '01', 'Jl.Pasir Sari', '085274520574', NULL, NULL, NULL, NULL),
+(28, 7, '', '02', 'Jl.Bukit Sari', '081276337155', NULL, NULL, NULL, NULL),
+(29, 7, '', '03', 'Jl.Bukit Sari', '082172250833', NULL, NULL, NULL, NULL),
+(30, 8, 'SUPARMAN', '01', 'Jl.Geso IV', '082384399555', NULL, NULL, NULL, NULL),
+(31, 8, 'NURMALA,S.pd', '02', 'Jl.Umban Sari Atas I', '082391381638', NULL, NULL, NULL, NULL),
+(32, 8, 'A.KHAIRI', '03', 'Jl.Geso V Gg.Toyosari', '081275354100', NULL, NULL, NULL, NULL),
+(33, 9, 'HAMDAN', '02', 'Jl.Datuk Panglima', '081371422026', NULL, NULL, NULL, NULL),
+(34, 9, 'SAHAT SAGALA', '03', 'Jl.Putih Pungguk', '082173071183', NULL, NULL, NULL, NULL),
+(35, 9, 'SYAFRIJON', '04', 'Jl.Gurindam XII', '081268121020', NULL, NULL, NULL, NULL),
+(36, 9, 'Drs.ISKANDAR', '05', 'Jl.Siak II Perum Guru Cendana', '081276079822', NULL, NULL, NULL, NULL),
+(37, 9, 'ZULHAM HARAHAP', '06', 'Jl.Padat Karya Perum. Griya Padat Karya', '081276139347', NULL, NULL, NULL, NULL),
+(38, 10, 'SUTRISNO', '01', 'Jl. Geso X', '085363555353', NULL, NULL, NULL, NULL),
+(39, 10, 'ROPAI', '02', 'Jl. Barito Sari', '08127616500', NULL, NULL, NULL, NULL),
+(40, 10, 'RIO HARDI', '03', 'Jl. Geso X', '087770195444', NULL, NULL, NULL, NULL),
+(41, 11, 'NINA NELMA YENTI, S.Pd', '01', 'Perum Aliyah Syifa', '', NULL, NULL, NULL, NULL),
+(42, 11, 'AL AS\'ARI', '02', 'Perum Aliyah Syifa', '081374761179', NULL, NULL, NULL, NULL),
+(43, 11, 'YUSNU WANDI', '03', 'Jl. Umban Sari Atas', '081365704402', NULL, NULL, NULL, NULL),
+(44, 11, 'RIANTO SITUMORANG', '04', 'Jl. Toba Sari', '082173110311', NULL, NULL, NULL, NULL),
+(45, 12, 'AGUS SAFAR, S.Pd', '01', 'Jl. Geso II', '08126827061', NULL, NULL, NULL, NULL),
+(46, 12, 'PUTRA ADIN MARDEKA', '02', 'Jl. Pasir Perum. Sidimaco', '08127647686', NULL, NULL, NULL, NULL),
+(47, 12, 'JUSWANDI', '03', 'Jl. Geso VI', '', NULL, NULL, NULL, NULL),
+(48, 12, 'ISKANDAR, S.Sos', '04', 'Jl. Patria Sari V', '081268107888', NULL, NULL, NULL, NULL),
+(49, 13, 'NISOM BUDIN', '01', 'Jl. Teratai Indah', '08127642723', NULL, NULL, NULL, NULL),
+(50, 13, 'NUR KHAMDI', '02', 'Jl. Umban Sari Atas Perum. PCR', '082387743715', NULL, NULL, NULL, NULL),
+(51, 13, 'MARTUJI', '03', 'Jl. Pintas Sari', '081378445164', NULL, NULL, NULL, NULL),
+(52, 13, 'SAUT HUTAGAOL', '04', 'Jl. Teratai Indah', '081283356484', NULL, NULL, NULL, NULL),
+(53, 13, 'ZULKIFLI. S', '05', 'Perum. Lancang Kuning Sejahtera', '08127630146', NULL, NULL, NULL, NULL),
+(54, 9, '', '01', '', '', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -599,29 +689,30 @@ CREATE TABLE `rw` (
   `rw_nama` varchar(50) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `no_tlp` varchar(50) DEFAULT NULL,
-  `rw_foto` varchar(50) DEFAULT NULL,
-  `periode` varchar(50) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL
+  `rw_foto` varchar(50) DEFAULT 'default.png',
+  `tgl_jabat` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL,
+  `status` varchar(50) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `rw`
 --
 
-INSERT INTO `rw` (`rw_id`, `no_rw`, `rw_nama`, `alamat`, `no_tlp`, `rw_foto`, `periode`, `status`) VALUES
-(1, '01', 'M. ALPARADI, M.Pd', 'Jl. Mangkubumi Gg. Pelita Taqwa', '085278685650', NULL, NULL, NULL),
-(2, '02', 'RIMANTO', 'Jl. Mangkubumi', '081267059976', NULL, NULL, NULL),
-(3, '03', 'AFRIZAL,M.SH', 'Jl. Tegal Sari III No.7', '082386917956', NULL, NULL, NULL),
-(4, '04', 'SURIADIATMO', 'Jl. Umban Sari', '081365056588', NULL, NULL, NULL),
-(5, '05', 'SYOPIAR, M.BSc', 'Jl. Tegal Sari Ujung Komp. BTN', '081371047762', NULL, NULL, NULL),
-(6, '06', 'M. ZAM', 'Jl. Purnama Sari', '081268433699', NULL, NULL, NULL),
-(7, '07', 'FULIDO ZENDRATO,S.Ap', 'Jl.Pasir Sari', '081275425259', NULL, NULL, NULL),
-(8, '08', 'SUTARTO', 'Jl.Toyo Sari', '081266184640', NULL, NULL, NULL),
-(9, '09', 'YULISMANAR', 'Jl.Padat Karya', '08127514456', NULL, NULL, NULL),
-(10, '10', 'MARYULIS', 'Jl.Geso X', '085271712414', NULL, NULL, NULL),
-(11, '11', 'RIO MASROHANI', 'Perum Aliyah Syifa', '085355241999', NULL, NULL, NULL),
-(12, '12', 'FULIDODO ZENDRATO, S.Ap', 'Jl. Flamboyan', '', NULL, NULL, NULL),
-(13, '13', 'SARIDI', 'Jl. Teratai Indah', '085365843382', NULL, NULL, NULL);
+INSERT INTO `rw` (`rw_id`, `no_rw`, `rw_nama`, `alamat`, `no_tlp`, `rw_foto`, `tgl_jabat`, `tgl_akhir`, `status`) VALUES
+(1, '01', 'M. ALPARADI, M.Pd', 'Jl. Mangkubumi Gg. Pelita Taqwa', '085278685650', 'default.png', '0000-00-00', NULL, NULL),
+(2, '02', 'RIMANTO', 'Jl. Mangkubumi', '081267059976', NULL, '0000-00-00', NULL, NULL),
+(3, '03', 'AFRIZAL,M.SH', 'Jl. Tegal Sari III No.7', '082386917956', NULL, '0000-00-00', NULL, NULL),
+(4, '04', 'SURIADIATMO', 'Jl. Umban Sari', '081365056588', NULL, '0000-00-00', NULL, NULL),
+(5, '05', 'SYOPIAR, M.BSc', 'Jl. Tegal Sari Ujung Komp. BTN', '081371047762', NULL, '0000-00-00', NULL, NULL),
+(6, '06', 'M. ZAM', 'Jl. Purnama Sari', '081268433699', NULL, '0000-00-00', NULL, NULL),
+(7, '07', 'FULIDO ZENDRATO,S.Ap', 'Jl.Pasir Sari', '081275425259', NULL, '0000-00-00', NULL, NULL),
+(8, '08', 'SUTARTO', 'Jl.Toyo Sari', '081266184640', NULL, '0000-00-00', NULL, NULL),
+(9, '09', 'YULISMANAR', 'Jl.Padat Karya', '08127514456', NULL, '0000-00-00', NULL, NULL),
+(10, '10', 'MARYULIS', 'Jl.Geso X', '085271712414', NULL, '0000-00-00', NULL, NULL),
+(11, '11', 'RIO MASROHANI', 'Perum Aliyah Syifa', '085355241999', NULL, '0000-00-00', NULL, NULL),
+(12, '12', 'FULIDODO ZENDRATO, S.Ap', 'Jl. Flamboyan', '', NULL, '0000-00-00', NULL, NULL),
+(13, '13', 'SARIDI', 'Jl. Teratai Indah', '085365843382', NULL, '0000-00-00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -634,10 +725,18 @@ CREATE TABLE `saprsarana` (
   `sprjns_id` int(10) NOT NULL,
   `spr_name` varchar(100) NOT NULL,
   `spr_kondisi` varchar(100) NOT NULL,
-  `spr_kd_invetaris` varchar(100) NOT NULL,
-  `spr_quantity` int(50) NOT NULL,
+  `spr_kd_invetaris` varchar(100) DEFAULT NULL,
+  `spr_lokasi` varchar(255) DEFAULT NULL,
   `spr_gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `saprsarana`
+--
+
+INSERT INTO `saprsarana` (`spr_id`, `sprjns_id`, `spr_name`, `spr_kondisi`, `spr_kd_invetaris`, `spr_lokasi`, `spr_gambar`) VALUES
+(1, 2, 'Politeknik Caltex Riau', 'Baik', NULL, 'Jln. Umban Sari no.1', 'default.png'),
+(2, 1, 'ks', 'Baik', NULL, 'jln. umbansari', 'tech.jpg');
 
 -- --------------------------------------------------------
 
@@ -647,8 +746,17 @@ CREATE TABLE `saprsarana` (
 
 CREATE TABLE `spr_jenis` (
   `sprjns_id` int(10) NOT NULL,
-  `sprjns_name` int(10) NOT NULL
+  `sprjns_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `spr_jenis`
+--
+
+INSERT INTO `spr_jenis` (`sprjns_id`, `sprjns_name`) VALUES
+(1, 'Kesehatan'),
+(2, 'Pendidikan'),
+(3, 'Tempat Ibadah');
 
 -- --------------------------------------------------------
 
@@ -731,8 +839,16 @@ CREATE TABLE `umkm` (
   `nama_usaha` varchar(255) NOT NULL,
   `id_kat` int(11) NOT NULL,
   `alamat` text NOT NULL,
-  `foto_produk` varchar(255) NOT NULL
+  `foto_produk` varchar(255) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `umkm`
+--
+
+INSERT INTO `umkm` (`id_umkm`, `no_nib`, `nama_owner`, `nama_usaha`, `id_kat`, `alamat`, `foto_produk`) VALUES
+(1, '123', 'saya', 'kamu', 2, 'Jalan patria sari', 'default.png'),
+(2, '321', 'kamu', 'saya', 3, 'jln. paus no.1', 'unknown.jpg');
 
 -- --------------------------------------------------------
 
@@ -744,6 +860,15 @@ CREATE TABLE `umkm_kat` (
   `id_kat` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `umkm_kat`
+--
+
+INSERT INTO `umkm_kat` (`id_kat`, `nama`) VALUES
+(1, 'Mikro'),
+(2, 'Kecil'),
+(3, 'Menengah');
 
 -- --------------------------------------------------------
 
@@ -816,7 +941,10 @@ ALTER TABLE `jns_asuransi`
 ALTER TABLE `kelahiran`
   ADD PRIMARY KEY (`klhrn_id`),
   ADD KEY `klhrn_plpr_pkrj` (`plpr_pekerjaan`),
-  ADD KEY `klhrn_sks_pkrj` (`sks_pekerjaan`);
+  ADD KEY `klhrn_sks_pkrj` (`sks1_pekerjaan`),
+  ADD KEY `klhrn_ibu_pkrj` (`klhrn_ibu_pekerjaan`),
+  ADD KEY `klhrn_ayah_pkrj` (`klhrn_ayah_pekerjaan`),
+  ADD KEY `klhrn_sks2_pkrj` (`sks2_pekerjaan`);
 
 --
 -- Indexes for table `kematian`
@@ -825,8 +953,9 @@ ALTER TABLE `kematian`
   ADD PRIMARY KEY (`kmtn_id`),
   ADD KEY `kmtn_pkrj` (`kmtn_pekerjaan`),
   ADD KEY `kmtn_plpr_pkrj` (`plpr_pekerjaan`),
-  ADD KEY `kmtn_sks_pkrj` (`sks_pekerjaan`),
-  ADD KEY `kmtn_agm` (`kmtn_agama`);
+  ADD KEY `kmtn_sks_pkrj` (`sks1_pekerjaan`),
+  ADD KEY `kmtn_agm` (`kmtn_agama`),
+  ADD KEY `kmtn_sks2_pkrj` (`sks2_pekerjaan`);
 
 --
 -- Indexes for table `komentar`
@@ -978,13 +1107,13 @@ ALTER TABLE `agama`
 -- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `ag_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `ag_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `brt_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `brt_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `galeri`
@@ -997,6 +1126,12 @@ ALTER TABLE `galeri`
 --
 ALTER TABLE `gol_darah`
   MODIFY `goldr_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `jns_asuransi`
+--
+ALTER TABLE `jns_asuransi`
+  MODIFY `jnsasn_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kelahiran`
@@ -1059,16 +1194,22 @@ ALTER TABLE `rt`
   MODIFY `rt_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
+-- AUTO_INCREMENT for table `rw`
+--
+ALTER TABLE `rw`
+  MODIFY `rw_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `saprsarana`
 --
 ALTER TABLE `saprsarana`
-  MODIFY `spr_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `spr_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `spr_jenis`
 --
 ALTER TABLE `spr_jenis`
-  MODIFY `sprjns_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `sprjns_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sts_hub_kel`
@@ -1092,13 +1233,13 @@ ALTER TABLE `tipe`
 -- AUTO_INCREMENT for table `umkm`
 --
 ALTER TABLE `umkm`
-  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_umkm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `umkm_kat`
 --
 ALTER TABLE `umkm_kat`
-  MODIFY `id_kat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -1120,8 +1261,11 @@ ALTER TABLE `berita`
 -- Constraints for table `kelahiran`
 --
 ALTER TABLE `kelahiran`
+  ADD CONSTRAINT `klhrn_ayah_pkrj` FOREIGN KEY (`klhrn_ayah_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
+  ADD CONSTRAINT `klhrn_ibu_pkrj` FOREIGN KEY (`klhrn_ibu_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
   ADD CONSTRAINT `klhrn_plpr_pkrj` FOREIGN KEY (`plpr_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
-  ADD CONSTRAINT `klhrn_sks_pkrj` FOREIGN KEY (`sks_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
+  ADD CONSTRAINT `klhrn_sks1_pkrj` FOREIGN KEY (`sks1_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
+  ADD CONSTRAINT `klhrn_sks2_pkrj` FOREIGN KEY (`sks2_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
 
 --
 -- Constraints for table `kematian`
@@ -1130,7 +1274,8 @@ ALTER TABLE `kematian`
   ADD CONSTRAINT `kmtn_agm` FOREIGN KEY (`kmtn_agama`) REFERENCES `agama` (`agm_id`),
   ADD CONSTRAINT `kmtn_pkrj` FOREIGN KEY (`kmtn_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
   ADD CONSTRAINT `kmtn_plpr_pkrj` FOREIGN KEY (`plpr_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
-  ADD CONSTRAINT `kmtn_sks_pkrj` FOREIGN KEY (`sks_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
+  ADD CONSTRAINT `kmtn_sks1_pkrj` FOREIGN KEY (`sks1_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`),
+  ADD CONSTRAINT `kmtn_sks2_pkrj` FOREIGN KEY (`sks2_pekerjaan`) REFERENCES `pekerjaan` (`pkrj_id`);
 
 --
 -- Constraints for table `komentar`
@@ -1163,7 +1308,7 @@ ALTER TABLE `pengaduan`
 -- Constraints for table `rt`
 --
 ALTER TABLE `rt`
-  ADD CONSTRAINT `rt_ibfk_1` FOREIGN KEY (`rw_id`) REFERENCES `rw` (`rw_id`);
+  ADD CONSTRAINT `fk_rt_rw_id` FOREIGN KEY (`rw_id`) REFERENCES `rw` (`rw_id`);
 
 --
 -- Constraints for table `saprsarana`
