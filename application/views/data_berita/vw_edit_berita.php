@@ -40,6 +40,7 @@
                              <div class="row">
                                  <div class="col-6">
                                      <label for="example-tel-input" class="form-control-label">Gambar</label>
+                                     <img src="<?= base_url('/assets/img/berita/') . $berita['brt_gambar'] ?>" style="width: 100px" class="img-thumbnail">
                                      <div class="custom-file">
                                          <input type="file" name="brt_gambar" class="custom-file-input" id="customFileLang" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>

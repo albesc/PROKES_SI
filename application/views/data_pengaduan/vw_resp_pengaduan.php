@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
                                     <label class="custom-control-label" for="customCheck1">Ditampilkan</label>
                                 </div>
                             </div>
