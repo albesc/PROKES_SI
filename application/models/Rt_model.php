@@ -25,6 +25,14 @@ class Rt_model extends CI_Model
         $query = $this->db->get();
         return $query->row_array();
     }
+
+    public function getByRw($rw_id){
+        $this->db->select('rt.*');
+        $this->db->from('rt');
+        $this->db->where('rt.rw_id', $rw_id);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
     
     public function update($where, $data)
     {

@@ -16,6 +16,8 @@ class Role_Petugas extends CI_Controller
         $this->load->model('Kelahiran_model');
         $this->load->model('Kematian_model');
         $this->load->model('Pindahdomisili_model');
+        $this->load->model('Rw_model');
+        $this->load->model('Rt_model');
     }
 
     public function index()

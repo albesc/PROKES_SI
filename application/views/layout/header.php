@@ -35,7 +35,7 @@
                     <!-- Nav items -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas'); ?>">
                                 <i class="fas fa-tv text-primary"></i>
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
@@ -46,68 +46,68 @@
                                 <span class="nav-link-text">Data Penduduk</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <a class="nav-link" href="<?= site_url('role_petugas/penduduk'); ?>">
+                                <a class="nav-link" href="<?= site_url('Role_petugas/Penduduk'); ?>">
                                     <i class="fas fa-user text-primary"></i>
                                     <span class="nav-link-text">Data Penduduk</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('role_petugas/kelahiran'); ?>">
+                                <a class="nav-link" href="<?= site_url('Role_petugas/Kelahiran'); ?>">
                                     <i class="fas fa-user-plus text-primary"></i>
                                     <span class="nav-link-text">Data Kelahiran</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('role_petugas/kematian'); ?>">
+                                <a class="nav-link" href="<?= site_url('Role_petugas/Kematian'); ?>">
                                     <i class="fas fa-user-minus text-primary"></i>
                                     <span class="nav-link-text">Data Kematian</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('role_petugas/pindahdomisili'); ?>">
+                                <a class="nav-link" href="<?= site_url('Role_petugas/Pindahdomisili'); ?>">
                                     <i class="fas fa-people-carry text-primary"></i>
                                     <span class="nav-link-text">Data Pindah Domisili</span>
                                 </a>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/berita'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Berita'); ?>">
                                 <i class="fas fa-newspaper text-primary"></i>
                                 <span class="nav-link-text">Berita</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/galeri'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Galeri'); ?>">
                                 <i class="far fa-image text-primary"></i>
                                 <span class="nav-link-text">Galeri</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/pengaduan'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Pengaduan'); ?>">
                                 <i class="fas fa-bullhorn text-primary"></i>
                                 <span class="nav-link-text">Pengaduan</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/agenda'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Agenda'); ?>">
                                 <i class="fas fa-calendar text-primary"></i>
                                 <span class="nav-link-text">Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/rtrw'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Rw'); ?>">
                                 <i class="fas fa-user text-primary"></i>
                                 <span class="nav-link-text">RT & RW</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/sapras'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Sapras'); ?>">
                                 <i class="fas fa-building text-primary"></i>
                                 <span class="nav-link-text">Sarana & Prasarana</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/umkm'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Umkm'); ?>">
                                 <i class="fas fa-store text-primary"></i>
                                 <span class="nav-link-text">UMKM</span>
                             </a>
                         </li>
                         <!-- <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('role_petugas/pooling'); ?>">
+                            <a class="nav-link" href="<?= site_url('Role_petugas/Pooling'); ?>">
                                 <i class="ni ni-single-copy-04 text-primary"></i>
                                 <span class="nav-link-text">Laporan Polling</span>
                             </a>

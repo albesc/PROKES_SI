@@ -21,7 +21,7 @@
                         <div class="card-header border-0">
                             <div class="row">
                                 <div class="col-sm-7">
-                                    <a href="<?= site_url('Rtrw/add_rw'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                    <a href="<?= site_url('Rw/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                                 <div class="col-sm-2">
                                     <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
@@ -54,29 +54,37 @@
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="media-body">
-                                                <span>1</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            01
-                                        </td>
-                                        <td>
-                                            Bambang
-                                        </td>
-                                        <td>
-                                            250
-                                        </td>
-                                        <td>
-                                            250
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="<?= site_url('Rtrw/detail_rw'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                            <a href="<?= site_url('Rtrw/edit_rw'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($rw as $r) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media-body">
+                                                    <span><?= $i ?></span>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <?= $r['no_rw'] ?>
+                                            </td>
+                                            <td>
+                                                <?= $r['rw_nama'] ?>
+                                            </td>
+                                            <td>
+                                                250
+                                            </td>
+                                            <td>
+                                                250
+                                            </td>
+                                            <td class="text-right">
+                                                <a href="<?= site_url('Rw/detail/') . $r['rw_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Rw/edit/') . $r['rw_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
