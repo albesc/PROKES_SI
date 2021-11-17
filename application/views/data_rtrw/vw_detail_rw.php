@@ -27,7 +27,7 @@
                 <div class="card-body pt-7">
                     <div class="text-center">
                         <h5 class="h3">
-                            <?= $rw['rw_nama'] ?><span class="font-weight-light">, 27</span>
+                            <?= $rw['rw_nama'] ?>
                         </h5>
                         <div class="h5 font-weight-300">
                             <i class="ni location_pin mr-2"></i>Ketua RW
@@ -119,32 +119,34 @@
                             <?php
                             $i = 1;
                             foreach ($rt as $r) {
+                                if ($rw['rw_id'] == $r['rw_id']) {
                             ?>
-                                <tr>
-                                    <th scope="row">
-                                        <div class="media-body">
-                                            <span><?= $i ?></span>
-                                        </div>
-                                    </th>
-                                    <td>
-                                        <?= $r['no_rt'] ?>
-                                    </td>
-                                    <td>
-                                        <?= $r['rt_nama'] ?>
-                                    </td>
-                                    <td>
-                                        250
-                                    </td>
-                                    <td>
-                                        250
-                                    </td>
-                                    <td class="text-right">
-                                        <a href="<?= site_url('Rt/detail/') . $r['rt_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                        <a href="<?= site_url('Rt/edit/') . $r['rt_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <div class="media-body">
+                                                <span><?= $i ?></span>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <?= $r['no_rt'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $r['rt_nama'] ?>
+                                        </td>
+                                        <td>
+                                            250
+                                        </td>
+                                        <td>
+                                            250
+                                        </td>
+                                        <td class="text-right">
+                                            <a href="<?= site_url('Rt/detail/') . $r['rt_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                            <a href="<?= site_url('Rt/edit/') . $r['rt_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                        </td>
+                                    </tr>
                             <?php
-                                $i++;
+                                    $i++;
+                                }
                             }
                             ?>
                         </tbody>

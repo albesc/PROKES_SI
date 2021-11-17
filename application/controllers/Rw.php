@@ -106,7 +106,7 @@ class Rw extends CI_Controller
         $data['judul'] = "Detail RW";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['rw'] = $this->Rw_model->getById($rw_id);
-        $data['rt'] = $this->Rt_model->getByRw($rw_id);
+        $data['rt'] = $this->Rt_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_detail_rw", $data);
         $this->load->view("layout/footer", $data);

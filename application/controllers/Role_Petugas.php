@@ -10,6 +10,7 @@ class Role_Petugas extends CI_Controller
         $this->load->model('Pengaduan_model');
         $this->load->model('Berita_model');
         $this->load->model('Agenda_model');
+        $this->load->model('Galeri_model');
         $this->load->model('Sapras_model');
         $this->load->model('Umkm_model');
         $this->load->model('Umkm_kat_model');
