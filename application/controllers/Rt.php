@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Rw extends CI_Controller
+class Rt extends CI_Controller
 {
     public function __construct()
     {
@@ -15,15 +15,16 @@ class Rw extends CI_Controller
     {
         $data['judul'] = "Halaman RT";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['rt'] = $this->Rw_model->get();
+        $data['rt'] = $this->Rt_model->get();
         $this->load->view("layout/header", $data);
-        $this->load->view("data_rtrw/vw_detail_rw", $data);
+        $this->load->view("data_rtrw/vw_detail_rt", $data);
         $this->load->view("layout/footer", $data);
     }
 
-    public function add()
+    public function add($rw_id)
     {
         $data['judul'] = "Tambah RT";
+        $data['rw_id'] = $rw_id;
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_add_rt", $data);
@@ -39,7 +40,6 @@ class Rw extends CI_Controller
             'no_tlp' => $this->input->post('no_tlp'),
             'tgl_jabat' => $this->input->post('tgl_jabat'),
             'tgl_akhir' => $this->input->post('tgl_akhir'),
-            'rw_id' => $this->input->post('rw_id'),
         ];
         $upload_image = $_FILES['rt_foto']['name'];
         if ($upload_image) {
@@ -56,14 +56,15 @@ class Rw extends CI_Controller
         }
 
         $this->Rt_model->insert($data, $upload_image);
-        redirect("Rw/detail/", $data['rw_id']);
+        redirect("Rw");
     }
 
     public function edit($rt_id)
     {
         $data['judul'] = "Edit RT";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['rt'] = $this->Rw_model->getById($rt_id);
+        $data['rt'] = $this->Rt_model->getById($rt_id);
+        $data['rw'] = $this->Rw_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_edit_rt", $data);
         $this->load->view("layout/footer", $data);
@@ -72,8 +73,8 @@ class Rw extends CI_Controller
     public function update()
     {
         $data = [
-            'no_rw' => $this->input->post('no_rw'),
-            'rw_nama' => $this->input->post('rw_nama'),
+            'no_rt' => $this->input->post('no_rt'),
+            'rt_nama' => $this->input->post('rt_nama'),
             'alamat' => $this->input->post('alamat'),
             'no_tlp' => $this->input->post('no_tlp'),
             'tgl_jabat' => $this->input->post('tgl_jabat'),
@@ -98,15 +99,16 @@ class Rw extends CI_Controller
         }
 
         $id = $this->input->post('rt_id');
-        $this->Rw_model->update(['rt_id' => $id], $data, $upload_image);
-        redirect("Rt/detail/", $data['rw_id']);
+        $this->Rt_model->update(['rt_id' => $id], $data, $upload_image);
+        redirect("Rw");
     }
 
     public function detail($rt_id)
     {
         $data['judul'] = "Detail RT";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['rt'] = $this->Rw_model->getById($rt_id);
+        $data['rt'] = $this->Rt_model->getById($rt_id);
+        $data['rw'] = $this->Rw_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_detail_rt", $data);
         $this->load->view("layout/footer", $data);

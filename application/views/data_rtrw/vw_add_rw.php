@@ -20,8 +20,8 @@
                      <!-- Card header -->
                      <div class="card-header border-0">
                          <form action="<?= base_url('Rw/upload'); ?>" method="post" enctype="multipart/form-data">
-                         <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
-                         <h6><br></h6>
+                             <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-2">
                                      <div class="form-group">
@@ -68,9 +68,9 @@
                                  <div class="col-5">
                                      <label for="example-tel-input" class="form-control-label">Foto Ketua RW</label>
                                      <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="rw_foto" id="gambar">
-                                        <label class="custom-file-label" for="rw_foto">Select file</label>
-                                    </div>
+                                         <input type="file" class="custom-file-input" name="rw_foto" id="gambar">
+                                         <label class="custom-file-label" for="rw_foto">Select file</label>
+                                     </div>
                                  </div>
                              </div>
                          </form>

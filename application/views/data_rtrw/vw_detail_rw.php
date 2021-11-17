@@ -98,7 +98,7 @@
                             <h3 class="mb-0">List RT</h3>
                         </div>
                         <div class="col-3">
-                            <a href="<?= site_url('Rt/add'); ?>" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                            <a href="<?= site_url('Rt/add/') . $rw['rw_id']; ?>" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                         </div>
                     </div>
                 </div>
