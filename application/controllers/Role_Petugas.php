@@ -23,10 +23,13 @@ class Role_Petugas extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "Dashboard";
-        $this->load->view('layout/header', $data);
-        $this->load->view('vw_dashboard', $data);
-        $this->load->view('layout/footer', $data);
+        $data['tpndk'] = $this->Penduduk_model->tpenduduk();
+        $data['tpgdn'] = $this->Pengaduan_model->tpengaduan();
+        $data['tsprs'] = $this->Sapras_model->tsapras();
+        $data['tumkm'] = $this->Umkm_model->tumkm();
+        $this->load->view("layout/header", $data);
+        $this->load->view("vw_dashboard", $data);
+        $this->load->view("layout/footer", $data);
     }
 
     public function penduduk()
@@ -138,15 +141,6 @@ class Role_Petugas extends CI_Controller
         $data['umkm_kat'] = $this->Umkm_kat_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_umkm/vw_umkm', $data);
-        $this->load->view('layout/footer', $data);
-    }
-
-    public function pooling()
-    {
-        $data['judul'] = "Data Pooling";
-        // $data['p_byJk'] = $this->Pooling_model->getByJK();
-        $this->load->view('layout/header', $data);
-        $this->load->view('data_pooling/vw_pooling', $data);
         $this->load->view('layout/footer', $data);
     }
 }

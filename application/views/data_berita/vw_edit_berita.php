@@ -20,6 +20,8 @@
                      <!-- Card header -->
                      <div class="card-header border-0">
                          <form action="<?= base_url('Berita/update'); ?>" method="post" enctype="multipart/form-data">
+                             <button type="submit" name="Edit" class="btn btn-sm btn-primary">Edit</button>
+                             <h6><br></h6>
                              <input class="form-control" type="hidden" name="brt_id" value="<?= $berita['brt_id']; ?>">
                              <div class="row">
                                  <div class="col-4">
@@ -45,12 +47,6 @@
                                          <input type="file" name="brt_gambar" class="custom-file-input" id="customFileLang" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>
                                      </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <button type="submit" name="Edit" class="btn btn-primary">Edit</but>
                                  </div>
                              </div>
                          </form>

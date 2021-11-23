@@ -17,15 +17,16 @@ class Sapras_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
-    
-    public function getById($spr_id){
+
+    public function getById($spr_id)
+    {
         $this->db->select('saprsarana.*');
         $this->db->from('saprsarana');
         $this->db->where('saprsarana.spr_id', $spr_id);
         $query = $this->db->get();
         return $query->row_array();
     }
-    
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);
@@ -43,5 +44,12 @@ class Sapras_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
         return $this->db->affected_rows();
+    }
+
+    public function tsapras()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 }

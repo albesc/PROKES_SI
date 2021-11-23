@@ -31,53 +31,6 @@ class Auth extends CI_Controller
         }
     }
 
-    function registrasi()
-    {
-        if ($this->session->userdata('email')) {
-            redirect('Role_Lurah');
-        }
-        $this->form_validation->set_rules('fullname', 'Fullname', 'required|trim', [
-            'required' => 'Fullname Wajib di isi'
-        ]);
-        $this->form_validation->set_rules('username', 'Username', 'required|trim', [
-            'required' => 'Username Wajib di isi'
-        ]);
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.usr_email]', [
-            'is_unique' => 'Email ini sudah terdaftar!',
-            'valid_email' => 'Email Harus Valid',
-            'required' => 'Email Wajib di isi'
-        ]);
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[5]', [
-            'matches' => 'Password Tidak Sama',
-            'min_length' => 'Password Terlalu Pendek',
-            'required' => 'Password harus diisi'
-        ]);
-        if ($this->form_validation->run() == false) {
-            $data['title'] = 'Registration';
-            $this->load->view('layout/auth_header', $data);
-            $this->load->view('auth/registrasi');
-            $this->load->view('layout/auth_footer');
-        } else {
-            $data = [
-                'usr_name' => htmlspecialchars($this->input->post('username', true)),
-                'usr_email' => htmlspecialchars($this->input->post('email', true)),
-                'usr_pass' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-                'usr_fullname' => htmlspecialchars($this->input->post('fullname', true)),
-                'status' => 1,
-                'rl_id' => 2,
-            ];
-            if ($this->userm->insert($data)) {
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Selamat! Akunmu telah berhasil terdaftar, Silahkan Login! </div>');
-                redirect('auth');
-            } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-                Maaf! Akunmu gagal terdaftar, Silahkan daftar kembali! </div>');
-                redirect('auth/registrasi');
-            }
-        }
-    }
-
     function cek_login()
     {
         $email = $this->input->post('email');
