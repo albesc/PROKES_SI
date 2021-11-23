@@ -6,17 +6,20 @@ class Penduduk_model extends CI_Model
     public $table = 'penduduk';
     public $pndk_id = 'penduduk.pndk_id';
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    public function get(){
+    public function get()
+    {
         $this->db->from($this->table);
         $query = $this->db->get();
         return $query->result_array();
     }
 
-    public function getById($pndk_id){
+    public function getById($pndk_id)
+    {
         $this->db->select('penduduk.*, rw.no_rw as rw, rt.no_rt as rt, agama.agm_ket as agama, gol_darah.goldr_ket as gol_darah, 
         pendidikan.pnd_ket as pendidikan, pekerjaan.pkrj_ket as pekerjaan, sts_hub_kel.sts_hub_ket as sts_hub_kel, 
         sts_pernikahan.stspnkn_ket as sts_pernikahan');
@@ -51,5 +54,12 @@ class Penduduk_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
         return $this->db->affected_rows();
+    }
+
+    public function tpenduduk()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 }

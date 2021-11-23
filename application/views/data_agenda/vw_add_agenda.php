@@ -20,6 +20,8 @@
                      <!-- Card header -->
                      <div class="card-header border-0">
                          <form action="<?= base_url('Agenda/upload'); ?>" method="post" enctype="multipart/form-data">
+                             <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
@@ -46,11 +48,6 @@
                                      <div class="form-group">
                                          <textarea class="form-control" name="ag_ket" id="exampleFormControlTextarea1" rows="5"></textarea>
                                      </div>
-                                 </div>
-                             </div>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <button type="submit" name="Tambah" class="btn btn-primary">Tambah</button>
                                  </div>
                              </div>
                          </form>

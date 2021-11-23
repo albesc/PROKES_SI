@@ -20,6 +20,8 @@
                      <!-- Card header -->
                      <div class="card-header border-0">
                          <form action="<?= base_url('Berita/upload'); ?>" method="post" enctype="multipart/form-data">
+                             <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
@@ -43,12 +45,6 @@
                                          <input type="file" class="custom-file-input" name="brt_gambar" id="gambar" lang="en">
                                          <label class="custom-file-label" for="brt_gambar">Select file</label>
                                      </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <button type="submit" name="Tambah" class="btn btn-primary">Tambah</butto>
                                  </div>
                              </div>
                          </form>

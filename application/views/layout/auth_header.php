@@ -50,11 +50,6 @@
                             <span class="nav-link-inner--text">Login</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('auth/registrasi') ?>" class="nav-link">
-                            <span class="nav-link-inner--text">Register</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

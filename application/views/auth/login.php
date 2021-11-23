@@ -45,14 +45,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-6">
-                        <a href="#" class="text-light"><small>Lupa Password?</small></a>
-                    </div>
-                    <div class="col-6 text-right">
-                        <a href="<?= base_url('auth/registrasi') ?>" class="text-light"><small>Buat Akun</small></a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
