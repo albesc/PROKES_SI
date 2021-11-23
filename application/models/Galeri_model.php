@@ -18,14 +18,15 @@ class Galeri_model extends CI_Model
         return $query->result_array();
     }
 
-    public function getById($gal_id){
+    public function getById($brt_id)
+    {
         $this->db->select('galeri.*');
         $this->db->from('galeri');
-        $this->db->where('galeri.gal_id', $gal_id);
+        $this->db->where('galeri.gal_id', $brt_id);
         $query = $this->db->get();
         return $query->row_array();
     }
-    
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);

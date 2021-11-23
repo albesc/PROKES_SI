@@ -19,42 +19,28 @@
                  <div class="card">
                      <!-- Card header -->
                      <div class="card-header border-0">
-                         <form>
+                         <form action="<?= base_url('Galeri/update'); ?>" method="post">
+                             <input class="form-control" type="hidden" name="gal_id" value="<?= $galeri['gal_id']; ?>">
+                             <button type="submit" name="Edit" class="btn btn-primary btn-sm">Edit</button>
+                             <h6><br></h6>
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Judul Galeri</label>
-                                         <input class="form-control" type="text" id="example-text-input">
+                                         <input class="form-control" type="text" name="gal_title" value="<?= $galeri['gal_title']; ?>">
                                      </div>
                                  </div>
                                  <div class="col-4">
                                      <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">URL</label>
-                                         <input class="form-control" type="text" id="example-text-input">
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="row">
-                                 <div class="col-12">
-                                     <label for="example-tel-input" class="form-control-label">Keterangan</label><br>
-                                     <div class="form-group">
-                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                                         <label for="example-tel-input" class="form-control-label">Jenis</label>
+                                         <input class="form-control" type="text" name="gal_jns" value="<?= $galeri['gal_jns']; ?>">
                                      </div>
                                  </div>
                              </div>
                              <div class="row">
                                  <div class="col-6">
-                                     <label for="example-tel-input" class="form-control-label">Gambar</label>
-                                     <div class="custom-file">
-                                         <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                                         <label class="custom-file-label" for="customFileLang">Select file</label>
-                                     </div>
-                                 </div>
-                             </div>
-                             <br>
-                             <div class="row">
-                                 <div class="col-3">
-                                     <a href="" class="btn btn-primary">Edit</a>
+                                     <label for="example-tel-input" class="form-control-label">URL</label><br>
+                                     <input class="form-control" type="text" name="gal_url" value="<?= $galeri['gal_url']; ?>">
                                  </div>
                              </div>
                          </form>
