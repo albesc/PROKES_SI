@@ -19,14 +19,14 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-username">Nama Kepala Keluarga</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="Kepala Keluarga" value="">
+                                        <label class="form-control-label" for="input-first-name">Nama Kepala Keluarga</label>
+                                        <input type="text" name="klhrn_kepala_keluarga" class="form-control" placeholder="Nama Kepala Keluarga">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nomor Kartu Keluarga</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NKK" value="">
+                                        <input type="text" id="klhrn_nokk" class="form-control" placeholder="NKK">
                                     </div>
                                 </div>
                             </div>
@@ -38,38 +38,38 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <input type="text" id="klhrn_nama" class="form-control" placeholder="Nama">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="example-tel-input" class="form-control-label">Jenis Kelamin</label><br>
+                                    <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
+                                        <input type="radio" id="html" name="klhrn_jk" value="Laki-laki">
+                                        <label for="html">Laki-laki</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
+                                        <input type="radio" id="html" name="klhrn_jk" value="perempuan">
+                                        <label for="html">Perempuan</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Tempat Dilahirkan</label>
+                                        <label class="form-control-label" for="klhrn_tmpt_dilahirkan">Tempat Dilahirkan</label>
                                         <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>RS/RB</option>
-                                            <option>Puskesmas</option>
-                                            <option>Polindes</option>
-                                            <option>Rumah</option>
-                                            <option>Lainnya</option>
+                                            <option value="RS/RB">RS/RB</option>
+                                            <option value="Puskesmas">Puskesmas</option>
+                                            <option value="Polindes">Polindes</option>
+                                            <option value="Rumah">Rumah</option>
+                                            <option value="Lainnya">Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-first-name">Tempat Kelahiran</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat kelahiran" value="">
+                                        <label class="form-control-label" for="input-email">Tempat Dilahirkan</label>
+                                        <input type="text" id="klhrn_tmpt_dilahirkan" class="form-control" placeholder="Tempat Kelahiran">
                                     </div>
                                 </div>
                             </div>
@@ -77,19 +77,19 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Hari Kelahiran</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="hari" value="">
+                                        <input type="text" id="tidakadavariabel" class="form-control" placeholder="Hari Kelahiran">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Kelahiran</label>
-                                        <input class="form-control" type="date" id="example-date-input">
+                                        <input class="form-control" type="date" id="klhrn_tgl_lahir">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-time-input" class="form-control-label">Pukul</label>
-                                        <input class="form-control" type="time" value="Pukul" id="example-time-input">
+                                        <input class="form-control" type="time" id="klhrn_pkl_lahir">
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Kelahiran ke</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="1" value="">
+                                        <input type="text" id="klhrn_ke" class="form-control" placeholder="Kelahiran ke">
                                     </div>
                                 </div>
                                 <div class="col-4">
