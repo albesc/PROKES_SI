@@ -34,6 +34,7 @@ class Rt extends CI_Controller
     public function upload()
     {
         $data = [
+            'rw_id' => $this->input->post('rw_id'),
             'no_rt' => $this->input->post('no_rt'),
             'rt_nama' => $this->input->post('rt_nama'),
             'alamat' => $this->input->post('alamat'),
