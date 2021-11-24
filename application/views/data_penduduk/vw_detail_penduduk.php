@@ -241,7 +241,14 @@
                                 <div class="col-lg-5">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-email">Umur</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $penduduk['pndk_umur'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            $thn = date_format(date_create($penduduk['pndk_tgl_lahir']), "Y");
+                                            $thnNow = date("Y");
+                                            $age = $thnNow - $thn;
+                                            echo $age;
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                             </div>

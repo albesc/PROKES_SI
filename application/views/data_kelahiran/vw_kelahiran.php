@@ -46,8 +46,8 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <td scope="col" class="sort" data-sort="id">No</td>
-                                        <td scope="col" class="sort" data-sort="nik">NIK Penduduk</td>
-                                        <td scope="col" class="sort" data-sort="nama">Nama Penduduk</td>
+                                        <td scope="col" class="sort" data-sort="nik">Nomor KK</td>
+                                        <td scope="col" class="sort" data-sort="nama">Nama</td>
                                         <td scope="col">Jenis Kelamin</td>
                                         <td scope="col" class="sort" data-sort="asal">Tempat Lahir</td>
                                         <td scope="col"></td>
@@ -55,38 +55,34 @@
                                 </thead>
                                 <tbody class="list">
                                     <?php
-                                    // $i = 1;
-                                    // foreach ($penduduk as $p) {
+                                    $i = 1;
+                                    foreach ($kelahiran as $k) {
                                     ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="media-body">
-                                                    <span class="name mb-0 text-sm">1</span>
+                                                    <span class="name mb-0 text-sm"><?= $i ?></span>
                                                 </div>
                                             </th>
-                                            <td class="budget">
-                                                123
+                                            <td>
+                                                <?= $k['klhrn_nokk'] ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status">tes</span>
-                                                </span>
+                                            <?= $k['klhrn_nama'] ?>
                                             </td>
                                             <td>
-                                               Laki-Laki
+                                                <?= $k['klhrn_jk'] ?>
                                             </td>
                                             <td>
-                                                <div class="d-flex align-items-center">
-                                                    <span class="completion mr-2">PKU</span>
-                                                </div>
+                                            <?= $k['klhrn_tmpt_kelahiran'] ?>
                                             </td>
                                             <td class="text-right">
-                                                <a href="<?= site_url('kelahiran/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="<?= site_url('kelahiran/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                                <a href="<?= site_url('Kelahiran/detail/') . $k['klhrn_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Kelahiran/edit/') . $k['klhrn_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
-                                    <?php //$i++;
-                                    //} ?>
+                                    <?php $i++;
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>

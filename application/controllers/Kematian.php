@@ -6,30 +6,28 @@ class Kematian extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $this->load->model('Kematian_model');
+        $this->load->model('Kematian_model');
+        $this->load->model('Agama_model');
+        $this->load->model('Pekerjaan_model');
+    }
+
+    function index()
+    {
+        $data['judul'] = "Halaman Kelahiran";
+        // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['kematian'] = $this->Kematian_model->get();
+        $this->load->view("layout/header", $data);
+        $this->load->view("data_kematian/vw_kematian", $data);
+        $this->load->view("layout/footer", $data);
     }
 
     public function add()
     {
         $data['judul'] = "Tambah Kematian";
+        $data['agama'] = $this->Agama_model->get();
+        $data['pekerjaan'] = $this->Pekerjaan_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_kematian/vw_add_kematian', $data);
-        $this->load->view('layout/footer', $data);
-    }
-
-    public function edit()
-    {
-        $data['judul'] = "Edit Kematian";
-        $this->load->view('layout/header', $data);
-        $this->load->view('data_kematian/vw_edit_kematian', $data);
-        $this->load->view('layout/footer', $data);
-    }
-
-    public function detail()
-    {
-        $data['judul'] = "Detail Kematian";
-        $this->load->view('layout/header', $data);
-        $this->load->view('data_kematian/vw_detail_kematian', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -81,6 +79,17 @@ class Kematian extends CI_Controller
         redirect("Kematian");
     }
 
+    public function edit($kmtn_id)
+    {
+        $data['judul'] = "Edit Kematian";
+        $data['kematian'] = $this->Kematian_model->getById($kmtn_id);
+        $data['agama'] = $this->Agama_model->get();
+        $data['pekerjaan'] = $this->Pekerjaan_model->get();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_kematian/vw_edit_kematian', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
     public function update()
     {
         $data = [
@@ -128,5 +137,16 @@ class Kematian extends CI_Controller
         $id = $this->input->post('kmtn_id');
         $this->Kematian_model->update(['kmtn_id' => $id], $data);
         redirect("Kematian");
+    }
+
+    public function detail($kmtn_id)
+    {
+        $data['judul'] = "Detail Kematian";
+        $data['kematian'] = $this->Kematian_model->getById($kmtn_id);
+        $data['agama'] = $this->Agama_model->get();
+        $data['pekerjaan'] = $this->Pekerjaan_model->get();
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_kematian/vw_detail_kematian', $data);
+        $this->load->view('layout/footer', $data);
     }
 }
