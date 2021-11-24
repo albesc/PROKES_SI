@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kematian_model extends CI_Model
+class Permohonanpindah_model extends CI_Model
 {
-    public $table = 'kematian';
-    public $id = 'kematian.kmtn_id';
+    public $table = 'permohonan_pindah';
+    public $id = 'permohonan_pindah.prmhn_id';
 
     public function __construct()
     {
@@ -18,10 +18,10 @@ class Kematian_model extends CI_Model
         return $query->result_array();
     }
     
-    public function getById($kmtn_id){
-        $this->db->select('kematian.*');
-        $this->db->from('kematian');
-        $this->db->where('kematian.kmtn_id', $kmtn_id);
+    public function getById($prmhn_id){
+        $this->db->select('permohonan_pindah.*');
+        $this->db->from('permohonan_pindah');
+        $this->db->where('permohonan_pindah.prmhn_id', $prmhn_id);
         $query = $this->db->get();
         return $query->row_array();
     }
