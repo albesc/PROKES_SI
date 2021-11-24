@@ -13,7 +13,7 @@ class Kematian extends CI_Controller
 
     function index()
     {
-        $data['judul'] = "Halaman Kelahiran";
+        $data['judul'] = "Halaman Kematian";
         // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kematian'] = $this->Kematian_model->get();
         $this->load->view("layout/header", $data);
@@ -34,6 +34,9 @@ class Kematian extends CI_Controller
     public function upload()
     {
         $data = [
+            'desa_kelurahan' => $this->input->post('desa_kelurahan'),
+            'kecamatan' => $this->input->post('kecamatan'),
+            'kabupaten_kota' => $this->input->post('kabupaten_kota'),
             'kmtn_kepala_keluarga' => $this->input->post('kmtn_kepala_keluarga'),
             'kmtn_nokk' => $this->input->post('kmtn_nokk'),
             'kmtn_nik' => $this->input->post('kmtn_nik'),
