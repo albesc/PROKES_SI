@@ -16,7 +16,7 @@ class Role_Petugas extends CI_Controller
         $this->load->model('Umkm_kat_model');
         $this->load->model('Kelahiran_model');
         $this->load->model('Kematian_model');
-        $this->load->model('Pindahdomisili_model');
+        $this->load->model('Permohonanpindah_model');
         $this->load->model('Rw_model');
         $this->load->model('Rt_model');
     }
@@ -60,12 +60,12 @@ class Role_Petugas extends CI_Controller
         $this->load->view('layout/footer', $data);
     }
 
-    public function pindahdomisili()
+    public function permohonanpindah()
     {
         $data['judul'] = "Data Pindah Domisili";
-        $data['pindahdomisili'] = $this->Pindahdomisili_model->get();
+        $data['permohonanpindah'] = $this->Permohonanpindah_model->get();
         $this->load->view('layout/header', $data);
-        $this->load->view('data_pindahdomisili/vw_pindahdomisili', $data);
+        $this->load->view('data_permohonanpindah/vw_permohonanpindah', $data);
         $this->load->view('layout/footer', $data);
     }
 

@@ -58,9 +58,9 @@
                                     <i class="fas fa-user-minus text-primary"></i>
                                     <span class="nav-link-text">Data Kematian</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('Role_petugas/Pindahdomisili'); ?>">
+                                <a class="nav-link" href="<?= site_url('Role_petugas/Permohonanpindah'); ?>">
                                     <i class="fas fa-people-carry text-primary"></i>
-                                    <span class="nav-link-text">Data Pindah Domisili</span>
+                                    <span class="nav-link-text">Data Permohonan Pindah</span>
                                 </a>
                             </ul>
                         </li>
