@@ -7,26 +7,44 @@
                         <div class="col-8">
                             <h3 class="mb-0">Tambah Data Kematian </h3>
                         </div>
-                        <div class="col-4 text-right">
-                            <a href="#!" class="btn btn-sm btn-primary">Tambah</a>
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
-                        <h6 class="heading-small text-muted mb-4">Informasi Kematian</h6>
+                    <form action="<?= base_url('Kematian/upload'); ?>" method="post" enctype="multipart/form-data">
+                        <button type="submit" name="Tambah" class="btn btn-sm btn-primary">Tambah</button>
+                        <h6 class="heading-small text-muted mb-4"><br>Informasi Kematian</h6>
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Kelurahan</label>
+                                        <input type="text" name="desa_kelurahan" class="form-control" placeholder="Desa / Kelurahan">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="kecamatan" class="form-control" placeholder="Kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Kabupaten / Kota</label>
+                                        <input type="text" name="kabupaten_kota" class="form-control" placeholder="Kabupaten / Kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nama Kepala Keluarga</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="Kepala Keluarga" value="">
+                                        <input type="text" id="input-username" name="kmtn_kepala_keluarga" class="form-control" placeholder="Kepala Keluarga" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nomor Kepala Keluarga</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NKK" value="">
+                                        <input type="text" id="input-username" name="kmtn_nokk" class="form-control" placeholder="NKK" value="">
                                     </div>
                                 </div>
                             </div>
@@ -37,26 +55,26 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">NIK</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nik" value="">
+                                        <label class="form-control-label" for="input-text">NIK</label>
+                                        <input type="text" id="input-text" name="kmtn_nik" class="form-control" placeholder="nik" value="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" name="kmtn_nama" class="form-control" placeholder="nama" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="example-tel-input" class="form-control-label">Jenis Kelamin</label><br>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                        <input type="radio" id="customRadioInline1" name="kmtn_jk" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                        <input type="radio" id="customRadioInline2" name="kmtn_jk" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
                                     </div>
                                 </div>
@@ -65,73 +83,95 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="kmtn_tgl_lahir">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Tempat Lahir</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat lahir" value="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Agama</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>islam</option>
-                                            <option></option>
-                                        </select>
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat lahir" name="kmtn_tmpt_lahir">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="kmtn_agama ">Agama</label>
+                                        <select class="form-control" name="kmtn_agama">
+                                            <?php foreach ($agama as $r) : ?>
+                                                <option value="<?= $r['agm_id']; ?>"><?= $r['agm_ket']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_pekerjaan ">Pekerjaan</label>
+                                        <select class="form-control" name="kmtn_pekerjaan ">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="kmtn_alamat">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_provinsi">Provinsi</label>
+                                        <input type="text" name="kmtn_provinsi" class="form-control" placeholder="provinsi" name="kmtn_provinsi">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Anak ke</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="1" value="">
+                                        <label class="form-control-label" for="kmtn_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="kmtn_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_kecamatan">Kecamatan</label>
+                                        <input type="text" name="kmtn_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_desakelurahan">Desa / Lurah</label>
+                                        <input type="text" name="kmtn_desakelurahan" class="form-control" placeholder="desa / lurah">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_anak_ke">Anak ke</label>
+                                        <input type="text" id="input-first-name" name="kmtn_anak_ke" class="form-control" placeholder="1" value="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Kematian</label>
-                                        <input class="form-control" type="date" id="example-date-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="kmtn_tgl_mati">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-time-input" class="form-control-label">Pukul</label>
-                                        <input class="form-control" type="time" value="Pukul" id="example-time-input">
+                                        <input class="form-control" type="time" value="Pukul" id="example-time-input" name="kmtn_pkl_mati">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Sebab Kematian</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <label class="form-control-label" for="kmtn_sebab_mati">Sebab Kematian</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="kmtn_sebab_mati">
                                             <option>Sakit biasa / tua</option>
                                             <option>Wabah Penyakit</option>
                                             <option>Kecelakaan</option>
@@ -144,13 +184,13 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Tempat Kematian</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat kematian" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="tempat kematian" name="kmtn_tempat_mati">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Yang menerangkan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <label class="form-control-label" for="kmtn_yg_menerangkan">Yang menerangkan</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="kmtn_yg_menerangkan">
                                             <option>Dokter</option>
                                             <option>Tenaga Kesehatan</option>
                                             <option>Lainnya</option>
@@ -167,44 +207,67 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" id="input-username" name="kmtn_ayah_nik" class="form-control" placeholder="NIK">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" class="form-control" placeholder="nama" name="kmtn_ayah_nama">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="kmtn_ayah_tanggal_lahir">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="kmtn_ayah_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="kmtn_ayah_pekerjaan">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="kmtn_ayah_alamat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="klhrn_ibu_alamat_provinsi">Provinsi</label>
+                                        <input type="text" name="kmtn_ayah_alamat_provinsi" class="form-control" placeholder="provinsi">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="klhrn_ibu_alamat_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="kmtn_ayah_alamat_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="kmtn_ayah_alamat_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Lurah</label>
+                                        <input type="text" name="kmtn_ayah_alamat_desakelurahan" class="form-control" placeholder="desa / lurah">
                                     </div>
                                 </div>
                             </div>
@@ -217,44 +280,67 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" name="kmtn_ibu_nik">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" class="form-control" placeholder="nama" name="kmtn_ibu_nama">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="kmtn_ibu_tanggal_lahir">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="kmtn_ibu_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="kmtn_ibu_pekerjaan">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="kmtn_ibu_alamat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_ibu_alamat_provinsi">Provinsi</label>
+                                        <input type="text" name="kmtn_ibu_alamat_provinsi" class="form-control" placeholder="provinsi">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="kmtn_ibu_alamat_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="kmtn_ibu_alamat_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="kmtn_ibu_alamat_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Lurah</label>
+                                        <input type="text" name="kmtn_ibu_alamat_desakelurahan" class="form-control" placeholder="desa / lurah">
                                     </div>
                                 </div>
                             </div>
@@ -267,44 +353,67 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" name="plpr_nik">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" class="form-control" placeholder="nama" name="plpr_fullname">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="plpr_tgl_lahir">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="plpr_pekerjaan ">Pekerjaan</label>
+                                        <select class="form-control" name="plpr_pekerjaan ">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="plpr_alamat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="plpr_alamat_provinsi">Provinsi</label>
+                                        <input type="text" name="plpr_alamat_provinsi" class="form-control" placeholder="provinsi">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="plpr_alamat_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="plpr_alamat_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="plpr_alamat_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Lurah</label>
+                                        <input type="text" name="plpr_alamat_desakelurahan" class="form-control" placeholder="desa / lurah">
                                     </div>
                                 </div>
                             </div>
@@ -317,44 +426,67 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" name="sks1_nik">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" class="form-control" placeholder="nama" name="sks1_fullname">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="sks1_tgl_lahir">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="sks1_pekerjaan ">Pekerjaan</label>
+                                        <select class="form-control" name="sks1_pekerjaan ">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="sks1_alamat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="klhrn_ibu_alamat_provinsi">Provinsi</label>
+                                        <input type="text" name="sks1_alamat_provinsi" class="form-control" placeholder="provinsi">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="klhrn_ibu_alamat_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="sks1_alamat_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="sks1_alamat_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Lurah</label>
+                                        <input type="text" name="sks1_alamat_desakelurahan" class="form-control" placeholder="desa / lurah">
                                     </div>
                                 </div>
                             </div>
@@ -367,44 +499,67 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK</label>
-                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" id="input-username" class="form-control" placeholder="NIK" name="sks2_nik">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Nama</label>
-                                        <input type="email" id="input-email" class="form-control" placeholder="nama" value="">
+                                        <label class="form-control-label" for="input-text">Nama</label>
+                                        <input type="text" id="input-text" class="form-control" placeholder="nama" name="sks2_fullname">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Tanggal Lahir</label>
-                                        <input class="form-control" type="date" id="example-date-input">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group">
-                                        <label for="example-number-input" class="form-control-label">Umur</label>
-                                        <input class="form-control" type="number" value="23" id="example-number-input">
+                                        <input class="form-control" type="date" id="example-date-input" name="sks2_tgl_lahir">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Wiraswasta</option>
-                                            <option></option>
+                                        <label class="form-control-label" for="sks2_pekerjaan ">Pekerjaan</label>
+                                        <select class="form-control" name="sks2_pekerjaan ">
+                                            <?php foreach ($pekerjaan as $r) : ?>
+                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" id="input-first-name" class="form-control" placeholder="alamat" name="sks2_alamat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="sks2_alamat_provinsi">Provinsi</label>
+                                        <input type="text" name="sks2_alamat_provinsi" class="form-control" placeholder="provinsi">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="sks2_alamat_kabupatenkota">Kabupaten / Kota</label>
+                                        <input type="text" name="sks2_alamat_kabupatenkota" class="form-control" placeholder="kabupaten / kota">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Kecamatan</label>
+                                        <input type="text" name="sks2_alamat_kecamatan" class="form-control" placeholder="kecamatan">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Desa / Lurah</label>
+                                        <input type="text" name="sks2_alamat_desakelurahan" class="form-control" placeholder="desa / lurah">
                                     </div>
                                 </div>
                             </div>

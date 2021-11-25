@@ -363,20 +363,20 @@
                                                                             echo "selected";
                                                                         } ?>>Cacat Fisik</option>
                                             <option value="Cacat Netra/Buta" <?php if ($penduduk['pndk_cacat'] == "Cacat Netra/Buta") {
-                                                                            echo "selected";
-                                                                        } ?>>Cacat Netra/Buta</option>
+                                                                                    echo "selected";
+                                                                                } ?>>Cacat Netra/Buta</option>
                                             <option value="Cacat Rungu/Wicara" <?php if ($penduduk['pndk_cacat'] == "Cacat Rungu/Wicara") {
-                                                                            echo "selected";
-                                                                        } ?>>Cacat Rungu/Wicara</option>
+                                                                                    echo "selected";
+                                                                                } ?>>Cacat Rungu/Wicara</option>
                                             <option value="Cacat Mental/Jiwa" <?php if ($penduduk['pndk_cacat'] == "Cacat Mental/Jiwa") {
-                                                                            echo "selected";
-                                                                        } ?>>Cacat Mental/Jiwa</option>
+                                                                                    echo "selected";
+                                                                                } ?>>Cacat Mental/Jiwa</option>
                                             <option value="Cacat Fisik dan Mental" <?php if ($penduduk['pndk_cacat'] == "Cacat Fisik dan Mental") {
-                                                                            echo "selected";
-                                                                        } ?>>Cacat Fisik dan Mental</option>
+                                                                                        echo "selected";
+                                                                                    } ?>>Cacat Fisik dan Mental</option>
                                             <option value="Cacat Lainnya" <?php if ($penduduk['pndk_cacat'] == "Cacat Lainnya") {
-                                                                            echo "selected";
-                                                                        } ?>>Cacat Lainnya</option>
+                                                                                echo "selected";
+                                                                            } ?>>Cacat Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -462,8 +462,8 @@
                                         <select class="form-control" name="rt_id">
                                             <?php foreach ($rt as $r) : ?>
                                                 <option value="<?= $r['rt_id']; ?>" <?php if ($penduduk['rt_id'] == $r['rt_id']) {
-                                                                                            echo "selected";
-                                                                                        } ?>><?= $r['no_rt']; ?></option>
+                                                                                        echo "selected";
+                                                                                    } ?>><?= $r['no_rt']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -474,8 +474,8 @@
                                         <select class="form-control" name="rw_id">
                                             <?php foreach ($rw as $r) : ?>
                                                 <option value="<?= $r['rw_id']; ?>" <?php if ($penduduk['rw_id'] == $r['rw_id']) {
-                                                                                            echo "selected";
-                                                                                        } ?>><?= $r['no_rw']; ?></option>
+                                                                                        echo "selected";
+                                                                                    } ?>><?= $r['no_rw']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

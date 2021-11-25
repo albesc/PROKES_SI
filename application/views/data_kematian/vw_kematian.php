@@ -55,38 +55,38 @@
                                 </thead>
                                 <tbody class="list">
                                     <?php
-                                    // $i = 1;
-                                    // foreach ($penduduk as $p) {
+                                    $i = 1;
+                                    foreach ($kematian as $k) {
                                     ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="media-body">
-                                                    <span class="name mb-0 text-sm">1</span>
+                                                    <span class="name mb-0 text-sm"><?= $i ?></span>
                                                 </div>
                                             </th>
                                             <td class="budget">
-                                                123
+                                                <?= $k['kmtn_nik'] ?>
                                             </td>
                                             <td>
                                                 <span class="badge badge-dot mr-4">
-                                                    <span class="status">tes</span>
+                                                    <span class="status"><?= $k['kmtn_nama'] ?></span>
                                                 </span>
                                             </td>
                                             <td>
-                                               Laki-Laki
+                                                <?= $k['kmtn_jk'] ?>
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <span class="completion mr-2">PKU</span>
+                                                    <span class="completion mr-2"><?= $k['kmtn_tmpt_lahir'] ?></span>
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <a href="<?= site_url('kematian/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="<?= site_url('kematian/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                                <a href="<?= site_url('kematian/detail/') . $k['kmtn_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('kematian/edit/') . $k['kmtn_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
-                                    <?php //$i++;
-                                    //} ?>
+                                    <?php $i++;
+                                    } ?>
                                 </tbody>
                             </table>
                         </div>
