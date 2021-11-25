@@ -21,7 +21,7 @@
                         <div class="card-header border-0">
                             <div class="row">
                                 <div class="col-sm-7">
-                                    <a href="<?= site_url('pindahdomisili/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+                                    <a href="<?= site_url('Permohonanpindah/add'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah</a>
                                 </div>
                                 <div class="col-sm-2">
                                     <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
@@ -48,45 +48,46 @@
                                         <td scope="col" class="sort" data-sort="id">No</td>
                                         <td scope="col" class="sort" data-sort="nik">NIK Penduduk</td>
                                         <td scope="col" class="sort" data-sort="nama">Nama Penduduk</td>
-                                        <td scope="col">Jenis Kelamin</td>
-                                        <td scope="col" class="sort" data-sort="asal">Tempat Lahir</td>
+                                        <td scope="col">Alamat</td>
+                                        <td scope="col" class="sort" data-sort="asal">Alamat Pindah</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="list">
                                     <?php
-                                    // $i = 1;
-                                    // foreach ($penduduk as $p) {
+                                    $i = 1;
+                                    foreach ($permohonanpindah as $p) {
                                     ?>
                                         <tr>
                                             <th scope="row">
                                                 <div class="media-body">
-                                                    <span class="name mb-0 text-sm">1</span>
+                                                    <span class="name mb-0 text-sm"><?= $i ?></span>
                                                 </div>
                                             </th>
                                             <td class="budget">
-                                                123
+                                                <?= $p['nik_pemohon'] ?>
                                             </td>
                                             <td>
                                                 <span class="badge badge-dot mr-4">
-                                                    <span class="status">tes</span>
+                                                    <span class="status"><?= $p['nama_lengkap'] ?></span>
                                                 </span>
                                             </td>
                                             <td>
-                                               Laki-Laki
+                                                <?= $p['alamat'] ?>
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <span class="completion mr-2">PKU</span>
+                                                    <span class="completion mr-2"><?= $p['alamat_tujuan_pindah'] ?></span>
                                                 </div>
                                             </td>
                                             <td class="text-right">
-                                                <a href="<?= site_url('pindahdomisili/detail'); ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
-                                                <a href="<?= site_url('pindahdomisili/edit'); ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
+                                                <a href="<?= site_url('Permohonanpindah/detail/') . $p['prmhn_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
+                                                <a href="<?= site_url('Permohonanpindah/edit/') . $p['prmhn_id']; ?>" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
                                             </td>
                                         </tr>
-                                    <?php //$i++;
-                                    //} ?>
+                                    <?php $i++;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

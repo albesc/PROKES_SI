@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 06:09 AM
+-- Generation Time: Nov 25, 2021 at 08:34 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.4.20
 
@@ -103,12 +103,18 @@ INSERT INTO `berita` (`brt_id`, `usr_id`, `status`, `brt_kd`, `brt_judul`, `brt_
 
 CREATE TABLE `galeri` (
   `gal_id` int(10) NOT NULL,
-  `hal_title` varchar(100) NOT NULL,
+  `gal_title` varchar(100) NOT NULL,
   `gal_url` text NOT NULL,
-  `gal_gambar` varchar(100) NOT NULL,
-  `gal_date` date NOT NULL,
-  `gal_ket` text NOT NULL
+  `gal_date` date NOT NULL DEFAULT current_timestamp(),
+  `gal_jns` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galeri`
+--
+
+INSERT INTO `galeri` (`gal_id`, `gal_title`, `gal_url`, `gal_date`, `gal_jns`) VALUES
+(1, 'Google', 'https://www.google.com/', '2021-11-24', 'Browser');
 
 -- --------------------------------------------------------
 
@@ -165,75 +171,82 @@ INSERT INTO `jns_asuransi` (`jnsasn_id`, `jnsasn_ket`) VALUES
 --
 
 CREATE TABLE `kelahiran` (
-  `desa_kelurahan` varchar(255) NOT NULL,
-  `kecamatan` varchar(255) NOT NULL,
-  `kabupaten_kota` varchar(255) NOT NULL,
+  `desa_kelurahan` varchar(255) DEFAULT NULL,
+  `kecamatan` varchar(255) DEFAULT NULL,
+  `kabupaten_kota` varchar(255) DEFAULT NULL,
   `klhrn_id` int(11) NOT NULL,
-  `klhrn_kepala_keluarga` varchar(255) NOT NULL,
-  `klhrn_nokk` varchar(50) NOT NULL,
-  `klhrn_nama` varchar(255) NOT NULL,
-  `klhrn_jk` varchar(255) NOT NULL,
-  `klhrn_tmpt_dilahirkan` int(11) NOT NULL,
-  `klhrn_tmpt_kelahiran` varchar(255) NOT NULL,
-  `klhrn_tgl_lahir` date NOT NULL,
-  `klhrn_pkl_lahir` time NOT NULL,
-  `klhrn_jns_klmn_detail` int(11) NOT NULL,
-  `klhrn_ke` int(11) NOT NULL,
-  `klhrn_penolong` int(11) NOT NULL,
-  `klhrn_berat` int(11) NOT NULL,
-  `klhrn_panjang` int(11) NOT NULL,
-  `klhrn_ibu_nik` int(100) NOT NULL,
-  `klhrn_ibu_nama` varchar(255) NOT NULL,
-  `klhrn_ibu_tgl_lahir` date NOT NULL,
-  `klhrn_ibu_pekerjaan` int(5) NOT NULL,
-  `klhrn_ibu_alamat` varchar(255) NOT NULL,
-  `klhrn_ibu_alamat_desakelurahan` varchar(255) NOT NULL,
-  `klhrn_ibu_alamat_kecamatan` varchar(255) NOT NULL,
-  `klhrn_ibu_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `klhrn_ibu_alamat_provinsi` varchar(255) NOT NULL,
-  `klhrn_ibu_kewarganegaraan` int(1) NOT NULL,
-  `klhrn_ibu_kebangsaan` varchar(255) NOT NULL,
-  `klhrn_ibu_tgl_catat_kawin` date NOT NULL,
-  `klhrn_ayah_nik` int(100) NOT NULL,
-  `klhrn_ayah_nama` varchar(255) NOT NULL,
-  `klhrn_ayah_tgl_lahir` date NOT NULL,
-  `klhrn_ayah_pekerjaan` int(5) NOT NULL,
-  `klhrn_ayah_alamat` varchar(255) NOT NULL,
-  `klhrn_ayah_alamat_desakelurahan` varchar(255) NOT NULL,
-  `klhrn_ayah_alamat_kecamatan` varchar(255) NOT NULL,
-  `klhrn_ayah_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `klhrn_ayah_alamat_provinsi` varchar(255) NOT NULL,
-  `klhrn_ayah_kewarganegaraan` int(1) NOT NULL,
-  `klhrn_ayah_kebangsaan` varchar(255) NOT NULL,
-  `plpr_nik` bigint(16) NOT NULL,
-  `plpr_fullname` varchar(255) NOT NULL,
-  `plpr_umur` int(10) NOT NULL,
-  `plpr_jk` varchar(255) NOT NULL,
-  `plpr_pekerjaan` int(5) NOT NULL,
-  `plpr_alamat` varchar(255) NOT NULL,
-  `plpr_alamat_desakelurahan` varchar(255) NOT NULL,
-  `plpr_alamat_kecamatan` varchar(255) NOT NULL,
-  `plpr_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `plpr_alamat_provinsi` varchar(255) NOT NULL,
-  `sks1_nik` bigint(16) NOT NULL,
-  `sks1_fullname` varchar(255) NOT NULL,
-  `sks1_umur` int(10) NOT NULL,
-  `sks1_pekerjaan` int(5) NOT NULL,
-  `sks1_alamat` varchar(255) NOT NULL,
-  `sks1_alamat_desakelurahan` varchar(255) NOT NULL,
-  `sks1_alamat_kecamatan` varchar(255) NOT NULL,
-  `sks1_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `sks1_alamat_provinsi` varchar(255) NOT NULL,
-  `sks2_nik` bigint(16) NOT NULL,
-  `sks2_fullname` varchar(255) NOT NULL,
-  `sks2_umur` int(10) NOT NULL,
-  `sks2_pekerjaan` int(5) NOT NULL,
-  `sks2_alamat` varchar(255) NOT NULL,
-  `sks2_alamat_desakelurahan` varchar(255) NOT NULL,
-  `sks2_alamat_kecamatan` varchar(255) NOT NULL,
-  `sks2_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `sks2_alamat_provinsi` varchar(255) NOT NULL
+  `klhrn_kepala_keluarga` varchar(255) DEFAULT NULL,
+  `klhrn_nokk` varchar(50) DEFAULT NULL,
+  `klhrn_nama` varchar(255) DEFAULT NULL,
+  `klhrn_jk` varchar(255) DEFAULT NULL,
+  `klhrn_tmpt_dilahirkan` int(11) DEFAULT NULL,
+  `klhrn_tmpt_kelahiran` varchar(255) DEFAULT NULL,
+  `klhrn_tgl_lahir` date DEFAULT NULL,
+  `klhrn_pkl_lahir` time DEFAULT NULL,
+  `klhrn_jns_klmn_detail` int(11) DEFAULT NULL,
+  `klhrn_ke` int(11) DEFAULT NULL,
+  `klhrn_penolong` int(11) DEFAULT NULL,
+  `klhrn_berat` int(11) DEFAULT NULL,
+  `klhrn_panjang` int(11) DEFAULT NULL,
+  `klhrn_ibu_nik` int(100) DEFAULT NULL,
+  `klhrn_ibu_nama` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_tgl_lahir` date DEFAULT NULL,
+  `klhrn_ibu_pekerjaan` int(5) DEFAULT NULL,
+  `klhrn_ibu_alamat` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_kewarganegaraan` int(1) DEFAULT NULL,
+  `klhrn_ibu_kebangsaan` varchar(255) DEFAULT NULL,
+  `klhrn_ibu_tgl_catat_kawin` date DEFAULT NULL,
+  `klhrn_ayah_nik` int(100) DEFAULT NULL,
+  `klhrn_ayah_nama` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_tgl_lahir` date DEFAULT NULL,
+  `klhrn_ayah_pekerjaan` int(5) DEFAULT NULL,
+  `klhrn_ayah_alamat` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `klhrn_ayah_kewarganegaraan` int(1) DEFAULT NULL,
+  `klhrn_ayah_kebangsaan` varchar(255) DEFAULT NULL,
+  `plpr_nik` bigint(16) DEFAULT NULL,
+  `plpr_fullname` varchar(255) DEFAULT NULL,
+  `plpr_umur` int(10) DEFAULT NULL,
+  `plpr_jk` varchar(255) DEFAULT NULL,
+  `plpr_pekerjaan` int(5) DEFAULT NULL,
+  `plpr_alamat` varchar(255) DEFAULT NULL,
+  `plpr_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `plpr_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `plpr_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `plpr_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `sks1_nik` bigint(16) DEFAULT NULL,
+  `sks1_fullname` varchar(255) DEFAULT NULL,
+  `sks1_umur` int(10) DEFAULT NULL,
+  `sks1_pekerjaan` int(5) DEFAULT NULL,
+  `sks1_alamat` varchar(255) DEFAULT NULL,
+  `sks1_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `sks1_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `sks1_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `sks1_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `sks2_nik` bigint(16) DEFAULT NULL,
+  `sks2_fullname` varchar(255) DEFAULT NULL,
+  `sks2_umur` int(10) DEFAULT NULL,
+  `sks2_pekerjaan` int(5) DEFAULT NULL,
+  `sks2_alamat` varchar(255) DEFAULT NULL,
+  `sks2_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `sks2_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `sks2_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `sks2_alamat_provinsi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kelahiran`
+--
+
+INSERT INTO `kelahiran` (`desa_kelurahan`, `kecamatan`, `kabupaten_kota`, `klhrn_id`, `klhrn_kepala_keluarga`, `klhrn_nokk`, `klhrn_nama`, `klhrn_jk`, `klhrn_tmpt_dilahirkan`, `klhrn_tmpt_kelahiran`, `klhrn_tgl_lahir`, `klhrn_pkl_lahir`, `klhrn_jns_klmn_detail`, `klhrn_ke`, `klhrn_penolong`, `klhrn_berat`, `klhrn_panjang`, `klhrn_ibu_nik`, `klhrn_ibu_nama`, `klhrn_ibu_tgl_lahir`, `klhrn_ibu_pekerjaan`, `klhrn_ibu_alamat`, `klhrn_ibu_alamat_desakelurahan`, `klhrn_ibu_alamat_kecamatan`, `klhrn_ibu_alamat_kabupatenkota`, `klhrn_ibu_alamat_provinsi`, `klhrn_ibu_kewarganegaraan`, `klhrn_ibu_kebangsaan`, `klhrn_ibu_tgl_catat_kawin`, `klhrn_ayah_nik`, `klhrn_ayah_nama`, `klhrn_ayah_tgl_lahir`, `klhrn_ayah_pekerjaan`, `klhrn_ayah_alamat`, `klhrn_ayah_alamat_desakelurahan`, `klhrn_ayah_alamat_kecamatan`, `klhrn_ayah_alamat_kabupatenkota`, `klhrn_ayah_alamat_provinsi`, `klhrn_ayah_kewarganegaraan`, `klhrn_ayah_kebangsaan`, `plpr_nik`, `plpr_fullname`, `plpr_umur`, `plpr_jk`, `plpr_pekerjaan`, `plpr_alamat`, `plpr_alamat_desakelurahan`, `plpr_alamat_kecamatan`, `plpr_alamat_kabupatenkota`, `plpr_alamat_provinsi`, `sks1_nik`, `sks1_fullname`, `sks1_umur`, `sks1_pekerjaan`, `sks1_alamat`, `sks1_alamat_desakelurahan`, `sks1_alamat_kecamatan`, `sks1_alamat_kabupatenkota`, `sks1_alamat_provinsi`, `sks2_nik`, `sks2_fullname`, `sks2_umur`, `sks2_pekerjaan`, `sks2_alamat`, `sks2_alamat_desakelurahan`, `sks2_alamat_kecamatan`, `sks2_alamat_kabupatenkota`, `sks2_alamat_provinsi`) VALUES
+(NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2021-11-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 64, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 59, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 53, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -242,70 +255,75 @@ CREATE TABLE `kelahiran` (
 --
 
 CREATE TABLE `kematian` (
-  `desa_kelurahan` varchar(255) NOT NULL,
-  `kecamatan` varchar(255) NOT NULL,
-  `kabupaten_kota` varchar(255) NOT NULL,
+  `desa_kelurahan` varchar(255) DEFAULT NULL,
+  `kecamatan` varchar(255) DEFAULT NULL,
+  `kabupaten_kota` varchar(255) DEFAULT NULL,
   `kmtn_id` int(11) NOT NULL,
-  `kmtn_kepala_keluarga` varchar(255) NOT NULL,
-  `kmtn_nokk` varchar(50) NOT NULL,
-  `kmtn_nik` int(16) NOT NULL,
-  `kmtn_nama` varchar(255) NOT NULL,
-  `kmtn_jk` varchar(255) NOT NULL,
-  `kmtn_agama` int(5) NOT NULL,
-  `kmtn_pekerjaan` int(5) NOT NULL,
-  `kmtn_alamat` varchar(255) NOT NULL,
-  `kmtn_anak_ke` int(5) NOT NULL,
-  `kmtn_tgl_mati` date NOT NULL,
-  `kmtn_pkl_mati` time NOT NULL,
-  `kmtn_sebab_mati` varchar(255) NOT NULL,
-  `kmtn_tempat_mati` varchar(255) NOT NULL,
-  `kmtn_yg_menerangkan` int(5) NOT NULL,
-  `kmtn_ayah_nik` int(100) NOT NULL,
-  `kmtn_ayah_nama` varchar(255) NOT NULL,
-  `kmtn_ayah_tanggal_lahir` date NOT NULL,
-  `kmtn_ayah_pekerjaan` int(5) NOT NULL,
-  `kmtn_ayah_alamat` varchar(255) NOT NULL,
-  `kmtn_ayah_alamat_desakelurahan` varchar(255) NOT NULL,
-  `kmtn_ayah_alamat_kecamatan` varchar(255) NOT NULL,
-  `kmtn_ayah_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `kmtn_ayah_alamat_provinsi` varchar(255) NOT NULL,
-  `kmtn_ibu_nik` int(100) NOT NULL,
-  `kmtn_ibu_nama` varchar(255) NOT NULL,
-  `kmtn_ibu_tanggal_lahir` date NOT NULL,
-  `kmtn_ibu_pekerjaan` int(5) NOT NULL,
-  `kmtn_ibu_alamat` varchar(255) NOT NULL,
-  `kmtn_ibu_alamat_desakelurahan` varchar(255) NOT NULL,
-  `kmtn_ibu_alamat_kecamatan` varchar(255) NOT NULL,
-  `kmtn_ibu_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `kmtn_ibu_alamat_provinsi` varchar(255) NOT NULL,
-  `plpr_nik` int(100) NOT NULL,
-  `plpr_fullname` varchar(255) NOT NULL,
-  `plpr_umur` int(10) NOT NULL,
-  `plpr_tgl_lahir` date NOT NULL,
-  `plpr_pekerjaan` int(5) NOT NULL,
-  `plpr_alamat` varchar(255) NOT NULL,
-  `plpr_alamat_desakelurahan` varchar(255) NOT NULL,
-  `plpr_alamat_kecamatan` varchar(255) NOT NULL,
-  `plpr_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `plpr_alamat_provinsi` varchar(255) NOT NULL,
-  `sks1_nik` int(100) NOT NULL,
-  `sks1_fullname` varchar(255) NOT NULL,
-  `sks1_tgl_lahir` date NOT NULL,
-  `sks1_pekerjaan` int(5) NOT NULL,
-  `sks1_alamat` varchar(255) NOT NULL,
-  `sks1_alamat_desakelurahan` varchar(255) NOT NULL,
-  `sks1_alamat_kecamatan` varchar(255) NOT NULL,
-  `sks1_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `sks1_alamat_provinsi` varchar(255) NOT NULL,
-  `sks2_nik` int(100) NOT NULL,
-  `sks2_fullname` varchar(255) NOT NULL,
-  `sks2_tgl_lahir` date NOT NULL,
-  `sks2_pekerjaan` int(5) NOT NULL,
-  `sks2_alamat` varchar(255) NOT NULL,
-  `sks2_alamat_desakelurahan` varchar(255) NOT NULL,
-  `sks2_alamat_kecamatan` varchar(255) NOT NULL,
-  `sks2_alamat_kabupatenkota` varchar(255) NOT NULL,
-  `sks2_alamat_provinsi` varchar(255) NOT NULL
+  `kmtn_kepala_keluarga` varchar(255) DEFAULT NULL,
+  `kmtn_nokk` varchar(50) DEFAULT NULL,
+  `kmtn_nik` int(16) DEFAULT NULL,
+  `kmtn_nama` varchar(255) DEFAULT NULL,
+  `kmtn_jk` varchar(255) DEFAULT NULL,
+  `kmtn_tgl_lahir` varchar(255) DEFAULT NULL,
+  `kmtn_tmpt_lahir` varchar(255) DEFAULT NULL,
+  `kmtn_agama` int(5) DEFAULT NULL,
+  `kmtn_pekerjaan` int(5) DEFAULT NULL,
+  `kmtn_alamat` varchar(255) DEFAULT NULL,
+  `kmtn_desakelurahan` varchar(255) DEFAULT NULL,
+  `kmtn_kecamatan` varchar(255) DEFAULT NULL,
+  `kmtn_kabupatenkota` varchar(255) DEFAULT NULL,
+  `kmtn_provinsi` varchar(255) DEFAULT NULL,
+  `kmtn_anak_ke` int(5) DEFAULT NULL,
+  `kmtn_tgl_mati` date DEFAULT NULL,
+  `kmtn_pkl_mati` time DEFAULT NULL,
+  `kmtn_sebab_mati` varchar(255) DEFAULT NULL,
+  `kmtn_tempat_mati` varchar(255) DEFAULT NULL,
+  `kmtn_yg_menerangkan` int(5) DEFAULT NULL,
+  `kmtn_ayah_nik` int(100) DEFAULT NULL,
+  `kmtn_ayah_nama` varchar(255) DEFAULT NULL,
+  `kmtn_ayah_tanggal_lahir` date DEFAULT NULL,
+  `kmtn_ayah_pekerjaan` int(5) DEFAULT NULL,
+  `kmtn_ayah_alamat` varchar(255) DEFAULT NULL,
+  `kmtn_ayah_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `kmtn_ayah_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `kmtn_ayah_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `kmtn_ayah_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_nik` int(100) DEFAULT NULL,
+  `kmtn_ibu_nama` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_tanggal_lahir` date DEFAULT NULL,
+  `kmtn_ibu_pekerjaan` int(5) DEFAULT NULL,
+  `kmtn_ibu_alamat` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `kmtn_ibu_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `plpr_nik` int(100) DEFAULT NULL,
+  `plpr_fullname` varchar(255) DEFAULT NULL,
+  `plpr_tgl_lahir` date DEFAULT NULL,
+  `plpr_pekerjaan` int(5) DEFAULT NULL,
+  `plpr_alamat` varchar(255) DEFAULT NULL,
+  `plpr_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `plpr_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `plpr_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `plpr_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `sks1_nik` int(100) DEFAULT NULL,
+  `sks1_fullname` varchar(255) DEFAULT NULL,
+  `sks1_tgl_lahir` date DEFAULT NULL,
+  `sks1_pekerjaan` int(5) DEFAULT NULL,
+  `sks1_alamat` varchar(255) DEFAULT NULL,
+  `sks1_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `sks1_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `sks1_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `sks1_alamat_provinsi` varchar(255) DEFAULT NULL,
+  `sks2_nik` int(100) DEFAULT NULL,
+  `sks2_fullname` varchar(255) DEFAULT NULL,
+  `sks2_tgl_lahir` date DEFAULT NULL,
+  `sks2_pekerjaan` int(5) DEFAULT NULL,
+  `sks2_alamat` varchar(255) DEFAULT NULL,
+  `sks2_alamat_desakelurahan` varchar(255) DEFAULT NULL,
+  `sks2_alamat_kecamatan` varchar(255) DEFAULT NULL,
+  `sks2_alamat_kabupatenkota` varchar(255) DEFAULT NULL,
+  `sks2_alamat_provinsi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -555,6 +573,48 @@ CREATE TABLE `pengaduan` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `permohonan_pindah`
+--
+
+CREATE TABLE `permohonan_pindah` (
+  `prmhn_id` int(10) NOT NULL,
+  `no_kk` bigint(16) DEFAULT NULL,
+  `nama_kepala_keluarga` varchar(255) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `rt_asal` int(5) DEFAULT NULL,
+  `rw_asal` int(5) DEFAULT NULL,
+  `dusun_asal` varchar(255) DEFAULT NULL,
+  `desa_kelurahan_asal` varchar(255) DEFAULT NULL,
+  `kab_kota_asal` varchar(255) DEFAULT NULL,
+  `kecamatan_asal` varchar(255) DEFAULT NULL,
+  `provinsi_asal` varchar(255) DEFAULT NULL,
+  `kode_pos_asal` int(8) DEFAULT NULL,
+  `telepon_asal` varchar(12) DEFAULT NULL,
+  `nik_pemohon` bigint(16) DEFAULT NULL,
+  `nama_lengkap` varchar(255) DEFAULT NULL,
+  `alasan_pindah` varchar(255) DEFAULT NULL,
+  `alamat_tujuan_pindah` varchar(255) DEFAULT NULL,
+  `rt_pindah` int(5) DEFAULT NULL,
+  `rw_pindah` int(5) DEFAULT NULL,
+  `dusun_pindah` varchar(255) DEFAULT NULL,
+  `desa_kelurahan_pindah` varchar(255) DEFAULT NULL,
+  `kab_kota_pindah` varchar(255) DEFAULT NULL,
+  `kecamatan_pindah` varchar(255) DEFAULT NULL,
+  `provinsi_pindah` varchar(255) DEFAULT NULL,
+  `kode_pos_pindah` int(8) DEFAULT NULL,
+  `telepon_pindah` varchar(12) DEFAULT NULL,
+  `jns_kepindahan` varchar(255) DEFAULT NULL,
+  `stskk_tidak_pindah` varchar(255) DEFAULT NULL,
+  `stskk_pindah` varchar(255) DEFAULT NULL,
+  `nik` bigint(16) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `masa_berlaku_ktp` date DEFAULT NULL,
+  `shdk` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `polling`
 --
 
@@ -736,7 +796,7 @@ CREATE TABLE `saprsarana` (
 
 INSERT INTO `saprsarana` (`spr_id`, `sprjns_id`, `spr_name`, `spr_kondisi`, `spr_kd_invetaris`, `spr_lokasi`, `spr_gambar`) VALUES
 (1, 2, 'Politeknik Caltex Riau', 'Baik', NULL, 'Jln. Umban Sari no.1', 'default.png'),
-(2, 1, 'ks', 'Baik', NULL, 'jln. umbansari', 'tech.jpg');
+(2, 1, 'RS', 'Baik', NULL, 'jln. umbansari', 'tech.jpg');
 
 -- --------------------------------------------------------
 
@@ -1009,6 +1069,12 @@ ALTER TABLE `pengaduan`
   ADD KEY `fk_pndk_nik` (`pndk_nik`);
 
 --
+-- Indexes for table `permohonan_pindah`
+--
+ALTER TABLE `permohonan_pindah`
+  ADD PRIMARY KEY (`prmhn_id`);
+
+--
 -- Indexes for table `polling`
 --
 ALTER TABLE `polling`
@@ -1119,7 +1185,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `gal_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `gal_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `gol_darah`
@@ -1137,7 +1203,7 @@ ALTER TABLE `jns_asuransi`
 -- AUTO_INCREMENT for table `kelahiran`
 --
 ALTER TABLE `kelahiran`
-  MODIFY `klhrn_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `klhrn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kematian`
@@ -1174,6 +1240,12 @@ ALTER TABLE `penduduk`
 --
 ALTER TABLE `pengaduan`
   MODIFY `pgdn_id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `permohonan_pindah`
+--
+ALTER TABLE `permohonan_pindah`
+  MODIFY `prmhn_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `polling`

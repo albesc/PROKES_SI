@@ -7,6 +7,8 @@ class Permohonanpindah extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Permohonanpindah_model');
+        $this->load->model('Rw_model');
+        $this->load->model('Rt_model');
     }
 
     function index()
@@ -22,8 +24,19 @@ class Permohonanpindah extends CI_Controller
     public function add()
     {
         $data['judul'] = "Tambah Permohonan Pindah";
+        $data['permohonanpindah'] = $this->Permohonanpindah_model->get();
+        $data['rw'] = $this->Rw_model->get();
+        $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_add_permohonanpindah', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function add_keluarga()
+    {
+        $data['judul'] = "Tambah Keluarga yang Pindah";
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_permohonanpindah/vw_add_keluarga', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -56,23 +69,42 @@ class Permohonanpindah extends CI_Controller
             'kode_pos_pindah' => $this->input->post('kode_pos_pindah'),
             'telepon_pindah' => $this->input->post('telepon_pindah'),
             'jns_kepindahan' => $this->input->post('jns_kepindahan'),
-            'stskk_tidak_pernah' => $this->input->post('stskk_tidak_pernah'),
+            'stskk_tidak_pindah' => $this->input->post('stskk_tidak_pindah'),
             'stskk_pindah' => $this->input->post('stskk_pindah'),
+        ];
+        $this->Permohonanpindah_model->insert($data);
+        redirect("Permohonanpindah");
+    }
+
+    public function upload_keluarga()
+    {
+        $data = [
             'nik' => $this->input->post('nik'),
             'nama' => $this->input->post('nama'),
             'masa_berlaku_ktp' => $this->input->post('masa_berlaku_ktp'),
             'shdk' => $this->input->post('shdk'),
         ];
         $this->Permohonanpindah_model->insert($data);
-        redirect("Permohonanpindah");
+        redirect("Permohonanpindah/add");
     }
 
     public function edit($prmhn_id)
     {
         $data['judul'] = "Edit Permohonan Pindah";
         $data['permohonanpindah'] = $this->Permohonanpindah_model->getById($prmhn_id);
+        $data['rw'] = $this->Rw_model->get();
+        $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_edit_permohonanpindah', $data);
+        $this->load->view('layout/footer', $data);
+    }
+
+    public function edit_keluarga($prmhn_id)
+    {
+        $data['judul'] = "Edit Keluarga yang Pindah";
+        $data['permohonanpindah'] = $this->Permohonanpindah_model->getById($prmhn_id);
+        $this->load->view('layout/header', $data);
+        $this->load->view('data_permohonanpindah/vw_edit_keluarga', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -105,7 +137,7 @@ class Permohonanpindah extends CI_Controller
             'kode_pos_pindah' => $this->input->post('kode_pos_pindah'),
             'telepon_pindah' => $this->input->post('telepon_pindah'),
             'jns_kepindahan' => $this->input->post('jns_kepindahan'),
-            'stskk_tidak_pernah' => $this->input->post('stskk_tidak_pernah'),
+            'stskk_tidak_pindah' => $this->input->post('stskk_tidak_pindah'),
             'stskk_pindah' => $this->input->post('stskk_pindah'),
             'nik' => $this->input->post('nik'),
             'nama' => $this->input->post('nama'),
@@ -121,6 +153,8 @@ class Permohonanpindah extends CI_Controller
     {
         $data['judul'] = "Detail Permohonan Pindah";
         $data['permohonanpindah'] = $this->Permohonanpindah_model->getById($prmhn_id);
+        $data['rw'] = $this->Rw_model->get();
+        $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_detail_permohonanpindah', $data);
         $this->load->view('layout/footer', $data);
