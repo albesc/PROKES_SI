@@ -5,13 +5,13 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Edit Data Pindah Domisili </h3>
+                            <h3 class="mb-0">Edit Data Permohonan Pindah</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('Permohonanpindah/update'); ?>" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="prmhn_id " class="form-control" value="<?= $permohonanpindah['prmhn_id'] ?>">
+                        <input type="hidden" name="prmhn_id" class="form-control" value="<?= $permohonanpindah['prmhn_id'] ?>">
                         <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
                         <h6 class="heading-small text-muted mb-4"><br>Data Daerah Asal</h6>
                         <div class="pl-lg-4">
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
                                         <input type="text" name="alamat" class="form-control" placeholder="alamat" value="<?= $permohonanpindah['alamat']; ?>">
@@ -38,22 +38,14 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RW</label>
-                                        <select class="form-control" name="rw_asal">
-                                            <?php foreach ($rw as $r) : ?>
-                                                <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RT Asal</label>
+                                        <input type="number" name="rt_asal" class="form-control" placeholder="rt" value="<?= $permohonanpindah['rt_asal']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RT</label>
-                                        <select class="form-control" name="rt_asal">
-                                            <?php foreach ($rt as $r) : ?>
-                                                <option value="<?= $r['rt_id']; ?>"><?= $r['no_rt']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RW Asal</label>
+                                        <input type="number" name="rw_asal" class="form-control" placeholder="rw" value="<?= $permohonanpindah['rw_asal']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -96,6 +88,8 @@
                                         <input type="text" name="kode_pos_asal" class="form-control" placeholder="Kode pos" value="<?= $permohonanpindah['kode_pos_asal']; ?>">
                                     </div>
                                 </div>
+                                <div class="col-2">
+                                </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Telepon</label>
@@ -129,7 +123,7 @@
                                         <input type="text" name="alasan_pindah" class="form-control" placeholder="pekerjaan" value="<?= $permohonanpindah['alasan_pindah']; ?>">
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
                                         <input type="text" name="alamat_tujuan_pindah" class="form-control" placeholder="alamat" value="<?= $permohonanpindah['alamat_tujuan_pindah']; ?>">
@@ -137,22 +131,14 @@
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RW</label>
-                                        <select class="form-control" name="rw_pindah">
-                                            <?php foreach ($rw as $r) : ?>
-                                                <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RT Tujuan</label>
+                                        <input type="number" name="rt_pindah" class="form-control" placeholder="rt" value="<?= $permohonanpindah['rw_pindah']; ?>">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RT</label>
-                                        <select class="form-control" name="rt_pindah">
-                                            <?php foreach ($rt as $r) : ?>
-                                                <option value="<?= $r['rt_id']; ?>"><?= $r['no_rt']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RW Tujuan</label>
+                                        <input type="number" name="rw_pindah" class="form-control" placeholder="rw" value="<?= $permohonanpindah['rw_pindah']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -195,6 +181,8 @@
                                         <input type="text" name="kode_pos_pindah" class="form-control" placeholder="Kode pos" value="<?= $permohonanpindah['kode_pos_pindah']; ?>">
                                     </div>
                                 </div>
+                                <div class="col-2">
+                                </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Telepon</label>
@@ -207,10 +195,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="jns_kepindahan">Jenis Kepindahan</label>
                                         <select class="form-control" name="jns_kepindahan">
-                                            <option>Kep. Keluarga</option>
-                                            <option>Kep. Keluarga dan Seluruh Angg. Keluarga</option>
-                                            <option>Kep. Keluarga dan Sbg. Angg. Keluarga</option>
-                                            <option>Angg. Keluarga</option>
+                                            <option value="Kep. Keluarga" <?php if ($permohonanpindah['jns_kepindahan'] == "Kep. Keluarga") { ?> selected <?php } ?>>Kep. Keluarga</option>
+                                            <option value="Kep. Keluarga dan Seluruh Angg. Keluarga" <?php if ($permohonanpindah['Kep. Keluarga dan Seluruh Angg. Keluarga'] == "Sakit biasa / tua") { ?> selected <?php } ?>>Kep. Keluarga dan Seluruh Angg. Keluarga</option>
+                                            <option value="Kep. Keluarga dan Sbg. Angg. Keluarga" <?php if ($permohonanpindah['Kep. Keluarga dan Sbg. Angg. Keluarga'] == "Sakit biasa / tua") { ?> selected <?php } ?>>Kep. Keluarga dan Sbg. Angg. Keluarga</option>
+                                            <option value="Angg. Keluarga" <?php if ($permohonanpindah['jns_kepindahan'] == "Angg. Keluarga") { ?> selected <?php } ?>>Angg. Keluarga</option>
                                         </select>
                                     </div>
                                 </div>
@@ -218,9 +206,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="stskk_tidak_pindah">Status KK Yang Tidak Pindah</label>
                                         <select class="form-control" name="stskk_tidak_pindah">
-                                            <option>Numpang KK</option>
-                                            <option>Membuat KK Baru</option>
-                                            <option>Nomor KK Tetap</option>
+                                            <option value="Numpang KK" <?php if ($permohonanpindah['stskk_tidak_pindah'] == "Numpang KK") { ?> selected <?php } ?>>Numpang KK</option>
+                                            <option value="Membuat KK Baru" <?php if ($permohonanpindah['stskk_tidak_pindah'] == "Membuat KK Baru") { ?> selected <?php } ?>>Membuat KK Baru</option>
+                                            <option value="Nomor KK Tetap" <?php if ($permohonanpindah['stskk_tidak_pindah'] == "Nomor KK Tetap") { ?> selected <?php } ?>>Nomor KK Tetap</option>
                                         </select>
                                     </div>
                                 </div>
@@ -228,10 +216,42 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="stskk_pindah">Status KK Yang Pindah</label>
                                         <select class="form-control" name="stskk_pindah">
-                                            <option>Numpang KK</option>
-                                            <option>Membuat KK Baru</option>
-                                            <option>Nomor KK Tetap</option>
+                                            <option value="Numpang KK" <?php if ($permohonanpindah['stskk_pindah'] == "Numpang KK") { ?> selected <?php } ?>>Numpang KK</option>
+                                            <option value="Membuat KK Baru" <?php if ($permohonanpindah['stskk_pindah'] == "Membuat KK Baru") { ?> selected <?php } ?>>Membuat KK Baru</option>
+                                            <option value="Nomor KK Tetap" <?php if ($permohonanpindah['stskk_pindah'] == "Nomor KK Tetap") { ?> selected <?php } ?>>Nomor KK Tetap</option>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Keluarga yang Pindah</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">NIK</label>
+                                        <input type="text" name="nik" class="form-control" placeholder="NIK" value="<?= $permohonanpindah['nik']; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Nama</label>
+                                        <input type="text" name="nama" class="form-control" placeholder="Nama" value="<?= $permohonanpindah['nama']; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Masa Berlaku KTP S/D</label>
+                                        <input type="text" name="masa_berlaku_ktm" class="form-control" placeholder="Masa Berlaku" value="<?= $permohonanpindah['masa_berlaku_ktp']; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">SHDK</label>
+                                        <input type="text" name="shdk" class="form-control" placeholder="SDHK" value="<?= $permohonanpindah['shdk']; ?>">
                                     </div>
                                 </div>
                             </div>

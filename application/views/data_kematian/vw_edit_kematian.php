@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('Kematian/update'); ?>" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="kmtn_id " class="form-control" value="<?= $kematian['kmtn_id'] ?>">
+                        <input type="hidden" name="kmtn_id" class="form-control" value="<?= $kematian['kmtn_id'] ?>">
                         <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
                         <h6 class="heading-small text-muted mb-4"><br>Informasi Kematian</h6>
                         <div class="pl-lg-4">
@@ -70,9 +70,9 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="kmtn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                    <input type="radio" id="html" name="kmtn_jk" value="Laki-Laki">
+                                    <input type="radio" id="html" name="kmtn_jk" value="Laki-Laki" <?php if ($kematian['kmtn_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
                                     <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="css" name="kmtn_jk" value="Perempuan">
+                                    <input type="radio" id="css" name="kmtn_jk" value="Perempuan" <?php if ($kematian['kmtn_jk'] == "Perempuan") { ?> checked <?php } ?>>
                                     <label for="css">Perempuan</label>
                                 </div>
                             </div>
@@ -91,10 +91,12 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="kmtn_agama ">Agama</label>
+                                        <label class="form-control-label" for="kmtn_agama">Agama</label>
                                         <select class="form-control" name="kmtn_agama">
                                             <?php foreach ($agama as $r) : ?>
-                                                <option value="<?= $r['agm_id']; ?>"><?= $r['agm_ket']; ?></option>
+                                                <option value="<?= $r['agm_id']; ?>" <?php if ($kematian['kmtn_agama'] == $r['agm_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['agm_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -103,10 +105,12 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="kmtn_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="kmtn_pekerjaan ">
+                                        <label class="form-control-label" for="kmtn_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="kmtn_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['kmtn_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -148,7 +152,7 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_anak_ke">Anak ke</label>
-                                        <input type="text" id="input-first-name" name="kmtn_anak_ke" class="form-control" placeholder="1" value="<?= $kematian['kmtn_anak_ke'] ?>">
+                                        <input type="number" id="input-first-name" name="kmtn_anak_ke" class="form-control" placeholder="1" value="<?= $kematian['kmtn_anak_ke'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -169,12 +173,12 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_sebab_mati">Sebab Kematian</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="kmtn_sebab_mati">
-                                            <option>Sakit biasa / tua</option>
-                                            <option>Wabah Penyakit</option>
-                                            <option>Kecelakaan</option>
-                                            <option>Kriminalitas</option>
-                                            <option>Bunuh Diri</option>
-                                            <option>Lainnya</option>
+                                            <option value="Sakit biasa / tua" <?php if ($kematian['kmtn_sebab_mati'] == "Sakit biasa / tua") { ?> selected <?php } ?>>Sakit biasa / tua</option>
+                                            <option value="Wabah Penyakit" <?php if ($kematian['kmtn_sebab_mati'] == "Wabah Penyakit") { ?> selected <?php } ?>>Wabah Penyakit</option>
+                                            <option value="Kecelakaan" <?php if ($kematian['kmtn_sebab_mati'] == "Kecelakaan") { ?> selected <?php } ?>>Kecelakaan</option>
+                                            <option value="Kriminalitas" <?php if ($kematian['kmtn_sebab_mati'] == "Kriminalitas") { ?> selected <?php } ?>>Kriminalitas</option>
+                                            <option value="Bunuh Diri" <?php if ($kematian['kmtn_sebab_mati'] == "Bunuh Diri") { ?> selected <?php } ?>>Bunuh Diri</option>
+                                            <option value="Lainnya" <?php if ($kematian['kmtn_sebab_mati'] == "Lainnya") { ?> selected <?php } ?>>Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -188,9 +192,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_yg_menerangkan">Yang menerangkan</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="kmtn_yg_menerangkan">
-                                            <option>Dokter</option>
-                                            <option>Tenaga Kesehatan</option>
-                                            <option>Lainnya</option>
+                                            <option value="1" <?php if ($kematian['kmtn_yg_menerangkan'] == "1") { ?> selected <?php } ?>>Dokter</option>
+                                            <option value="2" <?php if ($kematian['kmtn_yg_menerangkan'] == "2") { ?> selected <?php } ?>>Tenaga Kesehatan</option>
+                                            <option value="3" <?php if ($kematian['kmtn_yg_menerangkan'] == "3") { ?> selected <?php } ?>>Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -228,7 +232,9 @@
                                         <label class="form-control-label" for="kmtn_ayah_pekerjaan">Pekerjaan</label>
                                         <select class="form-control" name="kmtn_ayah_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['kmtn_ayah_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -301,7 +307,9 @@
                                         <label class="form-control-label" for="kmtn_ibu_pekerjaan">Pekerjaan</label>
                                         <select class="form-control" name="kmtn_ibu_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['kmtn_ibu_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -371,10 +379,12 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="plpr_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="plpr_pekerjaan ">
+                                        <label class="form-control-label" for="plpr_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="plpr_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['plpr_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -444,10 +454,12 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="sks1_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="sks1_pekerjaan ">
+                                        <label class="form-control-label" for="sks1_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="sks1_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['sks1_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -517,10 +529,12 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="sks2_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="sks2_pekerjaan ">
+                                        <label class="form-control-label" for="sks2_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="sks2_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kematian['sks2_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

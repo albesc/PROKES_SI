@@ -64,21 +64,17 @@
                                                     <span class="name mb-0 text-sm"><?= $i ?></span>
                                                 </div>
                                             </th>
-                                            <td class="budget">
+                                            <td>
                                                 <?= $p['nik_pemohon'] ?>
                                             </td>
                                             <td>
-                                                <span class="badge badge-dot mr-4">
-                                                    <span class="status"><?= $p['nama_lengkap'] ?></span>
-                                                </span>
+                                                <?= $p['nama_lengkap'] ?>
                                             </td>
                                             <td>
                                                 <?= $p['alamat'] ?>
                                             </td>
                                             <td>
-                                                <div class="d-flex align-items-center">
-                                                    <span class="completion mr-2"><?= $p['alamat_tujuan_pindah'] ?></span>
-                                                </div>
+                                                <?= $p['alamat_tujuan_pindah'] ?>
                                             </td>
                                             <td class="text-right">
                                                 <a href="<?= site_url('Permohonanpindah/detail/') . $p['prmhn_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;

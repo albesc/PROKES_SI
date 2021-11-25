@@ -62,9 +62,9 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                    <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki">
+                                    <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki" <?php if ($kelahiran['klhrn_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
                                     <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="css" name="klhrn_jk" value="Perempuan">
+                                    <input type="radio" id="css" name="klhrn_jk" value="Perempuan" <?php if ($kelahiran['klhrn_jk'] == "Perempuan") { ?> checked <?php } ?>>
                                     <label for="css">Perempuan</label>
                                 </div>
                             </div>
@@ -73,11 +73,11 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="klhrn_tmpt_dilahirkan">Tempat Dilahirkan</label>
                                         <select class="form-control" name="klhrn_tmpt_dilahirkan">
-                                            <option value="RS/RB">RS/RB</option>
-                                            <option value="Puskesmas">Puskesmas</option>
-                                            <option value="Polindes">Polindes</option>
-                                            <option value="Rumah">Rumah</option>
-                                            <option value="Lainnya">Lainnya</option>
+                                            <option value="1" <?php if ($kelahiran['klhrn_tmpt_dilahirkan'] == "1") { ?> selected <?php } ?>>RS/RB</option>
+                                            <option value="2" <?php if ($kelahiran['klhrn_tmpt_dilahirkan'] == "2") { ?> selected <?php } ?>>Puskesmas</option>
+                                            <option value="3" <?php if ($kelahiran['klhrn_tmpt_dilahirkan'] == "3") { ?> selected <?php } ?>>Polindes</option>
+                                            <option value="4" <?php if ($kelahiran['klhrn_tmpt_dilahirkan'] == "4") { ?> selected <?php } ?>>Rumah</option>
+                                            <option value="5" <?php if ($kelahiran['klhrn_tmpt_dilahirkan'] == "5") { ?> selected <?php } ?>>Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -106,29 +106,29 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="klhrn_jns">Jenis Kelahiran</label>
-                                        <select class="form-control" name="klhrn_jns">
-                                            <option>Tunggal</option>
-                                            <option>kembar 2</option>
-                                            <option>Kembar 3</option>
-                                            <option>Kembar 4</option>
-                                            <option>Lainnya</option>
+                                        <select class="form-control" name="klhrn_jns_klmn_detail">
+                                            <option value="1" <?php if ($kelahiran['klhrn_jns_klmn_detail'] == "1") { ?> selected <?php } ?>>Tunggal</option>
+                                            <option value="2" <?php if ($kelahiran['klhrn_jns_klmn_detail'] == "2") { ?> selected <?php } ?>>kembar 2</option>
+                                            <option value="3" <?php if ($kelahiran['klhrn_jns_klmn_detail'] == "3") { ?> selected <?php } ?>>Kembar 3</option>
+                                            <option value="4" <?php if ($kelahiran['klhrn_jns_klmn_detail'] == "4") { ?> selected <?php } ?>>Kembar 4</option>
+                                            <option value="5" <?php if ($kelahiran['klhrn_jns_klmn_detail'] == "5") { ?> selected <?php } ?>>Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Kelahiran ke</label>
-                                        <input type="text" name="klhrn_ke" class="form-control" placeholder="Kelahiran ke" value="<?= $kelahiran['klhrn_ke'] ?>">
+                                        <input type="number" name="klhrn_ke" class="form-control" placeholder="Kelahiran ke" value="<?= $kelahiran['klhrn_ke'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="klhrn_penolong">Penolong Kelahiran</label>
                                         <select class="form-control" name="klhrn_penolong">
-                                            <option>Dokter</option>
-                                            <option>Bidan/Perawat</option>
-                                            <option>Dukun</option>
-                                            <option>Lainnya</option>
+                                            <option value="1" <?php if ($kelahiran['klhrn_penolong'] == "1") { ?> selected <?php } ?>>Dokter</option>
+                                            <option value="2" <?php if ($kelahiran['klhrn_penolong'] == "2") { ?> selected <?php } ?>>Bidan/Perawat</option>
+                                            <option value="3" <?php if ($kelahiran['klhrn_penolong'] == "3") { ?> selected <?php } ?>>Dukun</option>
+                                            <option value="4" <?php if ($kelahiran['klhrn_penolong'] == "4") { ?> selected <?php } ?>>Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -137,13 +137,13 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Berat</label>
-                                        <input type="text" name="klhrn_berat" class="form-control" placeholder="Kg" value="<?= $kelahiran['klhrn_berat'] ?>">
+                                        <input type="number" name="klhrn_berat" class="form-control" placeholder="Kg" value="<?= $kelahiran['klhrn_berat'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label for="example-date-input" class="form-control-label">Panjang Bayi</label>
-                                        <input type="text" name="klhrn_panjang" class="form-control" placeholder="Cm" value="<?= $kelahiran['klhrn_panjang'] ?>">
+                                        <input type="number" name="klhrn_panjang" class="form-control" placeholder="Cm" value="<?= $kelahiran['klhrn_panjang'] ?>">
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +180,9 @@
                                         <label class="form-control-label" for="klhrn_ibu_pekerjaan">Pekerjaan</label>
                                         <select class="form-control" name="klhrn_ibu_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kelahiran['klhrn_ibu_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -225,8 +227,8 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="klhrn_ibu_kewarganegaraan">Kewarganegaraan</label>
                                         <select class="form-control" name="klhrn_ibu_kewarganegaraan">
-                                            <option>WNI</option>
-                                            <option>WNA</option>
+                                            <option value="1" <?php if ($kelahiran['klhrn_ibu_kewarganegaraan'] == "1") { ?> selected <?php } ?>>WNI</option>
+                                            <option value="2" <?php if ($kelahiran['klhrn_ibu_kewarganegaraan'] == "2") { ?> selected <?php } ?>>WNA</option>
                                         </select>
                                     </div>
                                 </div>
@@ -276,7 +278,9 @@
                                         <label class="form-control-label" for="klhrn_ayah_pekerjaan">Pekerjaan</label>
                                         <select class="form-control" name="klhrn_ayah_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kelahiran['klhrn_ayah_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -321,8 +325,8 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="klhrn_ayah_kewarganegaraan">Kewarganegaraan</label>
                                         <select class="form-control" name="klhrn_ayah_kewarganegaraan">
-                                            <option>WNI</option>
-                                            <option>WNA</option>
+                                            <option value="1" <?php if ($kelahiran['klhrn_ibu_kewarganegaraan'] == "1") { ?> selected <?php } ?>>WNI</option>
+                                            <option value="2" <?php if ($kelahiran['klhrn_ibu_kewarganegaraan'] == "2") { ?> selected <?php } ?>>WNA</option>
                                         </select>
                                     </div>
                                 </div>
@@ -359,10 +363,10 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                        <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki">
+                                        <label for="plpr_jk" class="form-control-label">Jenis Kelamin</label><br>
+                                        <input type="radio" id="html" name="plpr_jk" value="Laki-Laki" <?php if ($kelahiran['plpr_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
                                         <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="radio" id="css" name="klhrn_jk" value="Perempuan">
+                                        <input type="radio" id="css" name="plpr_jk" value="Perempuan" <?php if ($kelahiran['plpr_jk'] == "Perempuan") { ?> checked <?php } ?>>
                                         <label for="css">Perempuan</label>
                                     </div>
                                 </div>
@@ -373,7 +377,9 @@
                                         <label class="form-control-label" for="plpr_pekerjaan">Pekerjaan</label>
                                         <select class="form-control" name="plpr_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kelahiran['plpr_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -446,7 +452,9 @@
                                         <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
                                         <select class="form-control" name="sks1_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kelahiran['sks1_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -519,7 +527,9 @@
                                         <label class="form-control-label" for="exampleFormControlSelect1">Pekerjaan</label>
                                         <select class="form-control" name="sks2_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
-                                                <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
+                                                <option value="<?= $r['pkrj_id']; ?>" <?php if ($kelahiran['sks2_pekerjaan'] == $r['pkrj_id']) {
+                                                                                            echo "selected";
+                                                                                        } ?>><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>

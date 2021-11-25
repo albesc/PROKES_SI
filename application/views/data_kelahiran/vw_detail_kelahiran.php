@@ -67,7 +67,21 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Tempat Dilahirkan</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kelahiran['klhrn_tmpt_dilahirkan'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            if ($kelahiran['klhrn_tmpt_dilahirkan'] == 1) {
+                                                echo "RS/RB";
+                                            } elseif ($kelahiran['klhrn_tmpt_dilahirkan'] == 2) {
+                                                echo "Puskesmas";
+                                            } elseif ($kelahiran['klhrn_tmpt_dilahirkan'] == 3) {
+                                                echo "Polindes";
+                                            } elseif ($kelahiran['klhrn_tmpt_dilahirkan'] == 4) {
+                                                echo "Rumah";
+                                            } elseif ($kelahiran['klhrn_tmpt_dilahirkan'] == 5) {
+                                                echo "Lainnya";
+                                            }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -85,19 +99,19 @@
                                             <?php
                                             $timestamp = strtotime($kelahiran['klhrn_tgl_lahir']);
                                             $day = date('D', $timestamp);
-                                            if($day == "Sun"){
+                                            if ($day == "Sun") {
                                                 echo "Minggu";
-                                            } elseif($day == "Mon"){
+                                            } elseif ($day == "Mon") {
                                                 echo "Senin";
-                                            } elseif($day == "Tue"){
+                                            } elseif ($day == "Tue") {
                                                 echo "Selara";
-                                            } elseif($day == "Wed"){
+                                            } elseif ($day == "Wed") {
                                                 echo "Rabu";
-                                            } elseif($day == "Thu"){
+                                            } elseif ($day == "Thu") {
                                                 echo "Kamis";
-                                            } elseif($day == "Fri"){
+                                            } elseif ($day == "Fri") {
                                                 echo "Jumat";
-                                            } elseif($day == "Sat"){
+                                            } elseif ($day == "Sat") {
                                                 echo "Sabtu";
                                             }
                                             ?>
@@ -121,7 +135,21 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Jenis Kelahiran</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kelahiran['klhrn_jns_klmn_detail'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            if ($kelahiran['klhrn_jns_klmn_detail'] == 1) {
+                                                echo "Tunggal";
+                                            } elseif ($kelahiran['klhrn_jns_klmn_detail'] == 2) {
+                                                echo "Kembar 2";
+                                            } elseif ($kelahiran['klhrn_jns_klmn_detail'] == 3) {
+                                                echo "Kembar 3";
+                                            } elseif ($kelahiran['klhrn_jns_klmn_detail'] == 4) {
+                                                echo "Kembar 4";
+                                            } elseif ($kelahiran['klhrn_jns_klmn_detail'] == 5) {
+                                                echo "Lainnya";
+                                            }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -133,7 +161,19 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Penolong Kelahiran</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kelahiran['klhrn_penolong'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            if ($kelahiran['klhrn_penolong'] == 1) {
+                                                echo "Dokter";
+                                            } elseif ($kelahiran['klhrn_penolong'] == 2) {
+                                                echo "Bidan/Perawat";
+                                            } elseif ($kelahiran['klhrn_penolong'] == 3) {
+                                                echo "Dukun";
+                                            } elseif ($kelahiran['klhrn_penolong'] == 4) {
+                                                echo "Lainnya";
+                                            }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +283,15 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Kewarganegaraan</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kelahiran['klhrn_ibu_kewarganegaraan'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            if ($kelahiran['klhrn_ibu_kewarganegaraan'] == 1) {
+                                                echo "WNI";
+                                            } elseif ($kelahiran['klhrn_ibu_kewarganegaraan'] == 2) {
+                                                echo "WNA";
+                                            }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -351,7 +399,15 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Kewarganegaraan</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kelahiran['klhrn_ayah_kewarganegaraan'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                            if ($kelahiran['klhrn_ayah_kewarganegaraan'] == 1) {
+                                                echo "WNI";
+                                            } elseif ($kelahiran['klhrn_ayah_kewarganegaraan'] == 2) {
+                                                echo "WNA";
+                                            }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">

@@ -5,7 +5,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Tambah Data Pindah Domisili </h3>
+                            <h3 class="mb-0">Tambah Data Permohonan Pindah</h3>
                         </div>
                     </div>
                 </div>
@@ -18,41 +18,33 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-text">Nomor Kartu Keluarga</label>
-                                        <input type="text" name="no_kk" class="form-control" placeholder="NKK" value="">
+                                        <input type="text" name="no_kk" class="form-control" placeholder="No KK">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-text">Nama Kepala Keluarga</label>
-                                        <input type="text" name="nama_kepala_keluarga" class="form-control" placeholder="nama" value="">
+                                        <input type="text" name="nama_kepala_keluarga" class="form-control" placeholder="nama">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" name="alamat" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" name="alamat" class="form-control" placeholder="alamat">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RW</label>
-                                        <select class="form-control" name="rw_asal">
-                                            <?php foreach ($rw as $r) : ?>
-                                                <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RT Asal</label>
+                                        <input type="number" name="rt_asal" class="form-control" placeholder="rt">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RT</label>
-                                        <select class="form-control" name="rt_asal">
-                                            <?php foreach ($rt as $r) : ?>
-                                                <option value="<?= $r['rt_id']; ?>"><?= $r['no_rt']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RW Asal</label>
+                                        <input type="number" name="rw_asal" class="form-control" placeholder="rw">
                                     </div>
                                 </div>
                             </div>
@@ -92,13 +84,15 @@
                                 <div class="col-2">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Kode Pos</label>
-                                        <input type="text" name="kode_pos_asal" class="form-control" placeholder="Kode pos" value="">
+                                        <input type="text" name="kode_pos_asal" class="form-control" placeholder="Kode pos">
                                     </div>
+                                </div>
+                                <div class="col-2">
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Telepon</label>
-                                        <input type="text" name="telepon_asal" class="form-control" placeholder="Telepon" value="">
+                                        <input type="text" name="telepon_asal" class="form-control" placeholder="Telepon">
                                     </div>
                                 </div>
                             </div>
@@ -106,13 +100,13 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">NIK Pemohon</label>
-                                        <input type="text" name="nik_pemohon" class="form-control" placeholder="NIK" value="">
+                                        <input type="text" name="nik_pemohon" class="form-control" placeholder="NIK">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-text">Nama</label>
-                                        <input type="text" name="nama_lengkap" class="form-control" placeholder="nama" value="">
+                                        <input type="text" name="nama_lengkap" class="form-control" placeholder="nama">
                                     </div>
                                 </div>
                             </div>
@@ -125,33 +119,25 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Alasan Pindah</label>
-                                        <input type="text" name="alasan_pindah" class="form-control" placeholder="pekerjaan" value="">
+                                        <input type="text" name="alasan_pindah" class="form-control" placeholder="pekerjaan">
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-first-name">Alamat</label>
-                                        <input type="text" name="alamat_tujuan_pindah" class="form-control" placeholder="alamat" value="">
+                                        <input type="text" name="alamat_tujuan_pindah" class="form-control" placeholder="alamat">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RW</label>
-                                        <select class="form-control" name="rw_pindah">
-                                            <?php foreach ($rw as $r) : ?>
-                                                <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RT Tujuan</label>
+                                        <input type="number" name="rt_pindah" class="form-control" placeholder="rt">
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">RT</label>
-                                        <select class="form-control" name="rt_pindah">
-                                            <?php foreach ($rt as $r) : ?>
-                                                <option value="<?= $r['rt_id']; ?>"><?= $r['no_rt']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label class="form-control-label" for="input-first-name">RW Tujuan</label>
+                                        <input type="number" name="rw_pindah" class="form-control" placeholder="rw">
                                     </div>
                                 </div>
                             </div>
@@ -191,13 +177,15 @@
                                 <div class="col-2">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Kode Pos</label>
-                                        <input type="text" name="kode_pos_pindah" class="form-control" placeholder="Kode pos" value="">
+                                        <input type="text" name="kode_pos_pindah" class="form-control" placeholder="Kode pos">
                                     </div>
+                                </div>
+                                <div class="col-2">
                                 </div>
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Telepon</label>
-                                        <input type="text" name="telepon_pindah" class="form-control" placeholder="Telepon" value="">
+                                        <input type="text" name="telepon_pindah" class="form-control" placeholder="Telepon">
                                     </div>
                                 </div>
                             </div>
@@ -206,10 +194,10 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="jns_kepindahan">Jenis Kepindahan</label>
                                         <select class="form-control" name="jns_kepindahan">
-                                            <option>Kep. Keluarga</option>
-                                            <option>Kep. Keluarga dan Seluruh Angg. Keluarga</option>
-                                            <option>Kep. Keluarga dan Sbg. Angg. Keluarga</option>
-                                            <option>Angg. Keluarga</option>
+                                            <option value="Kep. Keluarga">Kep. Keluarga</option>
+                                            <option value="Kep. Keluarga dan Seluruh Angg. Keluarga">Kep. Keluarga dan Seluruh Angg. Keluarga</option>
+                                            <option value="Kep. Keluarga dan Sbg. Angg. Keluarga">Kep. Keluarga dan Sbg. Angg. Keluarga</option>
+                                            <option value="Angg. Keluarga">Angg. Keluarga</option>
                                         </select>
                                     </div>
                                 </div>
@@ -217,9 +205,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="stskk_tidak_pindah">Status KK Yang Tidak Pindah</label>
                                         <select class="form-control" name="stskk_tidak_pindah">
-                                            <option>Numpang KK</option>
-                                            <option>Membuat KK Baru</option>
-                                            <option>Nomor KK Tetap</option>
+                                            <option value="Numpang KK">Numpang KK</option>
+                                            <option value="Membuat KK Baru">Membuat KK Baru</option>
+                                            <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                                         </select>
                                     </div>
                                 </div>
@@ -227,25 +215,47 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="stskk_pindah">Status KK Yang Pindah</label>
                                         <select class="form-control" name="stskk_pindah">
-                                            <option>Numpang KK</option>
-                                            <option>Membuat KK Baru</option>
-                                            <option>Nomor KK Tetap</option>
+                                            <option value="Numpang KK">Numpang KK</option>
+                                            <option value="Membuat KK Baru">Membuat KK Baru</option>
+                                            <option value="Nomor KK Tetap">Nomor KK Tetap</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h6 class="heading-small text-muted mb-4">Keluarga yang Pindah</h6>
+                        <div class="pl-lg-4">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlSelect1">Keluarga yang pindah</label>
+                                        <label class="form-control-label" for="input-first-name">NIK</label>
+                                        <input type="text" name="nik" class="form-control" placeholder="NIK">
                                     </div>
                                 </div>
-                                <div class="col-4 text-right">
-                                    <a href="<?= site_url('Permohonanpindah/add_keluarga'); ?>" class="btn btn-sm btn-primary">Tambah</a>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Nama</label>
+                                        <input type="text" name="nama" class="form-control" placeholder="Nama">
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Light table -->
-                            <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Masa Berlaku KTP S/D</label>
+                                        <input type="text" id="input-username" name="masa_berlaku_ktm" class="form-control" placeholder="Masa Berlaku">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">SHDK</label>
+                                        <input type="text" id="input-username" name="shdk" class="form-control" placeholder="SDHK">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="table-responsive">
                                 <table class="table align-items-center table-flush">
                                     <thead class="thead-light">
                                         <tr>
@@ -283,17 +293,16 @@
                                                         <span class="completion mr-2"><?= $p['shdk'] ?></span>
                                                     </div>
                                                 </td>
-                                                <!-- <td class="text-right">
+                                                <td class="text-right">
                                                     <a href="" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit</a>
-                                                </td> -->
+                                                </td>
                                             </tr>
                                         <?php $i++;
                                         }
                                         ?>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
+                            </div> -->
                     </form>
                 </div>
             </div>

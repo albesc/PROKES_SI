@@ -71,6 +71,10 @@ class Permohonanpindah extends CI_Controller
             'jns_kepindahan' => $this->input->post('jns_kepindahan'),
             'stskk_tidak_pindah' => $this->input->post('stskk_tidak_pindah'),
             'stskk_pindah' => $this->input->post('stskk_pindah'),
+            'nik' => $this->input->post('nik'),
+            'nama' => $this->input->post('nama'),
+            'masa_berlaku_ktp' => $this->input->post('masa_berlaku_ktp'),
+            'shdk' => $this->input->post('shdk'),
         ];
         $this->Permohonanpindah_model->insert($data);
         redirect("Permohonanpindah");

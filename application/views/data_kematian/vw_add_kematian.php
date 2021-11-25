@@ -38,13 +38,13 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nama Kepala Keluarga</label>
-                                        <input type="text" id="input-username" name="kmtn_kepala_keluarga" class="form-control" placeholder="Kepala Keluarga" value="">
+                                        <input type="text" id="input-username" name="kmtn_kepala_keluarga" class="form-control" placeholder="Kepala Keluarga">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Nomor Kepala Keluarga</label>
-                                        <input type="text" id="input-username" name="kmtn_nokk" class="form-control" placeholder="NKK" value="">
+                                        <input type="text" id="input-username" name="kmtn_nokk" class="form-control" placeholder="NKK">
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-text">NIK</label>
-                                        <input type="text" id="input-text" name="kmtn_nik" class="form-control" placeholder="nik" value="">
+                                        <input type="text" id="input-text" name="kmtn_nik" class="form-control" placeholder="nik">
                                     </div>
                                 </div>
                             </div>
@@ -64,19 +64,15 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-text">Nama</label>
-                                        <input type="text" id="input-text" name="kmtn_nama" class="form-control" placeholder="nama" value="">
+                                        <input type="text" id="input-text" name="kmtn_nama" class="form-control" placeholder="nama">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="example-tel-input" class="form-control-label">Jenis Kelamin</label><br>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" name="kmtn_jk" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" name="kmtn_jk" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
-                                    </div>
+                                    <label for="kmtn_jk" class="form-control-label">Jenis Kelamin</label><br>
+                                    <input type="radio" id="html" name="kmtn_jk" value="Laki-Laki">
+                                    <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" id="css" name="kmtn_jk" value="Perempuan">
+                                    <label for="css">Perempuan</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -94,7 +90,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="kmtn_agama ">Agama</label>
+                                        <label class="form-control-label" for="kmtn_agama">Agama</label>
                                         <select class="form-control" name="kmtn_agama">
                                             <?php foreach ($agama as $r) : ?>
                                                 <option value="<?= $r['agm_id']; ?>"><?= $r['agm_ket']; ?></option>
@@ -106,8 +102,8 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="kmtn_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="kmtn_pekerjaan ">
+                                        <label class="form-control-label" for="kmtn_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="kmtn_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
                                                 <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
@@ -151,7 +147,7 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_anak_ke">Anak ke</label>
-                                        <input type="text" id="input-first-name" name="kmtn_anak_ke" class="form-control" placeholder="1" value="">
+                                        <input type="number" id="input-first-name" name="kmtn_anak_ke" class="form-control" placeholder="Anak ke">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
@@ -172,12 +168,12 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_sebab_mati">Sebab Kematian</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="kmtn_sebab_mati">
-                                            <option>Sakit biasa / tua</option>
-                                            <option>Wabah Penyakit</option>
-                                            <option>Kecelakaan</option>
-                                            <option>Kriminalitas</option>
-                                            <option>Bunuh Diri</option>
-                                            <option>Lainnya</option>
+                                            <option value="Sakit biasa / tua">Sakit biasa / tua</option>
+                                            <option value="Wabah Penyakit">Wabah Penyakit</option>
+                                            <option value="Kecelakaan">Kecelakaan</option>
+                                            <option value="Kriminalitas">Kriminalitas</option>
+                                            <option value="Bunuh Diri">Bunuh Diri</option>
+                                            <option value="Lainnya">Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -191,9 +187,9 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="kmtn_yg_menerangkan">Yang menerangkan</label>
                                         <select class="form-control" id="exampleFormControlSelect1" name="kmtn_yg_menerangkan">
-                                            <option>Dokter</option>
-                                            <option>Tenaga Kesehatan</option>
-                                            <option>Lainnya</option>
+                                            <option value="1">Dokter</option>
+                                            <option value="2">Tenaga Kesehatan</option>
+                                            <option value="3">Lainnya</option>
                                         </select>
                                     </div>
                                 </div>
@@ -374,8 +370,8 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="plpr_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="plpr_pekerjaan ">
+                                        <label class="form-control-label" for="plpr_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="plpr_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
                                                 <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
@@ -447,8 +443,8 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="sks1_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="sks1_pekerjaan ">
+                                        <label class="form-control-label" for="sks1_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="sks1_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
                                                 <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>
@@ -520,8 +516,8 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="sks2_pekerjaan ">Pekerjaan</label>
-                                        <select class="form-control" name="sks2_pekerjaan ">
+                                        <label class="form-control-label" for="sks2_pekerjaan">Pekerjaan</label>
+                                        <select class="form-control" name="sks2_pekerjaan">
                                             <?php foreach ($pekerjaan as $r) : ?>
                                                 <option value="<?= $r['pkrj_id']; ?>"><?= $r['pkrj_ket']; ?></option>
                                             <?php endforeach; ?>

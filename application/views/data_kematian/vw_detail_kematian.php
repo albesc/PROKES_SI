@@ -76,7 +76,7 @@
                                         <label class="form-control-label" for="input-username"><?= $kematian['kmtn_tgl_lahir'] ?></label>
                                     </div>
                                 </div>
-                                <div class="col-lg-2">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="example-number-input" class="form-control-label">Umur</label><br>
                                         <label class="form-control-label" for="input-username">
@@ -193,7 +193,17 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlSelect1">Yang menerangkan</label><br>
-                                        <label class="form-control-label" for="input-username"><?= $kematian['kmtn_yg_menerangkan'] ?></label>
+                                        <label class="form-control-label" for="input-username">
+                                            <?php
+                                                if ($kematian['kmtn_yg_menerangkan'] == 1) {
+                                                    echo "Dokter";
+                                                } elseif ($kematian['kmtn_yg_menerangkan'] == 2) {
+                                                    echo "Tenaga Kesehatan";
+                                                } elseif ($kematian['kmtn_yg_menerangkan'] == 3) {
+                                                    echo "Lainnya";
+                                                }
+                                            ?>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
