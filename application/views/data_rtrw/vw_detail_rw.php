@@ -67,7 +67,15 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Masa Jabatan</label><br>
-                                        <label class="form-control-label" for="input-username">3 Tahun</label>
+                                        <label class="form-control-label" for="input-username">
+                                        <?php
+                                            $thn = date_format(date_create($rw['tgl_jabat']), "Y");
+                                            $thnAkhir = date_format(date_create($rw['tgl_akhir']), "Y");
+                                            $jabatan = $thnAkhir - $thn;
+                                            echo $jabatan;
+                                            ?>
+                                            &nbsp;Tahun
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">

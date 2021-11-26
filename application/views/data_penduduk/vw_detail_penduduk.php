@@ -383,7 +383,8 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="input-email">Pekerjaan</label><br>
+                                        <label class="form-con
+                                        trol-label" for="input-email">Pekerjaan</label><br>
                                         <label class="form-control-label" for="input-username">
                                             <?php foreach ($pekerjaan as $r) :
                                                 if ($penduduk['pkrj_id'] == $r['pkrj_id']) { ?>
