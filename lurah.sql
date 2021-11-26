@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2021 at 08:34 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Nov 26, 2021 at 08:19 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -105,16 +106,9 @@ CREATE TABLE `galeri` (
   `gal_id` int(10) NOT NULL,
   `gal_title` varchar(100) NOT NULL,
   `gal_url` text NOT NULL,
-  `gal_date` date NOT NULL DEFAULT current_timestamp(),
+  `gal_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `gal_jns` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `galeri`
---
-
-INSERT INTO `galeri` (`gal_id`, `gal_title`, `gal_url`, `gal_date`, `gal_jns`) VALUES
-(1, 'Google', 'https://www.google.com/', '2021-11-24', 'Browser');
 
 -- --------------------------------------------------------
 
@@ -241,13 +235,6 @@ CREATE TABLE `kelahiran` (
   `sks2_alamat_provinsi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kelahiran`
---
-
-INSERT INTO `kelahiran` (`desa_kelurahan`, `kecamatan`, `kabupaten_kota`, `klhrn_id`, `klhrn_kepala_keluarga`, `klhrn_nokk`, `klhrn_nama`, `klhrn_jk`, `klhrn_tmpt_dilahirkan`, `klhrn_tmpt_kelahiran`, `klhrn_tgl_lahir`, `klhrn_pkl_lahir`, `klhrn_jns_klmn_detail`, `klhrn_ke`, `klhrn_penolong`, `klhrn_berat`, `klhrn_panjang`, `klhrn_ibu_nik`, `klhrn_ibu_nama`, `klhrn_ibu_tgl_lahir`, `klhrn_ibu_pekerjaan`, `klhrn_ibu_alamat`, `klhrn_ibu_alamat_desakelurahan`, `klhrn_ibu_alamat_kecamatan`, `klhrn_ibu_alamat_kabupatenkota`, `klhrn_ibu_alamat_provinsi`, `klhrn_ibu_kewarganegaraan`, `klhrn_ibu_kebangsaan`, `klhrn_ibu_tgl_catat_kawin`, `klhrn_ayah_nik`, `klhrn_ayah_nama`, `klhrn_ayah_tgl_lahir`, `klhrn_ayah_pekerjaan`, `klhrn_ayah_alamat`, `klhrn_ayah_alamat_desakelurahan`, `klhrn_ayah_alamat_kecamatan`, `klhrn_ayah_alamat_kabupatenkota`, `klhrn_ayah_alamat_provinsi`, `klhrn_ayah_kewarganegaraan`, `klhrn_ayah_kebangsaan`, `plpr_nik`, `plpr_fullname`, `plpr_umur`, `plpr_jk`, `plpr_pekerjaan`, `plpr_alamat`, `plpr_alamat_desakelurahan`, `plpr_alamat_kecamatan`, `plpr_alamat_kabupatenkota`, `plpr_alamat_provinsi`, `sks1_nik`, `sks1_fullname`, `sks1_umur`, `sks1_pekerjaan`, `sks1_alamat`, `sks1_alamat_desakelurahan`, `sks1_alamat_kecamatan`, `sks1_alamat_kabupatenkota`, `sks1_alamat_provinsi`, `sks2_nik`, `sks2_fullname`, `sks2_umur`, `sks2_pekerjaan`, `sks2_alamat`, `sks2_alamat_desakelurahan`, `sks2_alamat_kecamatan`, `sks2_alamat_kabupatenkota`, `sks2_alamat_provinsi`) VALUES
-(NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, '2021-11-21', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 64, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 59, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 53, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -264,7 +251,7 @@ CREATE TABLE `kematian` (
   `kmtn_nik` int(16) DEFAULT NULL,
   `kmtn_nama` varchar(255) DEFAULT NULL,
   `kmtn_jk` varchar(255) DEFAULT NULL,
-  `kmtn_tgl_lahir` varchar(255) DEFAULT NULL,
+  `kmtn_tgllahir` varchar(255) DEFAULT NULL,
   `kmtn_tmpt_lahir` varchar(255) DEFAULT NULL,
   `kmtn_agama` int(5) DEFAULT NULL,
   `kmtn_pekerjaan` int(5) DEFAULT NULL,
@@ -597,7 +584,7 @@ CREATE TABLE `permohonan_pindah` (
   `rt_pindah` int(5) DEFAULT NULL,
   `rw_pindah` int(5) DEFAULT NULL,
   `dusun_pindah` varchar(255) DEFAULT NULL,
-  `desa_kelurahan_pindah` varchar(255) DEFAULT NULL,
+  `desa_kelurhan_pindah` varchar(255) DEFAULT NULL,
   `kab_kota_pindah` varchar(255) DEFAULT NULL,
   `kecamatan_pindah` varchar(255) DEFAULT NULL,
   `provinsi_pindah` varchar(255) DEFAULT NULL,
@@ -740,6 +727,25 @@ INSERT INTO `rt` (`rt_id`, `rw_id`, `rt_nama`, `no_rt`, `alamat`, `no_tlp`, `rt_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rt_histori`
+--
+
+CREATE TABLE `rt_histori` (
+  `rt_id` int(5) NOT NULL,
+  `rw_id` int(5) NOT NULL,
+  `rt_nama` varchar(50) DEFAULT NULL,
+  `no_rt` varchar(50) DEFAULT NULL,
+  `alamat` varchar(50) DEFAULT NULL,
+  `no_tlp` varchar(50) DEFAULT NULL,
+  `rt_foto` varchar(50) DEFAULT 'default.png',
+  `tgl_jabat` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL,
+  `status` varchar(50) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rw`
 --
 
@@ -777,6 +783,24 @@ INSERT INTO `rw` (`rw_id`, `no_rw`, `rw_nama`, `alamat`, `no_tlp`, `rw_foto`, `t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rw_histori`
+--
+
+CREATE TABLE `rw_histori` (
+  `rw_id` int(5) NOT NULL,
+  `no_rw` varchar(50) NOT NULL,
+  `rw_nama` varchar(50) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `no_tlp` varchar(50) DEFAULT NULL,
+  `rw_foto` varchar(50) DEFAULT 'default.png',
+  `tgl_jabat` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL,
+  `status` varchar(50) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `saprsarana`
 --
 
@@ -796,7 +820,7 @@ CREATE TABLE `saprsarana` (
 
 INSERT INTO `saprsarana` (`spr_id`, `sprjns_id`, `spr_name`, `spr_kondisi`, `spr_kd_invetaris`, `spr_lokasi`, `spr_gambar`) VALUES
 (1, 2, 'Politeknik Caltex Riau', 'Baik', NULL, 'Jln. Umban Sari no.1', 'default.png'),
-(2, 1, 'RS', 'Baik', NULL, 'jln. umbansari', 'tech.jpg');
+(2, 1, 'ks', 'Baik', NULL, 'jln. umbansari', 'tech.jpg');
 
 -- --------------------------------------------------------
 
@@ -1101,9 +1125,22 @@ ALTER TABLE `rt`
   ADD KEY `rw_id` (`rw_id`);
 
 --
+-- Indexes for table `rt_histori`
+--
+ALTER TABLE `rt_histori`
+  ADD PRIMARY KEY (`rt_id`),
+  ADD KEY `rw_id` (`rw_id`);
+
+--
 -- Indexes for table `rw`
 --
 ALTER TABLE `rw`
+  ADD PRIMARY KEY (`rw_id`);
+
+--
+-- Indexes for table `rw_histori`
+--
+ALTER TABLE `rw_histori`
   ADD PRIMARY KEY (`rw_id`);
 
 --
@@ -1185,7 +1222,7 @@ ALTER TABLE `berita`
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `gal_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `gal_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gol_darah`
@@ -1203,7 +1240,7 @@ ALTER TABLE `jns_asuransi`
 -- AUTO_INCREMENT for table `kelahiran`
 --
 ALTER TABLE `kelahiran`
-  MODIFY `klhrn_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `klhrn_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kematian`
@@ -1266,10 +1303,22 @@ ALTER TABLE `rt`
   MODIFY `rt_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
+-- AUTO_INCREMENT for table `rt_histori`
+--
+ALTER TABLE `rt_histori`
+  MODIFY `rt_id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `rw`
 --
 ALTER TABLE `rw`
   MODIFY `rw_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `rw_histori`
+--
+ALTER TABLE `rw_histori`
+  MODIFY `rw_id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `saprsarana`

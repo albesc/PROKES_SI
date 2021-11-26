@@ -8,6 +8,7 @@ class Rt extends CI_Controller
         parent::__construct();
         $this->load->model('Rt_model');
         $this->load->model('Rw_model');
+        $this->load->model('Rt_histori_model');
         $this->load->model('User_model');
     }
 
@@ -57,6 +58,7 @@ class Rt extends CI_Controller
         }
 
         $this->Rt_model->insert($data, $upload_image);
+        $this->Rt_histori_model->insert($data, $upload_image);
         redirect("Rw");
     }
 
@@ -101,6 +103,7 @@ class Rt extends CI_Controller
 
         $id = $this->input->post('rt_id');
         $this->Rt_model->update(['rt_id' => $id], $data, $upload_image);
+        $this->Rt_histori_model->insert($data, $upload_image);
         redirect("Rw");
     }
 
