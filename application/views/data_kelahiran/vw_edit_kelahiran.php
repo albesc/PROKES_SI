@@ -62,10 +62,10 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                    <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki" <?php if ($kelahiran['klhrn_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
-                                    <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="css" name="klhrn_jk" value="Perempuan" <?php if ($kelahiran['klhrn_jk'] == "Perempuan") { ?> checked <?php } ?>>
-                                    <label for="css">Perempuan</label>
+                                    <input type="radio" id="html" name="klhrn_jk" value="LAKI - LAKI" <?php if ($kelahiran['klhrn_jk'] == "LAKI - LAKI") { ?> checked <?php } ?>>
+                                    <label for="html">LAKI - LAKI</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" id="css" name="klhrn_jk" value="PEREMPUAN" <?php if ($kelahiran['klhrn_jk'] == "PEREMPUAN") { ?> checked <?php } ?>>
+                                    <label for="css">PEREMPUAN</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -364,10 +364,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="plpr_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                        <input type="radio" id="html" name="plpr_jk" value="Laki-Laki" <?php if ($kelahiran['plpr_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
-                                        <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="radio" id="css" name="plpr_jk" value="Perempuan" <?php if ($kelahiran['plpr_jk'] == "Perempuan") { ?> checked <?php } ?>>
-                                        <label for="css">Perempuan</label>
+                                        <input type="radio" id="html" name="plpr_jk" value="LAKI - LAKI" <?php if ($kelahiran['plpr_jk'] == "LAKI - LAKI") { ?> checked <?php } ?>>
+                                        <label for="html">LAKI - LAKI</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" id="css" name="plpr_jk" value="PEREMPUAN" <?php if ($kelahiran['plpr_jk'] == "PEREMPUAN") { ?> checked <?php } ?>>
+                                        <label for="css">PEREMPUAN</label>
                                     </div>
                                 </div>
                             </div>

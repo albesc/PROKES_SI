@@ -61,10 +61,10 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                    <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki">
-                                    <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="css" name="klhrn_jk" value="Perempuan">
-                                    <label for="css">Perempuan</label>
+                                    <input type="radio" id="html" name="klhrn_jk" value="LAKI - LAKI">
+                                    <label for="html">LAKI - LAKI</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" id="css" name="klhrn_jk" value="PEREMPUAN">
+                                    <label for="css">PEREMPUAN</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -359,10 +359,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="klhrn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                        <input type="radio" id="html" name="klhrn_jk" value="Laki-Laki">
-                                        <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="radio" id="css" name="klhrn_jk" value="Perempuan">
-                                        <label for="css">Perempuan</label>
+                                        <input type="radio" id="html" name="klhrn_jk" value="LAKI - LAKI">
+                                        <label for="html">LAKI - LAKI</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" id="css" name="klhrn_jk" value="PEREMPUAN">
+                                        <label for="css">PEREMPUAN</label>
                                     </div>
                                 </div>
                             </div>

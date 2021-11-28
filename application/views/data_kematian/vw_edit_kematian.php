@@ -70,10 +70,10 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="kmtn_jk" class="form-control-label">Jenis Kelamin</label><br>
-                                    <input type="radio" id="html" name="kmtn_jk" value="Laki-Laki" <?php if ($kematian['kmtn_jk'] == "Laki-Laki") { ?> checked <?php } ?>>
-                                    <label for="html">Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" id="css" name="kmtn_jk" value="Perempuan" <?php if ($kematian['kmtn_jk'] == "Perempuan") { ?> checked <?php } ?>>
-                                    <label for="css">Perempuan</label>
+                                    <input type="radio" id="html" name="kmtn_jk" value="LAKI - LAKI" <?php if ($kematian['kmtn_jk'] == "LAKI - LAKI") { ?> checked <?php } ?>>
+                                    <label for="html">LAKI - LAKI</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" id="css" name="kmtn_jk" value="PEREMPUAN" <?php if ($kematian['kmtn_jk'] == "PEREMPUAN") { ?> checked <?php } ?>>
+                                    <label for="css">PEREMPUAN</label>
                                 </div>
                             </div>
                             <div class="row">

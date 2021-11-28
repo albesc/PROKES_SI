@@ -68,7 +68,7 @@
                                             </span>
                                         </td>
                                         <td class="text-right">
-                                            <a href="<?= site_url('Pengaduan/resp'); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Tanggapi</a>
+                                            <a href="<?= site_url('Pengaduan/resp/'); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Tanggapi</a>
                                         </td>
                                     </tr>
                                 </tbody>
