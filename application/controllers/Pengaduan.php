@@ -7,27 +7,37 @@ class Pengaduan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Pengaduan_model');
+        $this->load->model('User_model');
     }
 
-    public function resp()
+    function index()
+    {
+        $data['judul'] = "Halaman Pengaduan";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['pengaduan'] = $this->Pengaduan_model->get();
+        $this->load->view("layout/header", $data);
+        $this->load->view("data_pengaduan/vw_pengaduan", $data);
+        $this->load->view("layout/footer", $data);
+    }
+
+    public function resp($pgdn_id)
     {
         $data['judul'] = "Tanggapi Pengaduan";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['pengaduan'] = $this->Pengaduan_model->getById($pgdn_id);
         $this->load->view('layout/header', $data);
         $this->load->view('data_pengaduan/vw_resp_pengaduan', $data);
         $this->load->view('layout/footer', $data);
     }
 
-    public function upload()
+    public function update()
     {
         $data = [
-            'pgdn_judul' => $this->input->post('pgdn_judul'),
-            'pgdn_isi' => $this->input->post('pgdn_isi'),
-            'pgdn_gambar' => $this->input->post('pgdn_gambar'),
-            'pgdn_nik' => $this->input->post('pgdn_nik'),
-            'tanggapan' => $this->input->post('tanggapan'),
+            'brt_judul' => $this->input->post('brt_judul'),
+            'brt_isi' => $this->input->post('brt_isi'),
         ];
-
-        $this->Galeri_model->insert($data);
-        redirect("Galeri");
+        $id = $this->input->post('pgdn_id');
+        $this->Pengaduan_model->update(['pgdn_id' => $id], $data);
+        redirect("Pengaduan");
     }
 }

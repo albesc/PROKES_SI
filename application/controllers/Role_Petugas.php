@@ -6,6 +6,7 @@ class Role_Petugas extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('User_model');
         $this->load->model('Penduduk_model');
         $this->load->model('Pengaduan_model');
         $this->load->model('Berita_model');
@@ -92,7 +93,7 @@ class Role_Petugas extends CI_Controller
     {
         $data['judul'] = "Data Pengaduan";
         $data['pengaduan'] = $this->Pengaduan_model->get();
-        // $data['p_byJk'] = $this->Pengaduan_model->getByJK();
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('layout/header', $data);
         $this->load->view('data_pengaduan/vw_pengaduan', $data);
         $this->load->view('layout/footer', $data);
