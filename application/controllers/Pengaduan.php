@@ -73,8 +73,7 @@ class Pengaduan extends CI_Controller
     public function update()
     {
         $data = [
-            'brt_judul' => $this->input->post('brt_judul'),
-            'brt_isi' => $this->input->post('brt_isi'),
+            'tanggapan' => $this->input->post('tanggapan')
         ];
         $id = $this->input->post('pgdn_id');
         $this->Pengaduan_model->update(['pgdn_id' => $id], $data);

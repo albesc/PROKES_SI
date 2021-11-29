@@ -24,12 +24,14 @@
                     <form action="<?= base_url('Pengaduan/update'); ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="pgdn_id" class="form-control" value="<?= $pengaduan['pgdn_id'] ?>">
                         <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
-                        <div><h6><br></h6></div>
+                        <div>
+                            <h6><br></h6>
+                        </div>
                         <h6 class="heading-small text-muted mb-4">Isi Pengaduan</h6>
                         <div class="pl-lg-4">
                             <div class="row justify-content-center">
                                 <div class="col text-center">
-                                    <img src="../img/default_pic.png" class="img-fluid" width="300" height="215">
+                                    <img src="<?= base_url('assets/img/pengaduan/') . $pengaduan['pgdn_gambar']; ?>" class="img-fluid" width="300" height="215">
                                 </div>
                             </div>
                             <br>
@@ -53,11 +55,24 @@
                         </div>
                         <div class="row">
                             <div class="col-8">
-                                <div class="custom-control custom-checkbox">
+                                <!-- <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" name="status"
-                                    <?php if($pengaduan['status'] == "1"){ echo "checked"; }?>>
+                                    <?php if ($pengaduan['status'] == "1") {
+                                        echo "checked";
+                                    } ?>>
                                     <label class="custom-control-label" for="customCheck1">Ditampilkan</label>
-                                </div>
+                                </div> -->
+                                <input type="checkbox" name="status" value="check">
+                                <label>Ditampilkan</label>
+                                <?php
+                                if (isset($_POST['submit'])) {
+                                    if (!isset($_POST['check'])) {
+                                        echo "Not selected!";
+                                    } else {
+                                        echo "Selected!";
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </form>
