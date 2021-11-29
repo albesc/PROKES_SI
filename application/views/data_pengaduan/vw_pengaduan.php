@@ -46,6 +46,7 @@
                                         <td scope="col" class="sort" data-sort="nik">Judul Pengaduan</td>
                                         <td scope="col" class="sort">Kategori Pengaduan</td>
                                         <td scope="col" class="sort" data-sort="nama">Status</td>
+                                        <td scope="col" class="sort" data-sort="nama">Tanggapan</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
@@ -66,17 +67,26 @@
                                             <td>
                                                 <?php
                                                 foreach ($tipe as $t) {
-                                                    if($p['tp_id'] == $t['tp_id']){
+                                                    if ($t['tp_id'] == $p['tp_id']) {
                                                         echo $t['tp_ket'];
                                                     }
                                                 }
                                                 ?>
                                             </td>
                                             <td>
-                                                <?php 
-                                                if($p['tanggapan'] == ""){
+                                                <?php
+                                                if ($p['status'] == "1") {
+                                                    echo "Sudah Direspon";
+                                                } else {
+                                                    echo "Belum Direspon";
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($p['tanggapan'] == "") {
                                                     echo "Belum Ditanggapi";
-                                                } else{
+                                                } else {
                                                     echo "Sudah Ditanggapi";
                                                 }
                                                 ?>
