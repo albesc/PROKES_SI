@@ -23,15 +23,14 @@
                 <div class="card-body">
                     <form action="<?= base_url('Pengaduan/update'); ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="pgdn_id" class="form-control" value="<?= $pengaduan['pgdn_id'] ?>">
+                        <input type="text" name="usr_id" class="form-control" value="<?= $user['usr_id'] ?>">
                         <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
-                        <div>
-                            <h6><br></h6>
-                        </div>
+                        <div><h6><br></h6></div>
                         <h6 class="heading-small text-muted mb-4">Isi Pengaduan</h6>
                         <div class="pl-lg-4">
                             <div class="row justify-content-center">
                                 <div class="col text-center">
-                                    <img src="<?= base_url('assets/img/pengaduan/') . $pengaduan['pgdn_gambar']; ?>" class="img-fluid" width="300" height="215">
+                                    <img src="../img/default_pic.png" class="img-fluid" width="300" height="215">
                                 </div>
                             </div>
                             <br>
@@ -48,31 +47,18 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                                        <textarea class="form-control" name="tanggapan" rows="7"><?= $pengaduan['tanggapan'] ?></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-8">
-                                <!-- <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" name="status"
-                                    <?php if ($pengaduan['status'] == "1") {
-                                        echo "checked";
-                                    } ?>>
-                                    <label class="custom-control-label" for="customCheck1">Ditampilkan</label>
-                                </div> -->
-                                <input type="checkbox" name="status" value="check">
-                                <label>Ditampilkan</label>
-                                <?php
-                                if (isset($_POST['submit'])) {
-                                    if (!isset($_POST['check'])) {
-                                        echo "Not selected!";
-                                    } else {
-                                        echo "Selected!";
-                                    }
-                                }
-                                ?>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="status" <?php if($pengaduan['status'] == "1"){ echo "checked"; }?>
+                                    value="1">
+                                    <label for="customCheck1">Ditampilkan</label>
+                                </div>
                             </div>
                         </div>
                     </form>
