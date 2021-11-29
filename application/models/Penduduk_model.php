@@ -38,6 +38,14 @@ class Penduduk_model extends CI_Model
         return $query->row_array();
     }
 
+    public function getByUmur()
+    {
+        $this->db->select('pndk_tgl_lahir');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);

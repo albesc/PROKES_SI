@@ -65,10 +65,10 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total UMKM</h5>
-                                    <span class="h2 font-weight-bold mb-0"><?= $tumkm ?></span>
+                                    <h1 class="mt-2"><?= $tumkm ?></h1>
                                 </div>
-                                <div class="col-auto">
-                                    <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                                <div class=" col-auto">
+                                    <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
                                         <i class="ni ni-chart-bar-32"></i>
                                     </div>
                                 </div>
@@ -83,57 +83,86 @@
 <!-- Page content -->
 <div class="container-fluid mt--6">
     <div class="row">
-        <div class="col-xl-8">
-            <div class="card bg-default">
-                <div class="card-header bg-transparent">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <h6 class="text-light text-uppercase ls-1 mb-1">Perkembangan</h6>
-                            <h5 class="h3 text-white mb-0">Perubahan Total Penduduk</h5>
-                        </div>
-                        <div class="col">
-                            <ul class="nav nav-pills justify-content-end">
-                                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                                    <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                                        <span class="d-none d-md-block">Kelahiran</span>
-                                        <span class="d-md-none">M</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                                    <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                                        <span class="d-none d-md-block">Kematian</span>
-                                        <span class="d-md-none">W</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Chart -->
-                    <div class="chart">
-                        <!-- Chart wrapper -->
-                        <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-transparent">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h6 class="text-uppercase text-muted ls-1 mb-1">Banyak</h6>
-                            <h5 class="h3 mb-0">Pengaduan Yang Dipublish</h5>
+                            <h6 class="text-uppercase ls-1 mb-1">Statistik</h6>
+                            <h5 class="h3">Penduduk Kelurahan Umban Sari</h5>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <!-- Chart -->
-                    <div class="chart">
-                        <canvas id="chart-bars" class="chart-canvas"></canvas>
+                    <div>
+                        <!-- Chart wrapper -->
+                        <canvas id="dashChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php
+    /*======== Get data usia ========*/
+    $temp = array();
+    foreach ($jml_usia as $u) :
+        array_push($temp, $u);
+    endforeach;
+    ?>
+    <script>
+        const labels = [
+            '0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39',
+            '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75+'
+        ];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Total',
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1,
+                data: <?= json_encode($temp) ?>,
+                tension: 0.5
+            }]
+        };
+        const config = {
+            type: 'line',
+            data,
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Usia'
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        };
+
+        var ctx = document.getElementById('dashChart');
+        var dashChart = new Chart(ctx, config);
+    </script>
