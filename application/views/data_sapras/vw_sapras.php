@@ -55,7 +55,7 @@
                                 <tbody class="list">
                                     <?php
                                     $i = 1;
-                                    foreach ($saprsarana as $s) {
+                                    foreach ($sapras as $s) {
                                     ?>
                                         <tr>
                                             <th scope="row">
@@ -87,7 +87,7 @@
                         <!-- Card footer -->
                         <div class="card-footer py-4">
                             <nav aria-label="...">
-                                <ul class="pagination justify-content-end mb-0">
+                                <!-- <ul class="pagination justify-content-end mb-0">
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1">
                                             <i class="fas fa-angle-left"></i>
@@ -107,7 +107,8 @@
                                             <span class="sr-only">Next</span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
+                                <?= $links; ?>
                             </nav>
                         </div>
                     </div>

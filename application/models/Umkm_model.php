@@ -11,9 +11,10 @@ class Umkm_model extends CI_Model
         parent::__construct();
     }
 
-    public function get()
+    public function get($num, $start)
     {
         $this->db->from($this->table);
+        $this->db->limit($num, $start);
         $query = $this->db->get();
         return $query->result_array();
     }

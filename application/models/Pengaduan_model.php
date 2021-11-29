@@ -11,9 +11,10 @@ class Pengaduan_model extends CI_Model
         parent::__construct();
     }
 
-    public function get()
+    public function get($num, $start)
     {
         $this->db->from($this->table);
+        $this->db->limit($num, $start);
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -21,7 +22,7 @@ class Pengaduan_model extends CI_Model
     public function getById($brt_id)
     {
         $this->db->select('pengaduan.*');
-        $this->db->from('pegaduan');
+        $this->db->from('pengaduan');
         $this->db->where('pengaduan.pgdn_id', $brt_id);
         $query = $this->db->get();
         return $query->row_array();

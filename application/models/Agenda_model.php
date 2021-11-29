@@ -11,21 +11,26 @@ class Agenda_model extends CI_Model
         parent::__construct();
     }
 
-    public function get()
+    public function get($num, $start)
     {
         $this->db->from($this->table);
+        $this->db->limit($num, $start);
         $query = $this->db->get();
         return $query->result_array();
+        // $this->db->from($this->table);
+        // $query = $this->db->get();
+        // return $query->result_array();
     }
-    
-    public function getById($ag_id){
+
+    public function getById($ag_id)
+    {
         $this->db->select('agenda.*');
         $this->db->from('agenda');
         $this->db->where('agenda.ag_id', $ag_id);
         $query = $this->db->get();
         return $query->row_array();
     }
-    
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);
@@ -43,5 +48,12 @@ class Agenda_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
         return $this->db->affected_rows();
+    }
+
+    public function tagenda()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 }

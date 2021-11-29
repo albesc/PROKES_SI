@@ -43,41 +43,59 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <td scope="col" class="sort" data-sort="id">No</td>
-                                        <td scope="col" class="sort" data-sort="nik">Nama Penduduk</td>
+                                        <td scope="col" class="sort" data-sort="nik">Judul Pengaduan</td>
                                         <td scope="col" class="sort">Kategori Pengaduan</td>
                                         <td scope="col" class="sort" data-sort="nama">Status</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="list">
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="media-body">
-                                                <span class="name mb-0 text-sm">1</span>
-                                            </div>
-                                        </th>
-                                        <td class="budget">
-                                            tes
-                                        </td>
-                                        <td>
-                                            tes
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-dot mr-4">
-                                                <span class="status">diproses</span>
-                                            </span>
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="<?= site_url('Pengaduan/resp/'); ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Tanggapi</a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($pengaduan as $p) {
+                                    ?>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media-body">
+                                                    <span class="name mb-0 text-sm"><?= $i ?></span>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <?= $p['pgdn_judul'] ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                foreach ($tipe as $t) {
+                                                    if($p['tp_id'] == $t['tp_id']){
+                                                        echo $t['tp_ket'];
+                                                    }
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php 
+                                                if($p['tanggapan'] == ""){
+                                                    echo "Belum Ditanggapi";
+                                                } else{
+                                                    echo "Sudah Ditanggapi";
+                                                }
+                                                ?>
+                                            </td>
+                                            <td class="text-right">
+                                                <a href="<?= site_url('Pengaduan/resp/') . $p['pgdn_id']; ?>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Tanggapi</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $i++;
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
                         <!-- Card footer -->
                         <div class="card-footer py-4">
                             <nav aria-label="...">
-                                <ul class="pagination justify-content-end mb-0">
+                                <!-- <ul class="pagination justify-content-end mb-0">
                                     <li class="page-item disabled">
                                         <a class="page-link" href="#" tabindex="-1">
                                             <i class="fas fa-angle-left"></i>
@@ -97,7 +115,8 @@
                                             <span class="sr-only">Next</span>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul> -->
+                                <?= $links; ?>
                             </nav>
                         </div>
                     </div>

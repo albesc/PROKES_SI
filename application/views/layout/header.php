@@ -46,62 +46,62 @@
                                 <span class="nav-link-text">Data Penduduk</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <a class="nav-link" href="<?= site_url('Role_petugas/Penduduk'); ?>">
+                                <a class="nav-link" href="<?= site_url('Penduduk'); ?>">
                                     <i class="fas fa-user text-primary"></i>
                                     <span class="nav-link-text">Data Penduduk</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('Role_petugas/Kelahiran'); ?>">
+                                <a class="nav-link" href="<?= site_url('Kelahiran'); ?>">
                                     <i class="fas fa-user-plus text-primary"></i>
                                     <span class="nav-link-text">Data Kelahiran</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('Role_petugas/Kematian'); ?>">
+                                <a class="nav-link" href="<?= site_url('Kematian'); ?>">
                                     <i class="fas fa-user-minus text-primary"></i>
                                     <span class="nav-link-text">Data Kematian</span>
                                 </a>
-                                <a class="nav-link" href="<?= site_url('Role_petugas/Permohonanpindah'); ?>">
+                                <a class="nav-link" href="<?= site_url('Permohonanpindah'); ?>">
                                     <i class="fas fa-people-carry text-primary"></i>
                                     <span class="nav-link-text">Data Permohonan Pindah</span>
                                 </a>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Berita'); ?>">
+                            <a class="nav-link" href="<?= site_url('Berita'); ?>">
                                 <i class="fas fa-newspaper text-primary"></i>
                                 <span class="nav-link-text">Berita</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Galeri'); ?>">
+                            <a class="nav-link" href="<?= site_url('Galeri'); ?>">
                                 <i class="far fa-image text-primary"></i>
                                 <span class="nav-link-text">Galeri</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Pengaduan'); ?>">
+                            <a class="nav-link" href="<?= site_url('Pengaduan'); ?>">
                                 <i class="fas fa-bullhorn text-primary"></i>
                                 <span class="nav-link-text">Pengaduan</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Agenda'); ?>">
+                            <a class="nav-link" href="<?= site_url('Agenda'); ?>">
                                 <i class="fas fa-calendar text-primary"></i>
                                 <span class="nav-link-text">Agenda</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Rw'); ?>">
+                            <a class="nav-link" href="<?= site_url('Rw'); ?>">
                                 <i class="fas fa-user text-primary"></i>
                                 <span class="nav-link-text">RT & RW</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Sapras'); ?>">
+                            <a class="nav-link" href="<?= site_url('Sapras'); ?>">
                                 <i class="fas fa-building text-primary"></i>
                                 <span class="nav-link-text">Sarana & Prasarana</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= site_url('Role_petugas/Umkm'); ?>">
+                            <a class="nav-link" href="<?= site_url('Umkm'); ?>">
                                 <i class="fas fa-store text-primary"></i>
                                 <span class="nav-link-text">UMKM</span>
                             </a>

@@ -16,12 +16,15 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3>Judul Pengaduan</h3>
+                            <h3><?= $pengaduan['pgdn_judul'] ?></h3>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="<?= base_url('Pengaduan/update'); ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="pgdn_id" class="form-control" value="<?= $pengaduan['pgdn_id'] ?>">
+                        <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
+                        <div><h6><br></h6></div>
                         <h6 class="heading-small text-muted mb-4">Isi Pengaduan</h6>
                         <div class="pl-lg-4">
                             <div class="row justify-content-center">
@@ -32,7 +35,7 @@
                             <br>
                             <div class="row">
                                 <div class="col-12 text-justify">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                    <?= $pengaduan['pgdn_isi'] ?>
                                 </div>
                             </div>
                         </div>
@@ -51,14 +54,10 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                    <input type="checkbox" class="custom-control-input" name="status"
+                                    <?php if($pengaduan['status'] == "1"){ echo "checked"; }?>>
                                     <label class="custom-control-label" for="customCheck1">Ditampilkan</label>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 text-right">
-                                <a href="" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;&nbsp;Tanggapi</a>
                             </div>
                         </div>
                     </form>

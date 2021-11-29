@@ -11,9 +11,10 @@ class Kematian_model extends CI_Model
         parent::__construct();
     }
 
-    public function get()
+    public function get($num, $start)
     {
         $this->db->from($this->table);
+        $this->db->limit($num, $start);
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -43,5 +44,12 @@ class Kematian_model extends CI_Model
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
         return $this->db->affected_rows();
+    }
+
+    public function tkematian()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
     }
 }

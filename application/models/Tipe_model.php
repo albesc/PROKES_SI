@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kewarganegaraan_model extends CI_Model
+class Tipe_model extends CI_Model
 {
-    public $table = 'kewarganegaraan';
-    public $id = 'kewarganegaraan.kwgn_id';
+    public $table = 'tipe';
+    public $id = 'tipe.tp_id';
 
     public function __construct()
     {
