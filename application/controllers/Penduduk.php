@@ -6,6 +6,7 @@ class Penduduk extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Penduduk_model');
         $this->load->model('Rw_model');
         $this->load->model('Rt_model');

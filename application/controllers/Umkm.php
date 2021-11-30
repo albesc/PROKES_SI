@@ -9,6 +9,7 @@ class Umkm extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Umkm_model');
         $this->load->model('Umkm_kat_model');
     }

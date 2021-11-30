@@ -6,6 +6,7 @@ class Kematian extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Kematian_model');
         $this->load->model('Agama_model');
         $this->load->model('Pekerjaan_model');

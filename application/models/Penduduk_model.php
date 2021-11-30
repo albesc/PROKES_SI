@@ -65,6 +65,15 @@ class Penduduk_model extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function countpendudukbyrw()
+    {
+        $this->db->select('p.*, count(p.rw_id) as rwcount');
+        $this->db->from('penduduk p');
+        $this->db->group_by('p.rw_id');
+        $query = $this->db->get();  
+        return $query->num_rows();
+    }
+
     public function tpenduduk()
     {
         $this->db->from($this->table);

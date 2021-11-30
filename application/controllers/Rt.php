@@ -10,6 +10,7 @@ class Rt extends CI_Controller
         $this->load->model('Rw_model');
         $this->load->model('Rt_histori_model');
         $this->load->model('User_model');
+        $this->load->model('Penduduk_model');
     }
 
     function index()

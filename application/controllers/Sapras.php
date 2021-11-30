@@ -9,6 +9,7 @@ class Sapras extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Sapras_model');
         $this->load->model('Sprjns_model');
     }

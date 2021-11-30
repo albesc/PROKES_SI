@@ -10,6 +10,7 @@ class Rw extends CI_Controller
         $this->load->model('Rt_model');
         $this->load->model('Rw_histori_model');
         $this->load->model('User_model');
+        $this->load->model('Penduduk_model');
     }
 
     function index()
@@ -52,6 +53,7 @@ class Rw extends CI_Controller
         $data['links'] = $this->pagination->create_links();
 
         $data['judul'] = "Halaman RW";
+        $data['countrw'] = $this->Penduduk_model->countpendudukbyrw();
         // $data['rw'] = $this->Rw_model->get();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_rtrw", $data);
