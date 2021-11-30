@@ -6,6 +6,7 @@ class Rw extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        is_logged_in2();
         $this->load->model('Rw_model');
         $this->load->model('Rt_model');
         $this->load->model('Rw_histori_model');
@@ -145,6 +146,7 @@ class Rw extends CI_Controller
         $data['judul'] = "Detail RW";
         $data['rw'] = $this->Rw_model->getById($rw_id);
         $data['rt'] = $this->Rt_model->get();
+        $data['countrt'] = $this->Penduduk_model->countpendudukbyrt();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_detail_rw", $data);
         $this->load->view("layout/footer", $data);

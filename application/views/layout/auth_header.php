@@ -44,13 +44,6 @@
                         </div>
                     </div>
                 </div>
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="<?= base_url() ?>" class="nav-link">
-                            <span class="nav-link-inner--text">Login</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </nav>

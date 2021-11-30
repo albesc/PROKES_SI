@@ -68,7 +68,7 @@
                                     <div class="form-group">
                                         <label class="form-control-label" for="input-username">Masa Jabatan</label><br>
                                         <label class="form-control-label" for="input-username">
-                                        <?php
+                                            <?php
                                             $thn = date_format(date_create($rw['tgl_jabat']), "Y");
                                             $thnAkhir = date_format(date_create($rw['tgl_akhir']), "Y");
                                             $jabatan = $thnAkhir - $thn;
@@ -142,10 +142,22 @@
                                             <?= $r['rt_nama'] ?>
                                         </td>
                                         <td>
-                                            250
+                                            <?php
+                                            foreach ($countrt as $cr) {
+                                                if ($cr['rw_id'] == $r['rw_id'] && $cr['rt_id'] == $r['rt_id'] && $cr['pndk_jk'] == 'LAKI - LAKI') {
+                                                    echo $cr['rtcount'];
+                                                }
+                                            }
+                                            ?>
                                         </td>
                                         <td>
-                                            250
+                                            <?php
+                                            foreach ($countrt as $cr) {
+                                                if ($cr['rw_id'] == $r['rw_id'] && $cr['rt_id'] == $r['rt_id'] && $cr['pndk_jk'] == 'PEREMPUAN') {
+                                                    echo $cr['rtcount'];
+                                                }
+                                            }
+                                            ?>
                                         </td>
                                         <td class="text-right">
                                             <a href="<?= site_url('Rt/detail/') . $r['rt_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;

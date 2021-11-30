@@ -71,10 +71,22 @@
                                                 <?= $r['rw_nama'] ?>
                                             </td>
                                             <td>
-                                                250
+                                                <?php
+                                                foreach ($countrw as $cr) {
+                                                    if ($cr['rw_id'] == $r['rw_id'] && $cr['pndk_jk'] == 'LAKI - LAKI') {
+                                                        echo $cr['rwcount'];
+                                                    }
+                                                }
+                                                ?>
                                             </td>
                                             <td>
-                                                250
+                                                <?php
+                                                foreach ($countrw as $cr) {
+                                                    if ($cr['rw_id'] == $r['rw_id'] && $cr['pndk_jk'] == 'LAKI - LAKI') {
+                                                        echo $cr['rwcount'];
+                                                    }
+                                                }
+                                                ?>
                                             </td>
                                             <td class="text-right">
                                                 <a href="<?= site_url('Rw/detail/') . $r['rw_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;
