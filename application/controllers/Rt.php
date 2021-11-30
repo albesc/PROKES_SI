@@ -66,7 +66,7 @@ class Rt extends CI_Controller
     {
         $data['judul'] = "Edit RT";
         $data['rt'] = $this->Rt_model->getById($rt_id);
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_edit_rt", $data);
         $this->load->view("layout/footer", $data);
@@ -110,7 +110,7 @@ class Rt extends CI_Controller
     {
         $data['judul'] = "Detail RT";
         $data['rt'] = $this->Rt_model->getById($rt_id);
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $this->load->view("layout/header", $data);
         $this->load->view("data_rtrw/vw_detail_rt", $data);
         $this->load->view("layout/footer", $data);

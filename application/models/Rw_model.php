@@ -52,4 +52,11 @@ class Rw_model extends CI_Model
         $query = $this->db->get();
         return $query->num_rows();
     }
+
+    public function get1()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
