@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <form action="<?= base_url('Pengaduan/update'); ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="pgdn_id" class="form-control" value="<?= $pengaduan['pgdn_id'] ?>">
-                        <input type="text" name="usr_id" class="form-control" value="<?= $user['usr_id'] ?>">
+                        <input type="hidden" name="usr_id" class="form-control" value="<?= $user['usr_id'] ?>">
                         <button type="submit" name="Update" class="btn btn-sm btn-primary">Edit</button>
                         <div><h6><br></h6></div>
                         <h6 class="heading-small text-muted mb-4">Isi Pengaduan</h6>
