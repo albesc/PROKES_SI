@@ -29,21 +29,17 @@
                          <form>
                              <div class="card flex-row">
                                  <div class="img-square-wrapper">
-                                     <img class="" src="<?= base_url('assets/img/umkm/') . $umkm['foto_produk']; ?>" width="300" height="215" alt="Card image cap">
+                                     <img class="" src="<?= base_url('assets/img/umkm/') . $umkm['foto_usaha']; ?>" width="300" height="215" alt="Card image cap">
                                  </div>
                                  <div class="card-body">
                                      <h3 class="card-title"><?= $umkm['nama_usaha'] ?></h3>
                                      <div class="row">
                                          <div class="col-2">
-                                             <label for="example-tel-input" class="form-control-label">No NIB</label><br>
-                                             <label class="form-control-label" for="input-username"><?= $umkm['no_nib'] ?></label>
-                                         </div>
-                                         <div class="col-3">
                                              <label for="example-tel-input" class="form-control-label">Pemilik Usaha</label><br>
                                              <label class="form-control-label" for="input-username"><?= $umkm['nama_owner'] ?></label>
                                          </div>
                                          <div class="col-2">
-                                             <label for="example-tel-input" class="form-control-label">Jenis Usaha</label><br>
+                                             <label for="example-tel-input" class="form-control-label">Kategori Usaha</label><br>
                                              <label class="form-control-label" for="input-username">
                                                  <?php foreach ($umkm_kat as $r) :
                                                         if ($umkm['id_kat'] == $r['id_kat']) { ?>

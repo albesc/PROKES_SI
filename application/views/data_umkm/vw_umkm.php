@@ -46,10 +46,10 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <td scope="col" class="sort" data-sort="id">No</td>
-                                        <td scope="col" class="sort" data-sort="nik">No NIB</td>
                                         <td scope="col" class="sort" data-sort="asal">Nama Usaha</td>
                                         <td scope="col" class="sort" data-sort="asal">Kategori Usaha</td>
                                         <td scope="col" class="sort" data-sort="asal">Alamat</td>
+                                        <td scope="col" class="sort" data-sort="asal">Kontak</td>
                                         <td scope="col"></td>
                                     </tr>
                                 </thead>
@@ -64,9 +64,6 @@
                                                     <span><?= $i ?></span>
                                                 </div>
                                             </th>
-                                            <td class="budget">
-                                                <?= $u['no_nib'] ?>
-                                            </td>
                                             <td>
                                                 <?= $u['nama_usaha'] ?>
                                             </td>
@@ -78,7 +75,10 @@
                                                 endforeach; ?>
                                             </td>
                                             <td>
-                                                <?= $u['alamat'] ?>
+                                                <?= word_limiter($u['alamat'], 5) ?>
+                                            </td>
+                                            <td>
+                                                <?= $u['kontak'] ?>
                                             </td>
                                             <td class="text-right">
                                                 <a href="<?= site_url('Umkm/detail/') . $u['id_umkm']; ?>" class="btn btn-info"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>&nbsp;&nbsp;&nbsp;

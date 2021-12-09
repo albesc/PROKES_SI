@@ -26,18 +26,10 @@
                              <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
-                                         <label for="example-tel-input" class="form-control-label">No NIB</label>
-                                         <input class="form-control" type="text" name="no_nib" value="<?= $umkm['no_nib'] ?>">
-                                     </div>
-                                 </div>
-                                 <div class="col-4">
-                                     <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Pemilik</label>
                                          <input class="form-control" type="text" name="nama_owner" value="<?= $umkm['nama_owner'] ?>">
                                      </div>
                                  </div>
-                             </div>
-                             <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Nama Usaha</label>
@@ -56,19 +48,41 @@
                                          </select>
                                      </div>
                                  </div>
+                             </div>
+                             <div class="row">
                                  <div class="col-4">
                                      <div class="form-group">
                                          <label for="example-tel-input" class="form-control-label">Alamat</label>
                                          <input class="form-control" type="text" name="alamat" value="<?= $umkm['alamat'] ?>">
                                      </div>
                                  </div>
+                                 <div class="col-4">
+                                     <div class="form-group">
+                                         <label for="example-tel-input" class="form-control-label">Kontak</label>
+                                         <input class="form-control" type="text" name="kontak" value="<?= $umkm['kontak'] ?>">
+                                     </div>
+                                 </div>
+                                 <div class="col-2">
+                                     <div class="form-group">
+                                         <label for="example-tel-input" class="form-control-label">Jumlah Karyawan</label>
+                                         <input class="form-control" type="text" name="jml_karyawan" value="<?= $umkm['jml_karyawan'] ?>">
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-12">
+                                     <label for="example-tel-input" class="form-control-label">Deskripsi Usaha</label><br>
+                                     <div class="form-group">
+                                         <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="5"><?= $umkm['deskripsi']; ?></textarea>
+                                     </div>
+                                 </div>
                              </div>
                              <div class="row">
                                  <div class="col-6">
-                                     <label for="example-tel-input" class="form-control-label">Foto Produk</label>
-                                     <img src="<?= base_url('assets/img/umkm/') . $umkm['foto_produk']; ?>" style="width: 100px" class="img-thumbnail">
+                                     <label for="example-tel-input" class="form-control-label">Foto Usaha</label>
+                                     <img src="<?= base_url('assets/img/umkm/') . $umkm['foto_usaha']; ?>" style="width: 100px" class="img-thumbnail">
                                      <div class="custom-file">
-                                         <input type="file" class="custom-file-input" name="foto_produk" lang="en">
+                                         <input type="file" class="custom-file-input" name="foto_usaha" lang="en">
                                          <label class="custom-file-label" for="customFileLang">Select file</label>
                                      </div>
                                  </div>

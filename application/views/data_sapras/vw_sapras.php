@@ -70,7 +70,7 @@
                                                 <?= $s['spr_kondisi'] ?>
                                             </td>
                                             <td>
-                                                <?= $s['spr_lokasi'] ?>
+                                                <?= word_limiter($s['spr_lokasi'], 10) ?>
                                             </td>
                                             <td class="text-right">
                                                 <a href="<?= site_url('Sapras/detail/') . $s['spr_id']; ?>" class="btn btn-info"><i class="fas fa-info"></i> Detail</a>&nbsp;&nbsp;&nbsp;

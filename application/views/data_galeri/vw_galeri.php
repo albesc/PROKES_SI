@@ -65,7 +65,7 @@
                                                 </div>
                                             </th>
                                             <td>
-                                                <?= $g['gal_title'] ?>
+                                                <?= word_limiter($g['gal_title'], 10) ?>
                                             </td>
                                             <td>
                                                 <?= $g['gal_jns'] ?>

@@ -61,8 +61,7 @@ class Permohonanpindah extends CI_Controller
     public function add()
     {
         $data['judul'] = "Tambah Permohonan Pindah";
-        $data['permohonanpindah'] = $this->Permohonanpindah_model->get();
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_add_permohonanpindah', $data);
@@ -133,7 +132,7 @@ class Permohonanpindah extends CI_Controller
     {
         $data['judul'] = "Edit Permohonan Pindah";
         $data['permohonanpindah'] = $this->Permohonanpindah_model->getById($prmhn_id);
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_edit_permohonanpindah', $data);
@@ -194,7 +193,7 @@ class Permohonanpindah extends CI_Controller
     {
         $data['judul'] = "Detail Permohonan Pindah";
         $data['permohonanpindah'] = $this->Permohonanpindah_model->getById($prmhn_id);
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_permohonanpindah/vw_detail_permohonanpindah', $data);

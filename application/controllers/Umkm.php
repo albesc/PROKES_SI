@@ -64,7 +64,6 @@ class Umkm extends CI_Controller
     public function add()
     {
         $data['judul'] = "Tambah UMKM";
-        $data['umkm'] = $this->Umkm_model->get();
         $data['umkm_kat'] = $this->Umkm_kat_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_umkm/vw_add_umkm', $data);
@@ -74,21 +73,23 @@ class Umkm extends CI_Controller
     public function upload()
     {
         $data = [
-            'no_nib' => $this->input->post('no_nib'),
             'nama_owner' => $this->input->post('nama_owner'),
             'nama_usaha' => $this->input->post('nama_usaha'),
             'id_kat' => $this->input->post('id_kat'),
             'alamat' => $this->input->post('alamat'),
+            'kontak' => $this->input->post('kontak'),
+            'jml_karyawan' => $this->input->post('jml_karyawan'),
+            'deskripsi' => $this->input->post('deskripsi'),
         ];
-        $upload_image = $_FILES['foto_produk']['name'];
+        $upload_image = $_FILES['foto_usaha']['name'];
         if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/umkm/';
             $this->load->library('upload', $config);
-            if ($this->upload->do_upload('foto_produk')) {
+            if ($this->upload->do_upload('foto_usaha')) {
                 $new_image = $this->upload->data('file_name');
-                $this->db->set('foto_produk', $new_image);
+                $this->db->set('foto_usaha', $new_image);
             } else {
                 echo $this->upload->display_errors();
             }
@@ -111,25 +112,27 @@ class Umkm extends CI_Controller
     public function update()
     {
         $data = [
-            'no_nib' => $this->input->post('no_nib'),
             'nama_owner' => $this->input->post('nama_owner'),
             'nama_usaha' => $this->input->post('nama_usaha'),
             'id_kat' => $this->input->post('id_kat'),
             'alamat' => $this->input->post('alamat'),
+            'kontak' => $this->input->post('kontak'),
+            'jml_karyawan' => $this->input->post('jml_karyawan'),
+            'deskripsi' => $this->input->post('deskripsi'),
         ];
-        $upload_image = $_FILES['foto_produk']['name'];
+        $upload_image = $_FILES['foto_usaha']['name'];
         if ($upload_image) {
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/umkm/';
             $this->load->library('upload', $config);
-            if ($this->upload->do_upload('foto_produk')) {
-                $old_image = $data['umkm']['gambar'];
+            if ($this->upload->do_upload('foto_usaha')) {
+                $old_image = $data['umkm']['foto_usaha'];
                 if ($old_image != 'default.png') {
                     unlink(FCPATH . 'assets/img/sapras/' . $old_image);
                 }
                 $new_image = $this->upload->data('file_name');
-                $this->db->set('foto_produk', $new_image);
+                $this->db->set('foto_usaha', $new_image);
             } else {
                 echo $this->upload->display_errors();
             }
