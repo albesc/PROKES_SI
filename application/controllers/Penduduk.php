@@ -74,7 +74,7 @@ class Penduduk extends CI_Controller
         $data['pendidikan'] = $this->Pendidikan_model->get();
         $data['sts_hub_kel'] = $this->Sts_hub_kel_model->get();
         $data['sts_pernikahan'] = $this->Sts_pernikahan_model->get();
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_penduduk/vw_add_penduduk', $data);
@@ -152,7 +152,7 @@ class Penduduk extends CI_Controller
         $data['pendidikan'] = $this->Pendidikan_model->get();
         $data['sts_hub_kel'] = $this->Sts_hub_kel_model->get();
         $data['sts_pernikahan'] = $this->Sts_pernikahan_model->get();
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_penduduk/vw_edit_penduduk', $data);
@@ -235,7 +235,7 @@ class Penduduk extends CI_Controller
         $data['pendidikan'] = $this->Pendidikan_model->get();
         $data['sts_hub_kel'] = $this->Sts_hub_kel_model->get();
         $data['sts_pernikahan'] = $this->Sts_pernikahan_model->get();
-        $data['rw'] = $this->Rw_model->get();
+        $data['rw'] = $this->Rw_model->get1();
         $data['rt'] = $this->Rt_model->get();
         $this->load->view('layout/header', $data);
         $this->load->view('data_penduduk/vw_detail_penduduk', $data);

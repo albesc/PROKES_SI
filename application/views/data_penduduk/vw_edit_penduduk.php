@@ -71,7 +71,7 @@
                                 <div class="col-2">
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">RW</label>
-                                        <select class="form-control" name="rw_id">
+                                        <select class="form-control" name="rw_id" onclick="document.getElementById('rt').style.display='block'">
                                             <?php foreach ($rw as $r) : ?>
                                                 <option value="<?= $r['rw_id']; ?>" <?php if ($penduduk['rw_id'] == $r['rw_id']) {
                                                                                         echo "selected";
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    <div class="form-group">
+                                    <div class="form-group" id="rt" style="display:none">
                                         <label for="exampleFormControlSelect1">RT</label>
                                         <select class="form-control" name="rt_id">
                                             <?php foreach ($rt as $r) : ?>

@@ -70,7 +70,7 @@
                                 <div class="col-2">
                                     <div class="form-group">
                                         <label for="rw_id">RW</label>
-                                        <select class="form-control" name="rw_id">
+                                        <select class="form-control" name="rw_id" onclick="document.getElementById('rt').style.display='block'">
                                             <?php foreach ($rw as $r) : ?>
                                                 <option value="<?= $r['rw_id']; ?>"><?= $r['no_rw']; ?></option>
                                             <?php endforeach; ?>
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    <div class="form-group">
+                                    <div class="form-group" id="rt" style="display:none">
                                         <label for="rt_id">RT</label>
                                         <select class="form-control" name="rt_id">
                                             <?php foreach ($rt as $r) : ?>
