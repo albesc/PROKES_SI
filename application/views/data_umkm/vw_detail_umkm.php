@@ -30,15 +30,20 @@
                              <div class="card flex-row">
                                  <div class="img-square-wrapper">
                                      <img class="" src="<?= base_url('assets/img/umkm/') . $umkm['foto_usaha']; ?>" width="300" height="215" alt="Card image cap">
+                                     <br><br>
+                                     <div class="form-group">
+                                        <label for="example-tel-input" class="form-control-label">Deskripsi Usaha</label><br>
+                                        <label class="form-control-label" for="input-username"><?= $umkm['deskripsi'] ?></label>
+                                     </div>
                                  </div>
                                  <div class="card-body">
                                      <h3 class="card-title"><?= $umkm['nama_usaha'] ?></h3>
                                      <div class="row">
-                                         <div class="col-2">
+                                         <div class="col-3">
                                              <label for="example-tel-input" class="form-control-label">Pemilik Usaha</label><br>
                                              <label class="form-control-label" for="input-username"><?= $umkm['nama_owner'] ?></label>
                                          </div>
-                                         <div class="col-2">
+                                         <div class="col-3">
                                              <label for="example-tel-input" class="form-control-label">Kategori Usaha</label><br>
                                              <label class="form-control-label" for="input-username">
                                                  <?php foreach ($umkm_kat as $r) :
@@ -48,10 +53,24 @@
                                                     endforeach; ?>
                                              </label>
                                          </div>
-                                         <div class="col-3">
+                                         <div class="col-6">
                                              <div class="form-group">
                                                  <label for="example-tel-input" class="form-control-label">Alamat</label><br>
                                                  <label class="form-control-label" for="input-username"><?= $umkm['alamat'] ?></label>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                     <div class="col-3">
+                                             <div class="form-group">
+                                                 <label for="example-tel-input" class="form-control-label">Kontak</label><br>
+                                                 <label class="form-control-label" for="input-username"><?= $umkm['kontak'] ?></label>
+                                             </div>
+                                         </div>
+                                        <div class="col-3">
+                                             <div class="form-group">
+                                                 <label for="example-tel-input" class="form-control-label">Jumlah Karyawan</label><br>
+                                                 <label class="form-control-label" for="input-username"><?= $umkm['jml_karyawan'] ?></label>
                                              </div>
                                          </div>
                                      </div>
